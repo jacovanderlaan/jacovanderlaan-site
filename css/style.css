@@ -119,6 +119,18 @@ p { margin: 0 0 18px; }
 .svc .anchor { font-size: 15px; color: var(--gold); font-weight: 700; white-space: nowrap; }
 .svc ul { padding-left: 20px; color: var(--ink-soft); margin: 12px 0 0; }
 
+/* ---- Infographic figures ---- */
+figure.graphic { margin: 40px 0 0; text-align: center; }
+figure.graphic img {
+  width: 100%; max-width: 900px; height: auto;
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.06);
+}
+figure.graphic figcaption {
+  margin-top: 14px; font-size: 15px; color: var(--ink-faint);
+}
+.band-dark figure.graphic figcaption { color: #94a3b8; }
+
 /* ---- CTA block ---- */
 .cta-block { text-align: center; }
 .cta-block h2 { margin-bottom: 12px; }

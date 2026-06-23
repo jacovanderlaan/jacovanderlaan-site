@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="oldCard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b1d2e"/>
+      <stop offset="1" stop-color="#2a1622"/>
+    </linearGradient>
+    <linearGradient id="newCard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e2a3a"/>
+      <stop offset="1" stop-color="#0b2230"/>
+    </linearGradient>
+    <linearGradient id="mergeCard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2f12"/>
+      <stop offset="1" stop-color="#2a2210"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrowB" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="800" y="92" text-anchor="middle" font-size="56" font-weight="800" fill="#f8fafc" letter-spacing="1">The meeting is just the merge</text>
+  <text x="800" y="138" text-anchor="middle" font-size="25" fill="#94a3b8">When structure carries the context, the meeting shrinks to judgement</text>
+  <rect x="560" y="158" width="480" height="4" rx="2" fill="#38bdf8"/>
+
+  <!-- LEFT: ceremony-driven -->
+  <rect x="90" y="210" width="640" height="500" rx="22" fill="url(#oldCard)" stroke="#7f3a55" stroke-width="2" filter="url(#soft)"/>
+  <text x="410" y="270" text-anchor="middle" font-size="34" font-weight="800" fill="#fb7185">Ceremony-driven</text>
+  <text x="410" y="306" text-anchor="middle" font-size="21" fill="#f1a8b8" font-style="italic">meetings compensate for missing structure</text>
+  <line x1="150" y1="332" x2="670" y2="332" stroke="#7f3a55" stroke-width="1.5"/>
+  <g font-size="23" fill="#fbcfe0">
+    <text x="150" y="386">✗  Standup = share status by talking</text>
+    <text x="150" y="436">✗  Refinement = understand together, live</text>
+    <text x="150" y="486">✗  Planning = estimate in the room</text>
+    <text x="150" y="536">✗  Retro = try to remember what happened</text>
+    <text x="150" y="586">✗  Demo = show it live</text>
+    <text x="150" y="636">✗  Time spent transferring context</text>
+  </g>
+  <text x="410" y="688" text-anchor="middle" font-size="21" fill="#fb7185" font-weight="700">Many people coordinating</text>
+
+  <!-- RIGHT: structure-driven -->
+  <rect x="870" y="210" width="640" height="500" rx="22" fill="url(#newCard)" stroke="#1e6f93" stroke-width="2" filter="url(#soft)"/>
+  <text x="1190" y="270" text-anchor="middle" font-size="34" font-weight="800" fill="#38bdf8">Structure-driven</text>
+  <text x="1190" y="306" text-anchor="middle" font-size="21" fill="#93c5e8" font-style="italic">structure carries context; AI prepares</text>
+  <line x1="930" y1="332" x2="1450" y2="332" stroke="#1e6f93" stroke-width="1.5"/>
+  <g font-size="23" fill="#cdeafe">
+    <text x="930" y="386">✓  Status derived from data, always visible</text>
+    <text x="930" y="436">✓  Material pre-analysed by each AI assistant</text>
+    <text x="930" y="486">✓  Plan generated from intentions + rules</text>
+    <text x="930" y="536">✓  Retro generated from the actual flow</text>
+    <text x="930" y="586">✓  Demo summary ready before the session</text>
+    <text x="930" y="636">✓  Time spent only on judgement + decision</text>
+  </g>
+  <text x="1190" y="688" text-anchor="middle" font-size="21" fill="#38bdf8" font-weight="700">Few people deciding</text>
+
+  <!-- Center arrow -->
+  <circle cx="800" cy="460" r="44" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+  <text x="800" y="473" text-anchor="middle" font-size="32" fill="#38bdf8" font-weight="800">→</text>
+
+  <!-- Bottom: the merge band -->
+  <rect x="300" y="744" width="1000" height="70" rx="16" fill="url(#mergeCard)" stroke="#eab308" stroke-width="2" filter="url(#soft)"/>
+  <text x="800" y="788" text-anchor="middle" font-size="23" fill="#fde68a" font-weight="700">A meeting = the merge of material already prepared by people + their AI assistants</text>
+
+  <!-- Signature line -->
+  <rect x="300" y="828" width="1000" height="50" rx="12" fill="#0b1220" stroke="#334155" stroke-width="1.5"/>
+  <text x="800" y="860" text-anchor="middle" font-size="22" fill="#e2e8f0">
+    <tspan fill="#94a3b8">Preparation beats ceremony. </tspan><tspan fill="#38bdf8" font-weight="800">Structure beats magic — on a team.</tspan>
+  </text>
+
+  <!-- Attribution -->
+  <text x="1466" y="180" text-anchor="end" font-size="16" fill="#64748b">Jaco van der Laan · MDDE × AI</text>
+</svg>

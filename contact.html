@@ -47,9 +47,15 @@
 
   <section class="tight">
     <div class="wrap">
-      <!-- TODO: set action to your form endpoint (e.g. Formspree https://formspree.io/f/XXXX).
-           Until then, the mailto fallback below works. -->
-      <form class="qualify" action="https://formspree.io/f/your-id" method="POST">
+      <!-- Netlify Forms: works automatically when hosted on Netlify (no backend needed).
+           On first deploy, Netlify detects the form by its name. Submissions appear in
+           the Netlify dashboard (Forms tab); add an email notification there.
+           The mailto fallback below still works for non-Netlify hosting. -->
+      <form class="qualify" name="qualify" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="qualify">
+        <p style="display:none;">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
         <div class="form-field">
           <label>Your name</label>
           <input type="text" name="name" required>
