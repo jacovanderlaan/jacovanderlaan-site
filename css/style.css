@@ -1,0 +1,138 @@
+/* jacovanderlaan.com — light-premium
+   Palette: off-white bg, deep navy text, one sky-blue accent, gold payoff.
+   Senior/calm/expensive: restraint, whitespace, one accent. */
+
+:root {
+  --bg:        #f7f8fa;
+  --surface:   #ffffff;
+  --ink:       #0f172a;   /* deep navy text */
+  --ink-soft:  #475569;   /* muted slate */
+  --ink-faint: #94a3b8;
+  --accent:    #2563eb;   /* sky/royal blue, one accent */
+  --accent-dk: #1e40af;
+  --gold:      #b88a1b;   /* payoff / result */
+  --line:      #e2e8f0;
+  --navy-card: #0f172a;   /* dark cards for infographics/quotes */
+  --maxw:      1080px;
+  --radius:    16px;
+  --shadow:    0 10px 30px rgba(15,23,42,.07);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+/* ---- Header / nav ---- */
+header.site {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(247,248,250,.85);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand { font-weight: 700; letter-spacing: .2px; color: var(--ink); text-decoration: none; font-size: 19px; }
+.brand span { color: var(--accent); }
+nav.main a {
+  color: var(--ink-soft); text-decoration: none; margin-left: 28px; font-size: 16px; font-weight: 500;
+}
+nav.main a:hover, nav.main a.active { color: var(--ink); }
+.nav-cta {
+  margin-left: 28px; padding: 9px 18px; border-radius: 999px;
+  background: var(--accent); color: #fff !important; font-weight: 600;
+}
+.nav-cta:hover { background: var(--accent-dk); }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block; padding: 14px 28px; border-radius: 999px;
+  font-weight: 600; text-decoration: none; font-size: 17px; transition: .15s;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dk); transform: translateY(-1px); }
+.btn-ghost { color: var(--ink); border: 1.5px solid var(--line); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---- Sections ---- */
+section { padding: 88px 0; }
+section.tight { padding: 56px 0; }
+.eyebrow {
+  text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700;
+  color: var(--accent); margin: 0 0 14px;
+}
+h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.05; font-weight: 800; letter-spacing: -1px; margin: 0 0 20px; }
+h2 { font-size: clamp(28px, 4vw, 40px); line-height: 1.1; font-weight: 800; letter-spacing: -.5px; margin: 0 0 18px; }
+h3 { font-size: 22px; font-weight: 700; margin: 0 0 10px; }
+.lead { font-size: clamp(20px, 2.4vw, 24px); color: var(--ink-soft); max-width: 720px; margin: 0 0 32px; }
+p { margin: 0 0 18px; }
+.muted { color: var(--ink-soft); }
+
+/* ---- Hero ---- */
+.hero { padding: 96px 0 72px; }
+.hero .formula {
+  font-weight: 800; letter-spacing: -.5px;
+}
+.hero .formula .rules { color: var(--accent); }
+.hero .formula .intel { color: var(--gold); }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+
+/* ---- Proof row ---- */
+.proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.proof .item { padding: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.proof .item strong { display:block; font-size: 17px; margin-bottom: 6px; }
+.proof .item span { color: var(--ink-soft); font-size: 16px; }
+
+/* ---- Cards / grids ---- */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 32px; box-shadow: var(--shadow);
+}
+.card.accent { border-top: 3px solid var(--accent); }
+
+/* ---- Dark band (for the stance / quotes / infographic context) ---- */
+.band-dark { background: var(--navy-card); color: #e2e8f0; }
+.band-dark h2 { color: #f8fafc; }
+.band-dark .lead, .band-dark p { color: #cbd5e1; }
+.band-dark .accent-text { color: #7dd3fc; }
+
+/* ---- Who it's for / not for ---- */
+.fit { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.fit ul { list-style: none; padding: 0; margin: 0; }
+.fit li { padding: 8px 0 8px 30px; position: relative; color: var(--ink-soft); }
+.fit .yes li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+.fit .no  li::before { content: "✕"; position: absolute; left: 0; color: #cbd5e1; font-weight: 800; }
+
+/* ---- Services ---- */
+.svc { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.svc .card h3 { display:flex; align-items:baseline; justify-content:space-between; gap: 12px; }
+.svc .anchor { font-size: 15px; color: var(--gold); font-weight: 700; white-space: nowrap; }
+.svc ul { padding-left: 20px; color: var(--ink-soft); margin: 12px 0 0; }
+
+/* ---- CTA block ---- */
+.cta-block { text-align: center; }
+.cta-block h2 { margin-bottom: 12px; }
+
+/* ---- Footer ---- */
+footer.site { border-top: 1px solid var(--line); padding: 40px 0; color: var(--ink-faint); font-size: 15px; }
+footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+footer.site a { color: var(--ink-soft); text-decoration: none; margin-left: 20px; }
+footer.site a:hover { color: var(--accent); }
+
+/* ---- Responsive ---- */
+@media (max-width: 860px) {
+  .proof, .grid-2, .grid-3, .fit, .svc { grid-template-columns: 1fr; }
+  nav.main a { margin-left: 16px; font-size: 15px; }
+  nav.main .label-hide { display: none; }
+  section { padding: 60px 0; }
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start a conversation — Jaco van der Laan</title>
+  <meta name="description" content="A short, honest conversation about what you're building and whether I'm the right person to help.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .form-field { margin-bottom: 22px; }
+    .form-field label { display:block; font-weight:600; margin-bottom:8px; font-size:16px; }
+    .form-field .hint { font-weight:400; color:var(--ink-faint); font-size:14px; }
+    .form-field input, .form-field textarea, .form-field select {
+      width:100%; padding:13px 15px; border:1.5px solid var(--line); border-radius:12px;
+      font-family:inherit; font-size:16px; color:var(--ink); background:var(--surface);
+    }
+    .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+      outline:none; border-color:var(--accent);
+    }
+    .form-field textarea { min-height:120px; resize:vertical; }
+    form.qualify { max-width:680px; }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="index.html">Jaco van der&nbsp;Laan</a>
+      <nav class="main">
+        <a href="approach.html">Approach</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="writing.html">Writing</a>
+        <a class="nav-cta active" href="contact.html">Start a conversation</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Start a conversation</p>
+      <h1>Tell me what you're building.</h1>
+      <p class="lead">A few honest questions so the first conversation is a good one. If it's a fit, you'll get a clear next step. If it isn't, I'll tell you that too — that's the deal.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <!-- TODO: set action to your form endpoint (e.g. Formspree https://formspree.io/f/XXXX).
+           Until then, the mailto fallback below works. -->
+      <form class="qualify" action="https://formspree.io/f/your-id" method="POST">
+        <div class="form-field">
+          <label>Your name</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label>Company / team <span class="hint">— and your role</span></label>
+          <input type="text" name="company">
+        </div>
+        <div class="form-field">
+          <label>What are you trying to build? <span class="hint">— the outcome, not the tool</span></label>
+          <textarea name="goal" required></textarea>
+        </div>
+        <div class="form-field">
+          <label>What's already in place? <span class="hint">— data, structure, team, anything</span></label>
+          <textarea name="current"></textarea>
+        </div>
+        <div class="form-field">
+          <label>How ready are you to change how the team works?</label>
+          <select name="readiness">
+            <option value="">Choose one…</option>
+            <option>Ready to build a foundation and change how we work</option>
+            <option>Curious, exploring, not committed yet</option>
+            <option>Looking for hands to execute / fill a role</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Timeline <span class="hint">— rough is fine</span></label>
+          <input type="text" name="timeline" placeholder="e.g. next quarter, exploring, urgent">
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+
+      <p class="muted" style="margin-top:24px;font-size:15px;">
+        Prefer email? Write to <a href="mailto:jaco@dcysive.com?subject=Starting%20a%20conversation">jaco@dcysive.com</a> with the same in your own words.
+      </p>
+    </div>
+  </section>
+
+  <section class="band-dark">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#7dd3fc">Before you write</p>
+      <h2>I work with people who are genuinely ready for this.</h2>
+      <p class="lead">Readiness matters more than budget. If you're looking for a contractor to fill a seat, run sprints, or apply a quick fix, I'm probably not your person — and I'd rather say so now than waste your time.</p>
+      <p>But if you want to build a reliable, governed foundation and change how your team works — that's exactly the conversation I want to have.</p>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="approach.html">Approach</a>
+        <a href="services.html">Services</a>
+        <a href="writing.html">Writing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
