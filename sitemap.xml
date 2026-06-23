@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: update <loc> domain to www.jacovanderlaan.com once DNS is pointed -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.jacovanderlaan.com/</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/approach.html</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/teams.html</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/services.html</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/work.html</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/writing.html</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/contact.html</loc></url>
+</urlset>
