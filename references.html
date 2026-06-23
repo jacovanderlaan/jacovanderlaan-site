@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>References & influences — Jaco van der Laan</title>
+  <meta name="description" content="The thinkers whose work shaped my approach to data modeling, architecture and engineering — from Inmon and Kimball to Hultgren, Roelant Vos and Patrick Cuba.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .refs { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .ref { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+           padding:24px 26px; box-shadow:var(--shadow); }
+    .ref h3 { font-size:19px; margin-bottom:4px; }
+    .ref .field { font-size:14px; color:var(--accent); font-weight:600; margin-bottom:10px; }
+    .ref p { font-size:15px; color:var(--ink-soft); margin-bottom:12px; }
+    .ref a { font-size:14px; font-weight:600; color:var(--accent); text-decoration:none; }
+    .ref a:hover { text-decoration:underline; }
+    @media (max-width:860px){ .refs{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="index.html">Jaco van der&nbsp;Laan</a>
+      <nav class="main">
+        <a href="approach.html">Approach</a>
+        <a href="teams.html">For teams</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="about.html">About</a>
+        <a href="references.html" class="active">References</a>
+        <a href="services.html">Services</a>
+        <a class="nav-cta" href="contact.html">Start a conversation</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">References &amp; influences</p>
+      <h1>Standing on good shoulders.</h1>
+      <p class="lead">My approach didn't appear from nowhere. It's built on decades of thinking by people who shaped how we model, historize and govern data. I've written about many of them — here's where to find their work.</p>
+    </div>
+  </section>
+
+  <!-- Data Vault & Ensemble -->
+  <section class="tight">
+    <div class="wrap">
+      <p class="eyebrow">Data Vault &amp; Ensemble modeling</p>
+      <div class="refs">
+        <div class="ref">
+          <h3>Hans Hultgren</h3>
+          <div class="field">Ensemble modeling, Data Vault</div>
+          <p>Ensemble Logical Modeling — a major influence on how I think about business-keyed, agile data models.</p>
+          <a href="https://www.linkedin.com/in/hanshultgren/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Roelant Vos</h3>
+          <div class="field">Data Vault automation, data engine thinking</div>
+          <p>His work on the historical staging area and data-engine thinking supports a model-driven framework.</p>
+          <a href="https://www.linkedin.com/in/roelantvos/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Patrick Cuba</h3>
+          <div class="field">Data Vault 2.0</div>
+          <p>Modern Data Vault practice and patterns — a sharp, practical voice in the temporal-modeling community.</p>
+          <a href="https://www.linkedin.com/in/patrickcuba/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Dirk Lerner</h3>
+          <div class="field">Temporal data, Data Vault</div>
+          <p>His work on temporal data strengthens the bi-temporal / dual-SCD2 architectures I rely on.</p>
+          <a href="https://www.linkedin.com/in/dirklerner/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Remco Broekmans</h3>
+          <div class="field">Ensemble modeling</div>
+          <p>Shapes, with Hultgren, the evolution of ensemble modeling toward model-driven data engineering.</p>
+          <a href="https://www.linkedin.com/in/remcobroekmans/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Andrew Foad</h3>
+          <div class="field">Hook, Data Vault</div>
+          <p>His Hook-vs-Data-Vault thinking informed how I weigh modeling trade-offs.</p>
+          <a href="https://www.linkedin.com/in/andrewfoad/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Foundations -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Foundations of data warehousing</p>
+      <div class="refs">
+        <div class="ref">
+          <h3>Bill Inmon</h3>
+          <div class="field">Data warehousing, 3NF integration</div>
+          <p>The case for 3NF and the business language model still shapes my integration-layer thinking.</p>
+          <a href="https://www.google.com/search?q=Bill+Inmon" target="_blank" rel="noopener">Find his work →</a>
+        </div>
+        <div class="ref">
+          <h3>Ralph Kimball</h3>
+          <div class="field">Dimensional modeling</div>
+          <p>Timeless dimensional patterns that still shape modern, time-aware data platforms.</p>
+          <a href="https://www.kimballgroup.com/" target="_blank" rel="noopener">Kimball Group →</a>
+        </div>
+        <div class="ref">
+          <h3>Steve Hoberman</h3>
+          <div class="field">Data modeling, community</div>
+          <p>Data Modeling Zone and a body of work that keeps the craft of modeling alive.</p>
+          <a href="https://www.stevehoberman.com/" target="_blank" rel="noopener">stevehoberman.com →</a>
+        </div>
+        <div class="ref">
+          <h3>Len Silverston</h3>
+          <div class="field">Universal Data Models</div>
+          <p>The Data Model Resource Book series — universal, reusable patterns that underpin my business-oriented, reuse-first modeling.</p>
+          <a href="https://www.linkedin.com/in/len-silverston-94b9911/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Lawrence Corr</h3>
+          <div class="field">Dimensional modeling, BEAM</div>
+          <p>From whiteboards to working models — his thinking influenced how I run modeling sessions.</p>
+          <a href="https://www.linkedin.com/in/lawrencecorr/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern data / engineering -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Modern data &amp; engineering</p>
+      <div class="refs">
+        <div class="ref">
+          <h3>Rick van der Lans</h3>
+          <div class="field">Data virtualization, architecture</div>
+          <p>His work on SuperNova / data virtualization shaped my approach to delivery and the semantic layer.</p>
+          <a href="https://www.linkedin.com/in/rickvanderlans/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Joe Reis</h3>
+          <div class="field">Data engineering fundamentals</div>
+          <p>His principles (and <em>Fundamentals of Data Engineering</em>) reinforce a disciplined, model-driven approach.</p>
+          <a href="https://www.linkedin.com/in/josephreis/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Mike Ferguson</h3>
+          <div class="field">Data architecture, BDL</div>
+          <p>His Business Data Lake keynote thinking aligns with the model-driven future of data management.</p>
+          <a href="https://www.linkedin.com/in/mike-ferguson-a92b81/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:24px;font-size:14px;">
+        <!-- TODO: verify each LinkedIn URL before public launch — links set to best-known profiles;
+             confirm the exact handles (esp. Cuba, Foad, Lerner, Corr, Ferguson). -->
+        Links point to each person's public profile. I keep a running list of the thinkers I reference across my articles.
+      </p>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Shared influences? Let's talk.</h2>
+      <p class="lead" style="margin:0 auto 28px;">If these names are on your shelf too, we'll get along.</p>
+      <a class="btn btn-primary" href="contact.html">Start a conversation</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="about.html">About</a>
+        <a href="references.html">References</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
