@@ -53,8 +53,9 @@ nav.main a:hover, nav.main a.active { color: var(--ink); }
 }
 .nav-cta:hover { background: var(--accent-dk); }
 
-/* hamburger toggle (CSS-only, hidden on desktop) */
-.nav-toggle { display: none; }
+/* hamburger toggle (CSS-only). Checkbox positioned off-screen (never visible)
+   so the :checked sibling selector still works on all browsers. */
+.nav-toggle { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .nav-burger { display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; flex-shrink: 0; }
 .nav-burger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; }
 
@@ -126,8 +127,9 @@ p { margin: 0 0 18px; }
 .svc ul { padding-left: 20px; color: var(--ink-soft); margin: 12px 0 0; }
 
 /* ---- Photos ---- */
-.hero-photo { display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center; }
-.hero-photo img { width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow); }
+.hero-photo { display:grid; grid-template-columns:1.25fr 1fr; gap:40px; align-items:center; }
+.hero-photo img { width:100%; height:auto; max-height:460px; object-fit:cover; object-position:center 20%;
+                  border-radius:var(--radius); box-shadow:var(--shadow); }
 .portrait { width:180px; height:180px; border-radius:50%; object-fit:cover; object-position:center top;
             box-shadow:var(--shadow); border:4px solid var(--surface); }
 .photo-band img { width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow); }
