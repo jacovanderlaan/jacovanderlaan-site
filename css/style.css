@@ -39,18 +39,24 @@ header.site {
   backdrop-filter: saturate(180%) blur(10px);
   border-bottom: 1px solid var(--line);
 }
-header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.brand { font-weight: 700; letter-spacing: .2px; color: var(--ink); text-decoration: none; font-size: 19px; }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
+.brand { font-weight: 700; letter-spacing: .2px; color: var(--ink); text-decoration: none; font-size: 19px; flex-shrink: 0; }
 .brand span { color: var(--accent); }
+nav.main { display: flex; align-items: center; }
 nav.main a {
-  color: var(--ink-soft); text-decoration: none; margin-left: 28px; font-size: 16px; font-weight: 500;
+  color: var(--ink-soft); text-decoration: none; margin-left: 22px; font-size: 15.5px; font-weight: 500; white-space: nowrap;
 }
 nav.main a:hover, nav.main a.active { color: var(--ink); }
 .nav-cta {
-  margin-left: 28px; padding: 9px 18px; border-radius: 999px;
-  background: var(--accent); color: #fff !important; font-weight: 600;
+  margin-left: 22px; padding: 9px 18px; border-radius: 999px;
+  background: var(--accent); color: #fff !important; font-weight: 600; white-space: nowrap;
 }
 .nav-cta:hover { background: var(--accent-dk); }
+
+/* hamburger toggle (CSS-only, hidden on desktop) */
+.nav-toggle { display: none; }
+.nav-burger { display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; flex-shrink: 0; }
+.nav-burger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; }
 
 /* ---- Buttons ---- */
 .btn {
@@ -150,9 +156,24 @@ footer.site a { color: var(--ink-soft); text-decoration: none; margin-left: 20px
 footer.site a:hover { color: var(--accent); }
 
 /* ---- Responsive ---- */
+
+/* Nav collapses to hamburger below 980px (8 links + CTA need the room) */
+@media (max-width: 980px) {
+  .nav-burger { display: flex; }
+  nav.main {
+    position: absolute; top: 72px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch;
+    background: var(--surface); border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    max-height: 0; overflow: hidden; transition: max-height .25s ease;
+  }
+  .nav-toggle:checked ~ nav.main { max-height: 80vh; }
+  nav.main a { margin: 0; padding: 15px 24px; font-size: 16px; border-top: 1px solid var(--line); }
+  nav.main a:first-child { border-top: none; }
+  .nav-cta { margin: 12px 24px 18px; text-align: center; }
+}
+
 @media (max-width: 860px) {
   .proof, .grid-2, .grid-3, .fit, .svc { grid-template-columns: 1fr; }
-  nav.main a { margin-left: 16px; font-size: 15px; }
-  nav.main .label-hide { display: none; }
   section { padding: 60px 0; }
 }
