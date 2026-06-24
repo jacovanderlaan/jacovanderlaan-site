@@ -119,6 +119,14 @@ p { margin: 0 0 18px; }
 .svc .anchor { font-size: 15px; color: var(--gold); font-weight: 700; white-space: nowrap; }
 .svc ul { padding-left: 20px; color: var(--ink-soft); margin: 12px 0 0; }
 
+/* ---- Photos ---- */
+.hero-photo { display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center; }
+.hero-photo img { width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow); }
+.portrait { width:180px; height:180px; border-radius:50%; object-fit:cover; object-position:center top;
+            box-shadow:var(--shadow); border:4px solid var(--surface); }
+.photo-band img { width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow); }
+@media (max-width:860px){ .hero-photo{ grid-template-columns:1fr; } }
+
 /* ---- Infographic figures ---- */
 figure.graphic { margin: 40px 0 0; text-align: center; }
 figure.graphic img {
