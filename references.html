@@ -17,7 +17,9 @@
     .ref p { font-size:15px; color:var(--ink-soft); margin-bottom:12px; }
     .ref a { font-size:14px; font-weight:600; color:var(--accent); text-decoration:none; }
     .ref a:hover { text-decoration:underline; }
-    @media (max-width:860px){ .refs{ grid-template-columns:1fr; } }
+    .holstee-row { display:flex; gap:28px; align-items:flex-start; }
+    .holstee-img { width:230px; flex-shrink:0; height:auto; border-radius:var(--radius); box-shadow:var(--shadow); }
+    @media (max-width:860px){ .refs{ grid-template-columns:1fr; } .holstee-row{ flex-direction:column; align-items:center; } .holstee-img{ width:200px; } }
   </style>
 </head>
 <body>
@@ -75,6 +77,12 @@
           <p>His work on temporal data strengthens the bi-temporal / dual-SCD2 architectures I rely on.</p>
           <a href="https://www.linkedin.com/in/dirklerner/" target="_blank" rel="noopener">LinkedIn →</a>
         </div>
+        <div class="ref">
+          <h3>Lars Rönnbäck</h3>
+          <div class="field">Anchor Modeling, temporal modeling</div>
+          <p>Creator of Anchor Modeling — an elegant, agile approach to information that changes over time. A key reference for the temporal thinking behind my historization patterns.</p>
+          <a href="https://www.anchormodeling.com/" target="_blank" rel="noopener">anchormodeling.com →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -109,6 +117,12 @@
           <div class="field">Dimensional modeling</div>
           <p>Timeless dimensional patterns that still shape modern, time-aware data platforms.</p>
           <a href="https://www.kimballgroup.com/" target="_blank" rel="noopener">Kimball Group →</a>
+        </div>
+        <div class="ref">
+          <h3>Francesco Puppini</h3>
+          <div class="field">Unified Star Schema</div>
+          <p>Inventor of the Unified Star Schema — an elegant, resilient approach to the delivery layer that solves many-to-many and drill-across cleanly. A concept I love and have written about.</p>
+          <a href="https://www.linkedin.com/in/francescopuppini/" target="_blank" rel="noopener">LinkedIn →</a>
         </div>
         <div class="ref">
           <h3>Steve Hoberman</h3>
@@ -272,6 +286,57 @@
         <!-- TODO: verify links; these are best-known official destinations. -->
         My interest in systems, models, productivity and a positive mindset is a real part of who I am — and it's the same instinct I bring to data and AI.
       </p>
+    </div>
+  </section>
+
+  <!-- Manifestos -->
+  <section class="band-dark">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#7dd3fc">Manifestos I stand by</p>
+      <h2>A few statements of principle — technical and human.</h2>
+      <p class="lead">I like manifestos. A good one compresses a way of working — or a way of living — into something you can actually hold onto. These shaped mine.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Technical</p>
+      <div class="refs">
+        <div class="ref">
+          <h3>The Agile Manifesto</h3>
+          <div class="field">Ways of working</div>
+          <p>The original. Value working software, collaboration and responding to change — principles I carry into how data teams should work.</p>
+          <a href="https://agilemanifesto.org/" target="_blank" rel="noopener">agilemanifesto.org →</a>
+        </div>
+        <div class="ref">
+          <h3>The DataOps Manifesto</h3>
+          <div class="field">Data ways of working</div>
+          <p>Agile principles applied to data: working analytics, treating analytics as production, monitoring quality and performance continuously.</p>
+          <a href="https://dataopsmanifesto.org/" target="_blank" rel="noopener">dataopsmanifesto.org →</a>
+        </div>
+        <div class="ref">
+          <h3>My own manifestos</h3>
+          <div class="field">Metadata-first · Universal Data Models · MDDE</div>
+          <p>I've written my own — Data Engineering Manifestos, the Metadata-First and Universal Data Models manifestos, and the MDDE Manifesto. Principles to shape the practice.</p>
+          <a href="https://medium.com/@jacovanderlaan" target="_blank" rel="noopener">Read on Medium →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Life &amp; psychological</p>
+      <div class="holstee-row">
+        <img class="holstee-img" src="assets/holstee.jpg" alt="The Holstee Manifesto poster on Jaco's wall">
+        <div class="ref" style="flex:1;">
+          <h3>The Holstee Manifesto</h3>
+          <div class="field">"This is your life."</div>
+          <p>The one that guides my life — it hangs on my wall. <em>"This is your life. Do what you love and do it often. If you don't like something, change it. If you don't like your job, quit."</em></p>
+          <p class="muted" style="font-size:15px;">It's the spirit behind my own pivot — and a reminder that the same instinct for living well drives the way I work.</p>
+          <a href="https://www.holstee.com/pages/manifesto" target="_blank" rel="noopener">holstee.com →</a>
+        </div>
+      </div>
     </div>
   </section>
 
