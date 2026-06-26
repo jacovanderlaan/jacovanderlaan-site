@@ -89,6 +89,10 @@
           <p class="muted">Parse legacy SQL into metadata, deterministically rebuild clean SQL that fits the target architecture, prove equivalence with automated regression — <em>then</em> let AI safely optimize the rest. Non-deterministic SQL (ROW_NUMBER without a stable ORDER BY) caught before it corrupts the validation.</p>
         </div>
       </div>
+      <figure class="graphic" style="margin-top:32px;">
+        <img src="assets/cte-regression.svg" alt="CTE-by-CTE regression testing finds which transformation step diverged, not just that the output differs">
+        <figcaption>Comparing step by step pinpoints the root cause — the core of how I de-risk migrations.</figcaption>
+      </figure>
       <p class="muted" style="margin-top:24px;">This is where the method earned its stripes: systematic validation and large-scale SQL analysis turned migration from a risky rewrite into something verifiable. The same discipline now underpins how I make AI output reliable. <a href="writing.html">More in the writing →</a></p>
     </div>
   </section>
@@ -112,6 +116,40 @@
           <h3>Writing &amp; speaking</h3>
           <p class="muted">Long-form thinking on data architecture, quality, and the structure-beats-magic approach. <a href="writing.html">See the writing →</a></p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community / Meetup -->
+  <section class="band-dark">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#7dd3fc">Community</p>
+      <h2>I founded and run the Model-Driven Data Engineering meetup.</h2>
+      <p class="lead">Beyond delivery and writing, I bring the community together. I organise the <strong>Model-Driven Data Engineering (MDDE)</strong> meetup — rated <strong>4.6★ across 52 reviews</strong> — to share best practices, lessons learned and live demos with fellow modeling and automation enthusiasts.</p>
+      <div class="grid-2" style="margin-top:8px;">
+        <div>
+          <h3 class="accent-text">Modeldriven DWH Automation with PowerDesigner</h3>
+          <p>At de Volksbank, Utrecht · Dec 2019 · 90+ attendees. A live demo of generating physical mappings from logical models — and parsing SQL back into the model for full lineage.</p>
+        </div>
+        <div>
+          <h3 class="accent-text">Introducing a Generic Metadata Interface</h3>
+          <p>With Roelant Vos · Utrecht · Nov 2019. Bringing a leading voice in data-engine thinking to the community.</p>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:18px;">And I'm just getting started — more MDDE meetups are on the way. <a href="contact.html" style="color:#7dd3fc;">Want to host or speak? Let's talk →</a></p>
+    </div>
+  </section>
+
+  <!-- Press / external proof -->
+  <section class="tight">
+    <div class="wrap">
+      <p class="eyebrow">In the press</p>
+      <h2>Recognised for the work, not just the claims.</h2>
+      <p class="lead">When de Volksbank built its new model-driven data warehouse for Finance &amp; Risk, the trade press covered it — and named me Lead Modeller.</p>
+      <div class="card">
+        <h3>"Nieuw datawarehouse in aanbouw bij de Volksbank"</h3>
+        <p class="muted">banken.nl, December 2019 — on the bank's model-driven approach: <em>"With our model-driven approach, we can quickly implement adjustments. Data flows are created and maintained simply and clearly."</em> Jurriaan Groot (Architect Finance Innovation) &amp; Jaco van der Laan (Lead Modeller).</p>
+        <p><a href="https://www.banken.nl/nieuws/22083/nieuw-datawarehouse-in-aanbouw-bij-de-volksbank" target="_blank" rel="noopener">Read the article →</a></p>
       </div>
     </div>
   </section>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.4"/></filter>
+    <marker id="lp" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#38bdf8"/></marker>
+  </defs>
+  <rect width="1000" height="640" fill="url(#bg)"/>
+  <text x="500" y="58" text-anchor="middle" font-size="34" font-weight="800" fill="#f8fafc">The MDDE loop</text>
+  <text x="500" y="92" text-anchor="middle" font-size="18" fill="#94a3b8">Model-Driven Data Engineering — a closed, deterministic cycle</text>
+
+  <!-- four nodes around a circle, center ~ (500,360) r~170 -->
+  <!-- Parse (top) -->
+  <circle cx="500" cy="200" r="74" fill="#0e2a3a" stroke="#38bdf8" stroke-width="2.5" filter="url(#s)"/>
+  <text x="500" y="195" text-anchor="middle" font-size="21" font-weight="800" fill="#7dd3fc">Parse</text>
+  <text x="500" y="218" text-anchor="middle" font-size="12.5" fill="#cdeafe">SQL → metadata</text>
+  <!-- Observe (right) -->
+  <circle cx="700" cy="360" r="74" fill="#0e2a3a" stroke="#38bdf8" stroke-width="2.5" filter="url(#s)"/>
+  <text x="700" y="355" text-anchor="middle" font-size="21" font-weight="800" fill="#7dd3fc">Observe</text>
+  <text x="700" y="378" text-anchor="middle" font-size="12.5" fill="#cdeafe">analyse + validate</text>
+  <!-- Optimize (bottom) -->
+  <circle cx="500" cy="520" r="74" fill="#0e2a3a" stroke="#38bdf8" stroke-width="2.5" filter="url(#s)"/>
+  <text x="500" y="515" text-anchor="middle" font-size="21" font-weight="800" fill="#7dd3fc">Optimize</text>
+  <text x="500" y="538" text-anchor="middle" font-size="12.5" fill="#cdeafe">improve the model</text>
+  <!-- Generate (left) -->
+  <circle cx="300" cy="360" r="74" fill="#3a2f12" stroke="#eab308" stroke-width="2.8" filter="url(#s)"/>
+  <text x="300" y="355" text-anchor="middle" font-size="21" font-weight="800" fill="#fde68a">Generate</text>
+  <text x="300" y="378" text-anchor="middle" font-size="12.5" fill="#f0e6c8">deterministic SQL</text>
+
+  <!-- curved arrows clockwise -->
+  <path d="M566 235 A 200 200 0 0 1 690 286" fill="none" stroke="#38bdf8" stroke-width="3" marker-end="url(#lp)"/>
+  <path d="M690 434 A 200 200 0 0 1 566 485" fill="none" stroke="#38bdf8" stroke-width="3" marker-end="url(#lp)"/>
+  <path d="M434 485 A 200 200 0 0 1 310 434" fill="none" stroke="#38bdf8" stroke-width="3" marker-end="url(#lp)"/>
+  <path d="M310 286 A 200 200 0 0 1 434 235" fill="none" stroke="#38bdf8" stroke-width="3" marker-end="url(#lp)"/>
+
+  <text x="500" y="612" text-anchor="middle" font-size="16" fill="#e2e8f0"><tspan fill="#94a3b8">Metadata is the source of truth; code is generated, never hand-maintained. </tspan><tspan fill="#7dd3fc" font-weight="700">Determinism before AI.</tspan></text>
+  <text x="966" y="632" text-anchor="end" font-size="13" fill="#64748b">Jaco van der Laan</text>
+</svg>
