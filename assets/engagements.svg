@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
+    <filter id="s" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#000" flood-opacity="0.4"/></filter>
+    <marker id="ar" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto"><path d="M0,0 L11,5.5 L0,11 z" fill="#475569"/></marker>
+  </defs>
+  <rect width="1200" height="520" fill="url(#bg)"/>
+  <text x="600" y="58" text-anchor="middle" font-size="32" font-weight="800" fill="#f8fafc">How we'd work together</text>
+  <text x="600" y="92" text-anchor="middle" font-size="17" fill="#94a3b8">Senior, focused engagements — come in, leave something solid, leave</text>
+
+  <!-- 4 cards in a row, light progression -->
+  <g>
+    <rect x="60" y="160" width="250" height="230" rx="16" fill="#0e2a3a" stroke="#1e6f93" stroke-width="2" filter="url(#s)"/>
+    <text x="185" y="206" text-anchor="middle" font-size="14" font-weight="700" fill="#38bdf8">01</text>
+    <text x="185" y="240" text-anchor="middle" font-size="19" font-weight="800" fill="#7dd3fc">Assess</text>
+    <text x="185" y="276" text-anchor="middle" font-size="13.5" fill="#cdeafe">Architecture &amp;</text>
+    <text x="185" y="296" text-anchor="middle" font-size="13.5" fill="#cdeafe">readiness review</text>
+    <text x="185" y="340" text-anchor="middle" font-size="12.5" fill="#9fcbe4" font-style="italic">report + roadmap</text>
+
+    <rect x="335" y="160" width="250" height="230" rx="16" fill="#0e2a3a" stroke="#1e6f93" stroke-width="2" filter="url(#s)"/>
+    <text x="460" y="206" text-anchor="middle" font-size="14" font-weight="700" fill="#38bdf8">02</text>
+    <text x="460" y="240" text-anchor="middle" font-size="19" font-weight="800" fill="#7dd3fc">Build</text>
+    <text x="460" y="276" text-anchor="middle" font-size="13.5" fill="#cdeafe">Foundation sprint —</text>
+    <text x="460" y="296" text-anchor="middle" font-size="13.5" fill="#cdeafe">rules + validation</text>
+    <text x="460" y="340" text-anchor="middle" font-size="12.5" fill="#9fcbe4" font-style="italic">built with your team</text>
+
+    <rect x="610" y="160" width="250" height="230" rx="16" fill="#0e2a3a" stroke="#1e6f93" stroke-width="2" filter="url(#s)"/>
+    <text x="735" y="206" text-anchor="middle" font-size="14" font-weight="700" fill="#38bdf8">03</text>
+    <text x="735" y="240" text-anchor="middle" font-size="19" font-weight="800" fill="#7dd3fc">Advise</text>
+    <text x="735" y="276" text-anchor="middle" font-size="13.5" fill="#cdeafe">Sounding board —</text>
+    <text x="735" y="296" text-anchor="middle" font-size="13.5" fill="#cdeafe">architecture &amp; governance</text>
+    <text x="735" y="340" text-anchor="middle" font-size="12.5" fill="#9fcbe4" font-style="italic">on-call, senior</text>
+
+    <rect x="885" y="160" width="250" height="230" rx="16" fill="#3a2f12" stroke="#eab308" stroke-width="2.4" filter="url(#s)"/>
+    <text x="1010" y="206" text-anchor="middle" font-size="14" font-weight="700" fill="#eab308">04</text>
+    <text x="1010" y="240" text-anchor="middle" font-size="19" font-weight="800" fill="#fde68a">Teach</text>
+    <text x="1010" y="276" text-anchor="middle" font-size="13.5" fill="#f0e6c8">Masterclass —</text>
+    <text x="1010" y="296" text-anchor="middle" font-size="13.5" fill="#f0e6c8">with your data</text>
+    <text x="1010" y="340" text-anchor="middle" font-size="12.5" fill="#d6c79a" font-style="italic">the way of working</text>
+  </g>
+
+  <line x1="312" y1="275" x2="333" y2="275" stroke="#475569" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="587" y1="275" x2="608" y2="275" stroke="#475569" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="862" y1="275" x2="883" y2="275" stroke="#475569" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <text x="600" y="450" text-anchor="middle" font-size="16" fill="#e2e8f0"><tspan fill="#94a3b8">Priced as engagements, not days. </tspan><tspan fill="#7dd3fc" font-weight="700">The honest first step is a conversation.</tspan></text>
+  <text x="1166" y="500" text-anchor="end" font-size="13" fill="#64748b">Jaco van der Laan</text>
+</svg>

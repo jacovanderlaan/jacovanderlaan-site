@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
+    <filter id="s" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#000" flood-opacity="0.4"/></filter>
+    <marker id="ar" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto"><path d="M0,0 L11,5.5 L0,11 z" fill="#38bdf8"/></marker>
+  </defs>
+  <rect width="1200" height="440" fill="url(#bg)"/>
+  <text x="600" y="56" text-anchor="middle" font-size="30" font-weight="800" fill="#f8fafc">Where the thinking lives</text>
+  <text x="600" y="88" text-anchor="middle" font-size="16" fill="#94a3b8">Give the recipe freely — the deep method is the workshop</text>
+
+  <!-- source -->
+  <rect x="80" y="170" width="220" height="100" rx="14" fill="#3a2f12" stroke="#eab308" stroke-width="2.4" filter="url(#s)"/>
+  <text x="190" y="212" text-anchor="middle" font-size="18" font-weight="800" fill="#fde68a">230+ articles</text>
+  <text x="190" y="238" text-anchor="middle" font-size="13" fill="#f0e6c8">the body of work</text>
+
+  <!-- channels -->
+  <rect x="430" y="120" width="220" height="66" rx="12" fill="#13324a" stroke="#38bdf8" stroke-width="2" filter="url(#s)"/>
+  <text x="540" y="160" text-anchor="middle" font-size="17" font-weight="700" fill="#cdeafe">Medium</text>
+  <rect x="430" y="207" width="220" height="66" rx="12" fill="#13324a" stroke="#38bdf8" stroke-width="2" filter="url(#s)"/>
+  <text x="540" y="247" text-anchor="middle" font-size="17" font-weight="700" fill="#cdeafe">LinkedIn</text>
+  <rect x="430" y="294" width="220" height="66" rx="12" fill="#13324a" stroke="#38bdf8" stroke-width="2" filter="url(#s)"/>
+  <text x="540" y="334" text-anchor="middle" font-size="17" font-weight="700" fill="#cdeafe">Substack</text>
+
+  <line x1="300" y1="210" x2="426" y2="155" stroke="#38bdf8" stroke-width="2.4" marker-end="url(#ar)"/>
+  <line x1="300" y1="222" x2="426" y2="240" stroke="#38bdf8" stroke-width="2.4" marker-end="url(#ar)"/>
+  <line x1="300" y1="235" x2="426" y2="325" stroke="#38bdf8" stroke-width="2.4" marker-end="url(#ar)"/>
+
+  <!-- workshop -->
+  <rect x="780" y="170" width="340" height="100" rx="14" fill="#0e2a3a" stroke="#7dd3fc" stroke-width="2.6" filter="url(#s)"/>
+  <text x="950" y="206" text-anchor="middle" font-size="18" font-weight="800" fill="#7dd3fc">The workshop</text>
+  <text x="950" y="232" text-anchor="middle" font-size="13.5" fill="#cdeafe">the deep method, rule design,</text>
+  <text x="950" y="252" text-anchor="middle" font-size="13.5" fill="#cdeafe">the hands-on — only here</text>
+  <line x1="650" y1="240" x2="776" y2="220" stroke="#475569" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+
+  <text x="600" y="406" text-anchor="middle" font-size="16" fill="#e2e8f0"><tspan fill="#94a3b8">"I could read the idea anywhere — but I could only </tspan><tspan fill="#7dd3fc" font-weight="700">build</tspan><tspan fill="#94a3b8"> it here."</tspan></text>
+</svg>
