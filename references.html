@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>References & influences — Jaco van der Laan</title>
+  <meta name="description" content="The thinkers whose work shaped my approach to data modeling, architecture and engineering — from Inmon and Kimball to Hultgren, Roelant Vos and Patrick Cuba.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .refs { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .ref { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+           padding:24px 26px; box-shadow:var(--shadow); }
+    .ref h3 { font-size:19px; margin-bottom:4px; }
+    .ref .field { font-size:14px; color:var(--accent); font-weight:600; margin-bottom:10px; }
+    .ref p { font-size:15px; color:var(--ink-soft); margin-bottom:12px; }
+    .ref a { font-size:14px; font-weight:600; color:var(--accent); text-decoration:none; }
+    .ref a:hover { text-decoration:underline; }
+    .holstee-row { display:flex; gap:28px; align-items:flex-start; }
+    .holstee-img { width:230px; flex-shrink:0; height:auto; border-radius:var(--radius); box-shadow:var(--shadow); }
+    @media (max-width:860px){ .refs{ grid-template-columns:1fr; } .holstee-row{ flex-direction:column; align-items:center; } .holstee-img{ width:200px; } }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <a href="approach.html">Approach</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="articles.html">Articles</a>
+        <a class="nav-cta" href="contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">References &amp; influences</p>
+      <h1>Standing on good shoulders.</h1>
+      <p class="lead">My approach didn't appear from nowhere. It's built on decades of thinking by people who shaped how we model, historize and govern data — and on collaborators I've built real things with. I've written about many of them — here's where to find their work.</p>
+    </div>
+  </section>
+
+  <!-- Collaboration -->
+  <section class="band-dark">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#7dd3fc">Collaboration</p>
+      <h2>CrossBreeze — building Model-Driven Data Engineering together.</h2>
+      <p class="lead">I've worked closely with <strong>CrossBreeze</strong> and its founders, <strong>Harmen Wessels</strong> and <strong>Willem Otten</strong>, on Model-Driven Data Engineering. I first met them on the Rabobank project, and later invited them to help build the MDDE framework at de Volksbank / ASN.</p>
+      <p>Their <strong>CrossModel</strong> tooling — open-source, logical-model-first, generating schemas and transformations from metadata — is MDDE in product form. A genuine meeting of minds on the same vision: structure first, generate the rest.</p>
+      <p style="margin-top:6px;"><a href="https://crossbreeze.nl/en/" target="_blank" rel="noopener" style="color:#7dd3fc;font-weight:600;">crossbreeze.nl →</a> &nbsp;·&nbsp; <a href="https://crossmodel.io/" target="_blank" rel="noopener" style="color:#7dd3fc;font-weight:600;">crossmodel.io →</a></p>
+    </div>
+  </section>
+
+  <!-- Data Vault & Ensemble -->
+  <section class="tight">
+    <div class="wrap">
+      <p class="eyebrow">Data Vault &amp; Ensemble modeling</p>
+      <div class="refs">
+        <div class="ref">
+          <h3>Hans Hultgren</h3>
+          <div class="field">Ensemble modeling, Data Vault</div>
+          <p>Ensemble Logical Modeling — a major influence on how I think about business-keyed, agile data models.</p>
+          <a href="https://www.linkedin.com/in/hanshultgren/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Roelant Vos</h3>
+          <div class="field">Data Vault automation, data engine thinking</div>
+          <p>His work on the historical staging area and data-engine thinking supports a model-driven framework.</p>
+          <a href="https://www.linkedin.com/in/roelantvos/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>John Giles</h3>
+          <div class="field">Data Town Plan, Universal Data Vault</div>
+          <p>His Data Town Plan — a bridge between business and IT — and his Universal Data Vault thinking shaped how I connect business intent to a generalized, reusable model. I've written about the Data Town Plan myself.</p>
+          <a href="https://www.dataversity.net/articles/embracing-data-town-plans-as-a-bridge-between-the-business-and-it-part-1/" target="_blank" rel="noopener">Data Town Plan →</a>
+        </div>
+        <div class="ref">
+          <h3>Patrick Cuba</h3>
+          <div class="field">Data Vault 2.0</div>
+          <p>Modern Data Vault practice and patterns — a sharp, practical voice in the temporal-modeling community.</p>
+          <a href="https://www.linkedin.com/in/patrickcuba/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Dirk Lerner</h3>
+          <div class="field">Temporal data, Data Vault</div>
+          <p>His work on temporal data strengthens the bi-temporal / dual-SCD2 architectures I rely on.</p>
+          <a href="https://www.linkedin.com/in/dirklerner/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Lars Rönnbäck</h3>
+          <div class="field">Anchor Modeling, temporal modeling</div>
+          <p>Creator of Anchor Modeling — an elegant, agile approach to information that changes over time. A key reference for the temporal thinking behind my historization patterns.</p>
+          <a href="https://www.anchormodeling.com/" target="_blank" rel="noopener">anchormodeling.com →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Foundations -->
+  <section>
+    <div class="wrap">
+      <figure class="graphic" style="margin:0 0 36px;">
+        <img src="assets/jaco-silverston.jpg" alt="Jaco van der Laan with Len Silverston, holding The Data Model Resource Book volumes" style="max-width:680px;">
+        <figcaption>With Len Silverston, holding The Data Model Resource Book — the universal-models work that underpins my reuse-first approach.</figcaption>
+      </figure>
+      <figure class="graphic" style="margin:0 0 36px;">
+        <img src="assets/jaco-alec-sharp.jpg" alt="Jaco van der Laan with Alec Sharp at a business-oriented data modeling session" style="max-width:560px;">
+        <figcaption>With Alec Sharp — whose three-day Business-Oriented Data Modeling masterclass shaped my business-first approach.</figcaption>
+      </figure>
+      <p class="eyebrow">Foundations of data warehousing</p>
+      <div class="refs">
+        <div class="ref">
+          <h3>Alec Sharp</h3>
+          <div class="field">Business-oriented data modeling, concept modeling</div>
+          <p>I followed his three-day Business-Oriented Data Modeling masterclass — a major influence on my conviction that good models start with the business, not the database. The clearest articulation of the business focus I bring to every model.</p>
+          <a href="https://www.linkedin.com/in/alecsharp/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Marco Wobben</h3>
+          <div class="field">CaseTalk, FCO-IM (fact-oriented modeling)</div>
+          <p>Behind CaseTalk and a leading voice in FCO-IM — fact-based modeling that grounds conceptual models in real, verifiable facts. Someone I know personally; his work informs how I keep models honest and business-readable.</p>
+          <a href="https://www.casetalk.com/about-us/the-casetalk-team" target="_blank" rel="noopener">casetalk.com →</a>
+        </div>
+        <div class="ref">
+          <h3>Bill Inmon</h3>
+          <div class="field">Data warehousing, 3NF integration</div>
+          <p>The case for 3NF and the business language model still shapes my integration-layer thinking.</p>
+          <a href="https://www.google.com/search?q=Bill+Inmon" target="_blank" rel="noopener">Find his work →</a>
+        </div>
+        <div class="ref">
+          <h3>Ralph Kimball</h3>
+          <div class="field">Dimensional modeling</div>
+          <p>Timeless dimensional patterns that still shape modern, time-aware data platforms.</p>
+          <a href="https://www.kimballgroup.com/" target="_blank" rel="noopener">Kimball Group →</a>
+        </div>
+        <div class="ref">
+          <h3>Francesco Puppini</h3>
+          <div class="field">Unified Star Schema</div>
+          <p>Inventor of the Unified Star Schema — an elegant, resilient approach to the delivery layer that solves many-to-many and drill-across cleanly. A concept I love and have written about.</p>
+          <a href="https://www.linkedin.com/in/francescopuppini/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Steve Hoberman</h3>
+          <div class="field">Data modeling, community</div>
+          <p>Data Modeling Zone and a body of work that keeps the craft of modeling alive.</p>
+          <a href="https://www.stevehoberman.com/" target="_blank" rel="noopener">stevehoberman.com →</a>
+        </div>
+        <div class="ref">
+          <h3>Len Silverston</h3>
+          <div class="field">Universal Data Models</div>
+          <p>The Data Model Resource Book series — universal, reusable patterns that underpin my business-oriented, reuse-first modeling.</p>
+          <a href="https://www.linkedin.com/in/len-silverston-94b9911/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Lawrence Corr</h3>
+          <div class="field">Dimensional modeling, BEAM</div>
+          <p>From whiteboards to working models — his thinking influenced how I run modeling sessions.</p>
+          <a href="https://www.linkedin.com/in/lawrencecorr/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>George McGeachie</h3>
+          <div class="field">PowerDesigner, metadata ("Metadata Junkie")</div>
+          <p>The deepest PowerDesigner and metadata-management voice I know — his Metadata Matters work sharpened my own PowerDesigner automation and metadata thinking.</p>
+          <a href="https://metadatamatters.com/author/metadatajunkie/" target="_blank" rel="noopener">metadatamatters.com →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern data / engineering -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Modern data &amp; engineering</p>
+      <div class="refs">
+        <div class="ref">
+          <h3>Piotr Czarnas</h3>
+          <div class="field">Data quality &amp; observability (DQOps)</div>
+          <p>Founder of DQOps and a clear voice on data-quality frameworks — and a maker of excellent infographics. Data quality is exactly the wedge in my own work, so his thinking lands close to home.</p>
+          <a href="https://www.linkedin.com/in/piotr-czarnas" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Simon Späti</h3>
+          <div class="field">Data engineering, technical writing</div>
+          <p>Author of the ssp.sh Data Engineering Blog and a public Data Engineering Vault — a data engineer who works the way I do: in markdown, in the open. Right at the PKM × data-engineering crossover.</p>
+          <a href="https://www.ssp.sh/" target="_blank" rel="noopener">ssp.sh →</a>
+        </div>
+        <div class="ref">
+          <h3>Shane Gibson</h3>
+          <div class="field">AgileData, Information Product Canvas</div>
+          <p>Co-founder of AgileData and creator of the Information Product Canvas — a business-first way to capture what data should deliver. I've written about the canvas; his pragmatic, agile take on modeling resonates with mine.</p>
+          <a href="https://shagility.com/" target="_blank" rel="noopener">shagility.com →</a>
+        </div>
+        <div class="ref">
+          <h3>Rick van der Lans</h3>
+          <div class="field">Data virtualization, architecture</div>
+          <p>His work on SuperNova / data virtualization shaped my approach to delivery and the semantic layer.</p>
+          <a href="https://www.linkedin.com/in/rickvanderlans/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Joe Reis</h3>
+          <div class="field">Data engineering fundamentals</div>
+          <p>His principles (and <em>Fundamentals of Data Engineering</em>) reinforce a disciplined, model-driven approach.</p>
+          <a href="https://www.linkedin.com/in/josephreis/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+        <div class="ref">
+          <h3>Mike Ferguson</h3>
+          <div class="field">Data architecture, BDL</div>
+          <p>His Business Data Lake keynote thinking aligns with the model-driven future of data management.</p>
+          <a href="https://www.linkedin.com/in/mike-ferguson-a92b81/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:24px;font-size:14px;">
+        <!-- TODO: verify each LinkedIn URL before public launch — links set to best-known profiles;
+             confirm the exact handles (esp. Cuba, Foad, Lerner, Corr, Ferguson, Silverston, Milo, Forte). -->
+        Links point to each person's public profile. I keep a running list of the thinkers I reference across my articles.
+      </p>
+    </div>
+  </section>
+
+  <!-- Personal knowledge management -->
+  <section class="band-dark">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#7dd3fc">Personal knowledge management</p>
+      <h2>The other half of my structure.</h2>
+      <p class="lead">Data architecture taught me rules and governance. PKM taught me linked, markdown-native thinking. Both turned out to be groundwork for the AI phase — the vault that organises my knowledge is now the context the model reasons over.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="refs">
+        <div class="ref">
+          <h3>Nick Milo</h3>
+          <div class="field">Linking Your Thinking (LYT), Obsidian</div>
+          <p>His Linking Your Thinking approach and Maps of Content shaped how I structure a connected vault — exactly the structure that now feeds AI.</p>
+          <a href="https://www.linkingyourthinking.com/" target="_blank" rel="noopener">linkingyourthinking.com →</a>
+        </div>
+        <div class="ref">
+          <h3>Tiago Forte</h3>
+          <div class="field">Building a Second Brain, PARA</div>
+          <p>The PARA method and the second-brain idea — capturing and organising knowledge so it compounds instead of evaporating.</p>
+          <a href="https://www.buildingasecondbrain.com/" target="_blank" rel="noopener">buildingasecondbrain.com →</a>
+        </div>
+        <div class="ref">
+          <h3>Sönke Ahrens</h3>
+          <div class="field">How to Take Smart Notes, Zettelkasten</div>
+          <p>The atomic-note, link-as-you-think discipline behind durable knowledge — the smallest unit of structure.</p>
+          <a href="https://www.soenkeahrens.de/en/takesmartnotes" target="_blank" rel="noopener">Smart Notes →</a>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:24px;font-size:14px;">
+        PKM gave me human-readable, linked structure; data architecture gave me rules and validation. AI needs both — and that convergence is where I work. <a href="approach.html">More on the convergence →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- What drives me / wider influences -->
+  <section class="band-dark">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#7dd3fc">What drives me</p>
+      <h2>Systems, models, and a positive mindset — it's how I'm wired.</h2>
+      <p class="lead">This isn't a reading list. It's intrinsic to how I think and work — the same operating system in my personal life and my professional one. See the system, find the model, build the structure, stay growth-minded. I don't switch it off when I leave the data behind; it's how I approach a project, a trip, a year, a life.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="refs">
+        <div class="ref">
+          <h3>Mental models</h3>
+          <div class="field">Shane Parrish / Charlie Munger</div>
+          <p>A latticework of mental models for clearer thinking and better decisions — the habit of reaching for the right model, not the first idea.</p>
+          <a href="https://fs.blog/" target="_blank" rel="noopener">Farnam Street →</a>
+        </div>
+        <div class="ref">
+          <h3>Stephen Covey</h3>
+          <div class="field">The 7 Habits of Highly Effective People</div>
+          <p>Principle-centred effectiveness — begin with the end in mind, first things first. Structure applied to character and priorities.</p>
+          <a href="https://www.franklincovey.com/the-7-habits/" target="_blank" rel="noopener">The 7 Habits →</a>
+        </div>
+        <div class="ref">
+          <h3>Carol Dweck</h3>
+          <div class="field">Growth mindset</div>
+          <p>Abilities grow with effort and learning. The mindset behind staying curious, reinventing, and treating every phase as a chance to grow.</p>
+          <a href="https://www.google.com/search?q=Carol+Dweck+Mindset" target="_blank" rel="noopener">Mindset →</a>
+        </div>
+        <div class="ref">
+          <h3>Tim Ferriss</h3>
+          <div class="field">The 4-Hour Workweek</div>
+          <p>Designing work around life through systems, leverage and elimination — not more hours. Output over busyness.</p>
+          <a href="https://tim.blog/" target="_blank" rel="noopener">tim.blog →</a>
+        </div>
+        <div class="ref">
+          <h3>David Allen</h3>
+          <div class="field">Getting Things Done (GTD)</div>
+          <p>A trusted system so the mind is for having ideas, not holding them. Capture, clarify, organise — productivity as structure.</p>
+          <a href="https://gettingthingsdone.com/" target="_blank" rel="noopener">GTD →</a>
+        </div>
+        <div class="ref">
+          <h3>Growth &amp; systems thinking</h3>
+          <div class="field">Growth hacking · systems over goals</div>
+          <p>Build the system and the results follow. Small, compounding, measurable improvements beat heroic one-off effort.</p>
+          <a href="approach.html">How I apply it →</a>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:24px;font-size:14px;">
+        <!-- TODO: verify links; these are best-known official destinations. -->
+        My interest in systems, models, productivity and a positive mindset is a real part of who I am — and it's the same instinct I bring to data and AI.
+      </p>
+    </div>
+  </section>
+
+  <!-- Manifestos -->
+  <section class="band-dark">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#7dd3fc">Manifestos I stand by</p>
+      <h2>A few statements of principle — technical and human.</h2>
+      <p class="lead">I like manifestos. A good one compresses a way of working — or a way of living — into something you can actually hold onto. These shaped mine.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Technical</p>
+      <div class="refs">
+        <div class="ref">
+          <h3>The Agile Manifesto</h3>
+          <div class="field">Ways of working</div>
+          <p>The original. Value working software, collaboration and responding to change — principles I carry into how data teams should work.</p>
+          <a href="https://agilemanifesto.org/" target="_blank" rel="noopener">agilemanifesto.org →</a>
+        </div>
+        <div class="ref">
+          <h3>The DataOps Manifesto</h3>
+          <div class="field">Data ways of working</div>
+          <p>Agile principles applied to data: working analytics, treating analytics as production, monitoring quality and performance continuously.</p>
+          <a href="https://dataopsmanifesto.org/" target="_blank" rel="noopener">dataopsmanifesto.org →</a>
+        </div>
+        <div class="ref">
+          <h3>My own manifestos</h3>
+          <div class="field">Metadata-first · Universal Data Models · MDDE</div>
+          <p>I've written my own — Data Engineering Manifestos, the Metadata-First and Universal Data Models manifestos, and the MDDE Manifesto. Principles to shape the practice.</p>
+          <a href="https://medium.com/@jacovanderlaan" target="_blank" rel="noopener">Read on Medium →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Life &amp; psychological</p>
+      <div class="holstee-row">
+        <img class="holstee-img" src="assets/holstee.jpg" alt="The Holstee Manifesto poster on Jaco's wall">
+        <div class="ref" style="flex:1;">
+          <h3>The Holstee Manifesto</h3>
+          <div class="field">"This is your life."</div>
+          <p>The one that guides my life — it hangs on my wall. <em>"This is your life. Do what you love and do it often. If you don't like something, change it. If you don't like your job, quit."</em></p>
+          <p class="muted" style="font-size:15px;">It's the spirit behind my own pivot — and a reminder that the same instinct for living well drives the way I work.</p>
+          <a href="https://www.holstee.com/pages/manifesto" target="_blank" rel="noopener">holstee.com →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Shared influences? Let's talk.</h2>
+      <p class="lead" style="margin:0 auto 28px;">If these names are on your shelf too, we'll get along.</p>
+      <a class="btn btn-primary" href="contact.html">Start a conversation</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="approach.html">Approach</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="articles.html">Articles</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
