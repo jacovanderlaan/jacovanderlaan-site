@@ -68,8 +68,32 @@
     </div>
   </section>
 
-  <!-- Track record -->
+  <!-- SQL migration showcase -->
   <section>
+    <div class="wrap">
+      <p class="eyebrow">Signature engagement</p>
+      <h2>Migrating legacy SQL — and proving it's identical.</h2>
+      <p class="lead">My largest recent delivery: migrating complex legacy SQL to a governed, bi-temporal integration layer for a bank's Risk &amp; Finance data platform. The hard part isn't rewriting the SQL — it's proving the new pipeline produces exactly the same data as the old one. So I built the tooling to prove it.</p>
+      <div class="grid-3" style="margin-top:8px;">
+        <div class="card accent">
+          <h3>CTE-by-CTE regression testing</h3>
+          <p class="muted">Comparing only the final output tells you <em>that</em> something differs across 50,000 rows. Comparing query <em>step by step</em> tells you <em>which</em> transformation introduced it — root cause found, not just symptom. Migration debugging, ~10× faster.</p>
+        </div>
+        <div class="card accent">
+          <h3>The CTE Notebook generator</h3>
+          <p class="muted">Explode a SQL file into an interactive notebook where each step is profiled and checked — PII detection, SCD2/temporal patterns, lineage, data contracts — before a single query runs. SQL becomes self-documenting and self-validating, then exports back to deployable SQL.</p>
+        </div>
+        <div class="card accent">
+          <h3>Determinism before AI</h3>
+          <p class="muted">Parse legacy SQL into metadata, deterministically rebuild clean SQL that fits the target architecture, prove equivalence with automated regression — <em>then</em> let AI safely optimize the rest. Non-deterministic SQL (ROW_NUMBER without a stable ORDER BY) caught before it corrupts the validation.</p>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:24px;">This is where the method earned its stripes: systematic validation and large-scale SQL analysis turned migration from a risky rewrite into something verifiable. The same discipline now underpins how I make AI output reliable. <a href="writing.html">More in the writing →</a></p>
+    </div>
+  </section>
+
+  <!-- Track record -->
+  <section class="tight">
     <div class="wrap">
       <p class="eyebrow">Track record</p>
       <h2>Twenty-five years of structure that compounds.</h2>
