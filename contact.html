@@ -53,14 +53,14 @@
 
   <section class="tight">
     <div class="wrap">
-      <!-- Netlify Forms: works automatically when hosted on Netlify (no backend needed).
-           On first deploy, Netlify detects the form by its name. Submissions appear in
-           the Netlify dashboard (Forms tab); add an email notification there.
-           The mailto fallback below still works for non-Netlify hosting. -->
-      <form class="qualify" name="qualify" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="qualify">
+      <!-- Formspree: free form backend, works on any static host (GitHub Pages).
+           SETUP (one-time): create a free form at https://formspree.io → it gives you
+           an endpoint like https://formspree.io/f/abcdwxyz → replace YOUR_FORM_ID below.
+           Submissions then arrive by email automatically. The _gotcha honeypot blocks spam. -->
+      <form class="qualify" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from jacovanderlaan.com">
         <p style="display:none;">
-          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+          <label>Don't fill this out if you're human: <input name="_gotcha"></label>
         </p>
         <div class="form-field">
           <label>Your name</label>
