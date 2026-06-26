@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.4"/></filter>
+    <marker id="ar" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto"><path d="M0,0 L11,5.5 L0,11 z" fill="#38bdf8"/></marker>
+  </defs>
+  <rect width="1200" height="560" fill="url(#bg)"/>
+  <text x="600" y="58" text-anchor="middle" font-size="32" font-weight="800" fill="#f8fafc">Business-oriented data modeling</text>
+  <text x="600" y="92" text-anchor="middle" font-size="17" fill="#94a3b8">Start with the business — a shared language between people, engineers and AI</text>
+
+  <!-- three actors sharing one model -->
+  <rect x="90" y="170" width="260" height="90" rx="14" fill="#0e2a3a" stroke="#1e6f93" stroke-width="2" filter="url(#s)"/>
+  <text x="220" y="208" text-anchor="middle" font-size="19" font-weight="700" fill="#7dd3fc">Business</text>
+  <text x="220" y="234" text-anchor="middle" font-size="14" fill="#cdeafe">meaning &amp; intent</text>
+
+  <rect x="90" y="300" width="260" height="90" rx="14" fill="#0e2a3a" stroke="#1e6f93" stroke-width="2" filter="url(#s)"/>
+  <text x="220" y="338" text-anchor="middle" font-size="19" font-weight="700" fill="#7dd3fc">Engineers</text>
+  <text x="220" y="364" text-anchor="middle" font-size="14" fill="#cdeafe">build &amp; run</text>
+
+  <rect x="90" y="430" width="260" height="90" rx="14" fill="#0e2a3a" stroke="#1e6f93" stroke-width="2" filter="url(#s)"/>
+  <text x="220" y="468" text-anchor="middle" font-size="19" font-weight="700" fill="#7dd3fc">AI</text>
+  <text x="220" y="494" text-anchor="middle" font-size="14" fill="#cdeafe">reasons over it</text>
+
+  <!-- central shared model -->
+  <rect x="470" y="245" width="280" height="200" rx="18" fill="#3a2f12" stroke="#eab308" stroke-width="2.6" filter="url(#s)"/>
+  <text x="610" y="320" text-anchor="middle" font-size="24" font-weight="800" fill="#fde68a">One model</text>
+  <text x="610" y="352" text-anchor="middle" font-size="15" fill="#f0e6c8">business-friendly</text>
+  <text x="610" y="376" text-anchor="middle" font-size="15" fill="#f0e6c8">logical · universal</text>
+  <text x="610" y="400" text-anchor="middle" font-size="15" fill="#f0e6c8">a shared language</text>
+
+  <!-- arrows from actors to model -->
+  <line x1="350" y1="215" x2="466" y2="300" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="350" y1="345" x2="466" y2="345" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="350" y1="475" x2="466" y2="390" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <!-- model generates the physical -->
+  <line x1="750" y1="345" x2="846" y2="345" stroke="#eab308" stroke-width="3" marker-end="url(#ar)"/>
+  <rect x="860" y="290" width="250" height="110" rx="14" fill="#13324a" stroke="#38bdf8" stroke-width="2" filter="url(#s)"/>
+  <text x="985" y="332" text-anchor="middle" font-size="18" font-weight="700" fill="#7dd3fc">Physical design</text>
+  <text x="985" y="360" text-anchor="middle" font-size="14" fill="#cdeafe">generated, regenerable</text>
+  <text x="985" y="382" text-anchor="middle" font-size="13" fill="#9fcbe4">never drifts from intent</text>
+
+  <text x="600" y="540" text-anchor="middle" font-size="16" fill="#e2e8f0"><tspan fill="#94a3b8">Good modeling is as much </tspan><tspan fill="#fde68a" font-weight="700">communication</tspan><tspan fill="#94a3b8"> as notation.</tspan></text>
+</svg>
