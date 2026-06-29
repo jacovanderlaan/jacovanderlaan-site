@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <!-- rounded dark tile -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- 3x3 structural grid of cells; one gold = structure -> intelligence -->
+  <g>
+    <!-- row 1 -->
+    <rect x="12" y="12" width="11" height="11" rx="2.5" fill="#38bdf8"/>
+    <rect x="26.5" y="12" width="11" height="11" rx="2.5" fill="#1e6f93"/>
+    <rect x="41" y="12" width="11" height="11" rx="2.5" fill="#38bdf8"/>
+    <!-- row 2 -->
+    <rect x="12" y="26.5" width="11" height="11" rx="2.5" fill="#1e6f93"/>
+    <rect x="26.5" y="26.5" width="11" height="11" rx="2.5" fill="#fde68a"/>
+    <rect x="41" y="26.5" width="11" height="11" rx="2.5" fill="#1e6f93"/>
+    <!-- row 3 -->
+    <rect x="12" y="41" width="11" height="11" rx="2.5" fill="#38bdf8"/>
+    <rect x="26.5" y="41" width="11" height="11" rx="2.5" fill="#1e6f93"/>
+    <rect x="41" y="41" width="11" height="11" rx="2.5" fill="#38bdf8"/>
+  </g>
+</svg>

@@ -4,20 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MDDE — Model-Driven Data Engineering | Jaco van der Laan</title>
-  <meta name="description" content="MDDE — Model-Driven Data Engineering: a framework that makes structure explicit again. Parse SQL into metadata, reason over it, generate clean SQL — with full lineage, validation and humans in control.">
+  <meta name="description" content="Model-Driven Data Engineering — how I bring structure to the tools you already run. Parse SQL into metadata, validate and extend it, generate clean SQL or dbt back. Metadata in the middle; your stack does more.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="MDDE — Model-Driven Data Engineering">
-  <meta property="og:description" content="A framework that makes structure explicit again — parse, observe, optimize, generate. Metadata that participates, not just describes.">
+  <meta property="og:title" content="MDDE — structure that makes your existing tools do more">
+  <meta property="og:description" content="Metadata in the middle: parse SQL, validate and extend it, generate clean SQL or dbt back. The method behind my work at de Volksbank and ABN AMRO.">
   <meta property="og:url" content="https://www.jacovanderlaan.com/mdde.html">
   <meta property="og:image" content="https://www.jacovanderlaan.com/assets/mdde-loop.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
   <style>
     .tenet { padding:4px 0 4px 22px; border-left:3px solid var(--line); margin:0 0 18px; }
     .tenet h3 { font-size:18px; margin:0 0 4px; }
     .tenet p { color:var(--ink-soft); font-size:15px; margin:0; max-width:660px; }
     .tenet.key { border-left-color:var(--accent); }
+    .proof { padding:22px 24px; border:1px solid var(--line); border-radius:14px; background:var(--card); margin:0 0 18px; }
+    .proof h3 { font-size:17px; margin:0 0 6px; }
+    .proof .where { font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.04em; }
+    .proof p { color:var(--ink-soft); font-size:15px; margin:6px 0 0; }
   </style>
 </head>
 <body>
@@ -38,12 +46,12 @@
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">The framework</p>
-      <h1>MDDE — Model-Driven Data Engineering.</h1>
-      <p class="lead">A framework that makes structure explicit again. Modern data platforms don't fail because of bad SQL or poor tooling — they fail because <em>structure becomes invisible</em>, meaning drifts, and change becomes dangerous. MDDE addresses that, deliberately and pragmatically.</p>
+      <p class="eyebrow">Model-Driven Data Engineering</p>
+      <h1>Structure that makes the tools you already run do more.</h1>
+      <p class="lead">MDDE is how I work, not a product I sell you. Modern data platforms don't fail because of bad SQL or poor tooling — they fail because <em>structure becomes invisible</em>, meaning drifts, and change becomes dangerous. I make that structure explicit again and wire it into your existing stack — dbt, SQLMesh, PowerDesigner, Databricks — so the platform you already have does more.</p>
       <figure class="graphic" style="margin-top:36px;">
-        <img src="assets/mdde-loop.svg" alt="The MDDE loop: parse, observe, optimize, generate — a deterministic cycle">
-        <figcaption>The core loop: parse SQL → observe (analyse + validate) → optimize the model → generate clean SQL. Metadata is the source of truth.</figcaption>
+        <img src="assets/mdde-loop.svg" alt="The MDDE loop: parse SQL, observe and validate, optimize the model, generate clean SQL — with metadata in the middle">
+        <figcaption>Metadata in the middle: parse SQL → validate &amp; extend the model → generate clean SQL or dbt back. The model is the source of truth; the tools are how it ships.</figcaption>
       </figure>
     </div>
   </section>
@@ -52,17 +60,68 @@
   <section class="band-dark">
     <div class="wrap">
       <p class="eyebrow" style="color:#7dd3fc">In one paragraph</p>
-      <h2>Metadata that participates, not just describes.</h2>
-      <p class="lead">MDDE treats SQL as both input and output — something to be parsed, reasoned about, and regenerated without loss of intent. Models, rules, templates and macros generate the SQL, control flow and tests, with full horizontal &amp; vertical lineage and clear documentation. Structure stops hiding in joins, filters and aliases, and becomes explicit, governed and executable.</p>
-      <p>It's the method behind my work at de Volksbank and ABN AMRO — and the engine I keep building in the open.</p>
+      <h2>Metadata in the middle, not a parallel universe.</h2>
+      <p class="lead">I parse existing SQL into metadata, then validate, improve and extend that metadata — and generate clean SQL back, or a dbt project, or whatever target fits. SQL is both input and output, round-tripped without losing intent. Structure stops hiding in joins, filters and aliases and becomes explicit, governed and executable — with full lineage and clear documentation.</p>
+      <p>The point isn't a new platform. It's that <span class="accent-text">the model becomes the centre, and your existing tools become how that model ships.</span> I'm the structure-and-model person who makes your stack express it — not someone asking you to adopt one more framework.</p>
+    </div>
+  </section>
+
+  <!-- Proof: where this has actually run -->
+  <section class="tight">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">Where it has actually run</p>
+      <h2>Two banks. Existing tools, extended.</h2>
+      <p class="muted" style="margin:0 0 24px;">Every part of MDDE comes from real delivery — extending standard enterprise tools, not building a framework from scratch.</p>
+      <div class="proof">
+        <span class="where">de Volksbank · ASN</span>
+        <h3>PowerDesigner, extended into a generation engine.</h3>
+        <p>I customised PowerDesigner with extensions until it drove model-based generation — the foundation of the de Volksbank MDDE solution. A standard enterprise modeling tool, made to do far more than it shipped with.</p>
+      </div>
+      <div class="proof">
+        <span class="where">ABN AMRO</span>
+        <h3>CTE-notebook generators on Databricks.</h3>
+        <p>Scripts that generate Databricks notebooks to run CTE-by-CTE regression testing — proving each transformation step is equivalent before and after a change. Extending Databricks with structure, not replacing it.</p>
+      </div>
+      <div class="proof">
+        <span class="where">ABN AMRO</span>
+        <h3>Metadata as the middle → generate dbt.</h3>
+        <p>Parse SQL into a YAML metadata layer, improve and validate it, then generate SQL again from that model. Because metadata is the centre, the same model can also generate a dbt project and take it from there — tool-agnostic by design.</p>
+      </div>
+      <div class="proof">
+        <span class="where">ABN AMRO</span>
+        <h3>Databricks Genie, woven into the build.</h3>
+        <p>Integrated Databricks Genie into the workflow of building model-driven SQL step by step — Genie supported by the underlying structure and method. A way to use Genie to build transformations, grounded in the model rather than guessing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The AI-generation angle -->
+  <section class="band-dark">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#7dd3fc">Where this is heading</p>
+      <h2>AI generates the code. Structure decides whether you can trust it.</h2>
+      <p class="lead">More and more code is generated by AI. The teams that win at it aren't the ones with the best prompts — they're the ones with a solid foundation for the AI to generate against: clear rules, curated patterns, sample code, and a model that says what "correct" means.</p>
+      <p>That's exactly what MDDE is. The building blocks — skills, rules, validated sample code, the metadata model — become the <span class="accent-text">grounding for an AI generation process that produces custom solutions</span>, then integrates them with dbt, SQLMesh, Fabric or Databricks. Not a library you install and maintain; the structured foundation I bring in so generation is reliable instead of a guess. It's <a href="approach.html" style="color:#7dd3fc;">structure beats magic</a>, pointed at code generation itself.</p>
+    </div>
+  </section>
+
+  <!-- The human layer -->
+  <section class="tight">
+    <div class="wrap">
+      <p class="eyebrow">The half that makes it stick</p>
+      <h2>The structure only lasts if the team adopts it.</h2>
+      <p class="lead">A model on its own changes nothing. So the work is as much about people as patterns: I communicate it in visuals, prove it in demos, and get the team into the rhythm themselves.</p>
+      <p>I inspire teams to work structured, document their work — increasingly with AI — visualise what they're building, and demo their intermediate results. I do it to set the example; the aim is for the team to pick up the habit and keep it after I leave. <span class="accent-text">That's transfer-by-design: the structure, and the way of working around it, become yours.</span></p>
+      <p style="margin-top:20px;"><a class="btn btn-ghost" href="services.html">How I run engagements →</a></p>
     </div>
   </section>
 
   <!-- The tenets (the manifesto, condensed) -->
   <section class="tight">
     <div class="wrap" style="max-width:820px;">
-      <p class="eyebrow">The MDDE manifesto</p>
+      <p class="eyebrow">The thinking behind it</p>
       <h2>Eleven tenets.</h2>
+      <p class="muted" style="margin:0 0 20px;">The principles I work by — the method, distilled.</p>
       <div style="margin-top:20px;">
         <div class="tenet key"><h3>1 · SQL is not the enemy</h3><p>SQL is expressive and close to execution — and where architecture quietly accumulates. MDDE doesn't replace it; it parses, reasons about, and regenerates it. Any system that can't work with real SQL gets bypassed.</p></div>
         <div class="tenet key"><h3>2 · Modeling never disappeared — it went implicit</h3><p>Data modeling became embedded in joins, filters, aggregations and conventions. Implicit models scale execution, not understanding. MDDE makes structure explicit again — without heavyweight upfront design.</p></div>
@@ -71,7 +130,7 @@
         <div class="tenet"><h3>5 · One-way generation always fails</h3><p>Generate-and-forget drifts. MDDE round-trips: SQL ⇄ metadata, so the picture never separates from the truth.</p></div>
         <div class="tenet key"><h3>6 · Humans stay in control</h3><p>Observation is separate from enforcement. Understanding does not force change. The engine proposes; people decide.</p></div>
         <div class="tenet"><h3>7 · Evolution beats enforcement</h3><p>Architecture that adapts is adopted; architecture that's imposed is bypassed. MDDE nudges, it doesn't police.</p></div>
-        <div class="tenet"><h3>8 · Framework, not product</h3><p>MDDE is a way of working you own, not a tool you rent. The foundation is the asset; tools are generated on top.</p></div>
+        <div class="tenet"><h3>8 · It works with your tools, not against them</h3><p>MDDE isn't a platform to adopt or a tool to rent. The model is the asset; your existing tools — dbt, SQLMesh, PowerDesigner, Databricks — are how it ships. Extend what you have rather than replace it.</p></div>
         <div class="tenet key"><h3>9 · Lineage is a first-class citizen</h3><p>Full horizontal &amp; vertical lineage isn't a report you bolt on — it falls out of the model by design.</p></div>
         <div class="tenet"><h3>10 · Performance enables adoption</h3><p>If it's slow, it won't be used. The method has to be fast enough to live inside real delivery.</p></div>
         <div class="tenet key"><h3>11 · Intelligence augments, never replaces</h3><p>AI reasons over the metadata to help — it doesn't guess in place of the model, or optimize away rules it can't see. Reliable because engineered.</p></div>
@@ -79,19 +138,49 @@
     </div>
   </section>
 
+  <!-- The method, visualised -->
+  <section class="tight">
+    <div class="wrap" style="max-width:980px;">
+      <p class="eyebrow">The method, step by step</p>
+      <h2>What it looks like in practice.</h2>
+      <p class="lead">The tenets above are the principles; these are the moves. Fifteen visual guides — the patterns I bring into an engagement, from first model to governed delivery. They're deliberately concrete: this is the work, not a pitch.</p>
+
+      <h3 style="margin:36px 0 6px;">Foundation — model once, generate the rest</h3>
+      <p class="muted" style="margin:0 0 8px;">From Kimball to metadata, business- and entity-first modeling, 3NF&nbsp;→&nbsp;stars, and model-driven migrations. The business gets modeled once; the structures are generated from it.</p>
+      <figure class="graphic">
+        <img src="assets/mdde-method-guide-1.png" alt="MDDE method, part one: from Kimball to metadata, business-oriented data modeling, entity-first modeling, 3NF to stars, and model-driven migrations" loading="lazy">
+        <figcaption>Part one — the foundation: model the business once in metadata, generate everything else as needed.</figcaption>
+      </figure>
+
+      <h3 style="margin:44px 0 6px;">Trust &amp; delivery — quality and lineage by design</h3>
+      <p class="muted" style="margin:0 0 8px;">Model-driven data quality, data breadcrumbs, context-aware lineage, access views as the contract, and logical&nbsp;→&nbsp;physical generation. Quality and provenance are built in, not bolted on afterwards.</p>
+      <figure class="graphic">
+        <img src="assets/mdde-method-guide-2.png" alt="MDDE method, part two: model-driven data quality, data breadcrumbs, context-aware lineage, access views as the contract, and logical to physical generation" loading="lazy">
+        <figcaption>Part two — trust &amp; delivery: quality, breadcrumbs and lineage fall out of the model rather than being added later.</figcaption>
+      </figure>
+
+      <h3 style="margin:44px 0 6px;">Time &amp; automation — history and pipelines from metadata</h3>
+      <p class="muted" style="margin:0 0 8px;">Dual-SCD2 time travel, deterministic deduplication, historizing without a natural key, semantic vs technical lineage, and declarative metadata-driven pipelines. Code is generated; the metadata is the single source.</p>
+      <figure class="graphic">
+        <img src="assets/mdde-method-guide-3.png" alt="MDDE method, part three: dual SCD2 time travel, deduplication, historizing without a natural key, semantic vs technical lineage, and declarative metadata-driven pipelines" loading="lazy">
+        <figcaption>Part three — time &amp; automation: bitemporal history and pipelines generated from the model, so the picture never drifts from the truth.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- How it differs -->
   <section class="band-dark">
     <div class="wrap">
       <p class="eyebrow" style="color:#7dd3fc">Why it's different</p>
-      <h2>Not another tool. A way of working.</h2>
-      <p class="lead">Most approaches add a layer — a new platform, a wrapper, a YAML universe parallel to the SQL. MDDE goes the other way: it treats the SQL and the model as one round-tripped truth, makes metadata executable, and keeps humans in control. It's the practical core of <a href="approach.html" style="color:#7dd3fc;">Structure + Data + AI + Rules → Intelligence</a>.</p>
+      <h2>Not another tool to adopt. A way of working I bring in.</h2>
+      <p class="lead">Most approaches add a layer — a new platform, a wrapper, a YAML universe parallel to the SQL. MDDE goes the other way: it treats the SQL and the model as one round-tripped truth, makes metadata executable, keeps humans in control, and rides on the tools you already run. It's the practical core of <a href="approach.html" style="color:#7dd3fc;">Structure + Data + AI + Rules → Intelligence</a>.</p>
     </div>
   </section>
 
   <section class="cta-block">
     <div class="wrap">
-      <h2>Want MDDE working in your platform?</h2>
-      <p class="lead" style="margin:0 auto 28px;">That's exactly the kind of engagement I take on — we choose the patterns, prove them, and build them together.</p>
+      <h2>Want your existing stack doing more?</h2>
+      <p class="lead" style="margin:0 auto 28px;">That's exactly the kind of engagement I take on — we choose the patterns, prove them, and build them into your tools together.</p>
       <a class="btn btn-primary" href="contact.html">Get in touch</a>
     </div>
   </section>
