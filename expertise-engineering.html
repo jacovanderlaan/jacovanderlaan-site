@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SQL parsing &amp; migration — Jaco van der Laan</title>
-  <meta name="description" content="Parsing legacy SQL into metadata, validating it, and generating clean SQL or dbt back — plus CTE-by-CTE regression testing that proves a migration is identical. Metadata in the middle.">
+  <title>Data engineering and architecture | Jaco van der Laan</title>
+  <meta name="description" content="From ERDs and lineage to executable metadata: design once, generate the SQL, tests, docs and lineage. Layered architecture, business-oriented transformation layers, functional lineage and bank-grade governance for any stack.">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="SQL parsing & migration — metadata in the middle">
-  <meta property="og:description" content="Parse legacy SQL into a model, validate it, generate clean SQL or dbt back — and prove the migration identical, CTE by CTE.">
-  <meta property="og:url" content="https://www.jacovanderlaan.com/expertise-sql-migration.html">
+  <meta property="og:title" content="Data engineering and architecture - executable metadata">
+  <meta property="og:description" content="From ERDs and lineage to executable metadata: design once, generate the SQL, tests, docs and lineage. Layered architecture, business-oriented transformation layers, functional lineage and bank-grade governance for any stack.">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/expertise-engineering.html">
   <meta property="og:image" content="https://www.jacovanderlaan.com/assets/structurebeatsmagic/sbm-og-card.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,70 +79,54 @@
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Expertise · SQL parsing &amp; migration</p>
-      <h1>Migration isn't a rewrite. It's a round-trip.</h1>
-      <p class="lead">Most SQL migrations are a hopeful rewrite: copy the logic to the new platform, run it, and pray the numbers match. I do it the other way around — parse the existing SQL into metadata, reason about it, and generate clean SQL (or a dbt project) back. The model in the middle is what makes the move provable instead of risky.</p>
+      <p class="eyebrow">Expertise &middot; Engineering &amp; architecture</p>
+      <h1>Design once. Generate many.</h1>
+      <p class="lead">Most data platforms hide their structure inside scattered SQL scripts. I make the design executable: models, rules and metadata in the middle, generating the SQL, control flow, tests and lineage &mdash; with governance shifted left, into the model, not bolted on after.</p>
       <figure class="graphic" style="margin-top:36px;">
-        <img src="assets/sql-parsing-metadata.svg" alt="Parse existing SQL into a metadata model in the middle, then generate clean SQL, a dbt project, tests and lineage back — a round-trip without drift">
-        <figcaption>Parse → model → generate. The model is the source of truth; the tools are how it ships.</figcaption>
+        <img src="assets/layered-architecture.svg" alt="Layered data architecture source to integration to delivery, metadata-driven across every layer">
+        <figcaption>Source to integration to delivery, metadata-driven throughout - design once, generate many.</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- The original ideas -->
   <section class="tight">
     <div class="wrap" style="max-width:820px;">
       <p class="eyebrow">The ideas behind it</p>
       <h2>What makes my approach different.</h2>
-
-      <div class="idea">
-        <h3>Reverse-engineer SQL into <em>functional</em> blocks — not code</h3>
-        <p>I don't capture "how the query works" line by line. I capture <em>what it does</em> — pivot, normalize, union, aggregate — as functional metadata blocks. That abstraction is what survives a platform change; the syntax doesn't.</p>
-      </div>
-
-      <div class="idea">
-        <h3>CTE-by-CTE regression testing</h3>
-        <p>Comparing only the final output tells you <em>that</em> something differs across thousands of rows. Comparing the query step by step — each CTE before and after — tells you <em>which</em> transformation introduced it. Root cause found, not just symptom. Migration debugging, roughly 10× faster.</p>
-      </div>
-
-      <div class="idea">
-        <h3>Metadata in the middle → generate any target</h3>
-        <p>Once the logic lives as metadata, the new platform's SQL is just one output. The same model can generate a dbt project, tests, lineage and documentation. Tool-agnostic by design — you're never locked to where you landed.</p>
-      </div>
-
-      <div class="idea">
-        <h3>AI that's grounded in the model, not guessing</h3>
-        <p>AI accelerates migration only when it has a structured foundation to work against. Parsed metadata gives the model something true to reason over, so it transforms SQL into explainable logic instead of a confident guess.</p>
-      </div>
+      <div class="idea"><h3>Executable metadata, not just diagrams</h3><p>ERDs and lineage should not be decoration. When the metadata is executable, the same design generates the SQL, the tests, the docs and the lineage. Design once, generate many.</p></div>
+      <div class="idea"><h3>Transformations are where modeling really happens</h3><p>Business logic should not be scattered across SQL scripts. I design business-oriented transformation layers where the meaning lives in metadata, governed and visible - not buried in pipelines.</p></div>
+      <div class="idea"><h3>Functional lineage beats code-based lineage</h3><p>Lineage extracted from code alone tells you what connects to what. It cannot tell you why it matters. Business-friendly, semantic lineage - intent, not just wiring - is what teams actually need.</p></div>
+      <div class="idea"><h3>Bank discipline for any size stack</h3><p>dbt and SQLMesh bring declarative, versioned engineering. I carry bank-grade governance into them - shift-left quality, contracts, metadata diffing - disciplined without being bureaucratic.</p></div>
     </div>
   </section>
 
-  <!-- Reading -->
   <section class="band-dark">
     <div class="wrap" style="max-width:820px;">
       <p class="eyebrow" style="color:#7dd3fc">From the writing</p>
-      <h2>I've worked this out in public.</h2>
+      <h2>The engineering, thought through.</h2>
       <ul class="reading">
-        <li><span class="tag">Signature</span> &nbsp; Reverse Engineering SQL into Functional Metadata Blocks — abstract what the SQL <em>does</em>, not how it reads.</li>
-        <li><span class="tag">Toolkit</span> &nbsp; CTE Regression Testing v4 — the complete SQL migration validation toolkit.</li>
-        <li><span class="tag">Why</span> &nbsp; AI-Assisted SQL Migration: Why It Matters — GenAI + metadata, turning SQL into explainable logic.</li>
-        <li><span class="tag">Sources</span> &nbsp; Reverse Engineering Sources — from physical data models to logical business structures.</li>
+        <li><span class="tag">Framework</span> &nbsp; From ERDs and Lineage to Executable Metadata &mdash; the rise of Model-Driven Data Engineering.</li>
+        <li><span class="tag">Transformations</span> &nbsp; Designing Business-Oriented Transformation Layers in a Model-Driven Architecture.</li>
+        <li><span class="tag">Discipline</span> &nbsp; From Bank to Builder &mdash; bringing enterprise discipline to small data stacks with dbt and SQLMesh.</li>
+        <li><span class="tag">Quality</span> &nbsp; Shift-Left in Data Engineering &mdash; bringing quality and governance upstream.</li>
+        <li><span class="tag">Lineage</span> &nbsp; From Technical Lineage to Functional Understanding &mdash; why code-based lineage is not enough.</li>
+        <li><span class="tag">Change</span> &nbsp; Diffing the Metadata Graph &mdash; tracing change across layers and lineage.</li>
       </ul>
-      <p style="margin-top:20px;"><a class="btn btn-ghost" href="articles.html">Read the full archive →</a></p>
+      <p style="margin-top:20px;"><a class="btn btn-ghost" href="articles.html">Read the archive &rarr;</a></p>
     </div>
   </section>
 
   <section class="cta-block">
     <div class="wrap">
-      <h2>Facing a migration you can't afford to get wrong?</h2>
-      <p class="lead" style="margin:0 auto 28px;">That's exactly the kind of work I take on — prove it identical, step by step, and leave you with the model, not just the new SQL.</p>
+      <h2>Want your platform design to be executable, not just documented?</h2>
+      <p class="lead" style="margin:0 auto 28px;">That is the heart of how I work &mdash; let us make your metadata do the building.</p>
       <a class="btn btn-primary" href="contact.html">Start a conversation</a>
     </div>
   </section>
 
   <footer class="site">
     <div class="wrap">
-      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>&copy; 2026 Jaco van der Laan &middot; Consilium Information Systems B.V.</div>
       <div>
         <a href="approach.html">Approach</a>
         <a href="services.html">Services</a>

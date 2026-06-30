@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e2a3a"/><stop offset="1" stop-color="#0b2230"/>
+    </linearGradient>
+    <linearGradient id="midCard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#13324a"/><stop offset="1" stop-color="#0d2638"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrowB" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <text x="800" y="92" text-anchor="middle" font-size="54" font-weight="800" fill="#f8fafc">What if your IDE was the modeling tool?</text>
+  <text x="800" y="138" text-anchor="middle" font-size="24" fill="#94a3b8">Model as code, in Git — not locked inside a GUI that only exports one way.</text>
+  <rect x="640" y="158" width="320" height="4" rx="2" fill="#38bdf8"/>
+
+  <!-- center: the model (YAML/code) -->
+  <rect x="600" y="370" width="400" height="170" rx="20" fill="url(#midCard)" stroke="#38bdf8" stroke-width="3.5" filter="url(#soft)"/>
+  <text x="800" y="430" text-anchor="middle" font-size="28" font-weight="800" fill="#7dd3fc">The model — as code</text>
+  <text x="800" y="466" text-anchor="middle" font-size="17" fill="#e0f2fe">YAML in VS Code · versioned in Git</text>
+  <text x="800" y="496" text-anchor="middle" font-size="17" fill="#e0f2fe">diff, review, merge like any code</text>
+  <text x="800" y="524" text-anchor="middle" font-size="15" fill="#7dd3fc" font-style="italic">one source, many outputs</text>
+
+  <!-- six outputs around it -->
+  <!-- top-left -->
+  <rect x="120" y="250" width="260" height="92" rx="14" fill="url(#card)" stroke="#1e6f93" stroke-width="2" filter="url(#soft)"/>
+  <text x="250" y="296" text-anchor="middle" font-size="21" font-weight="700" fill="#cdeafe">SQL / DDL</text>
+  <text x="250" y="322" text-anchor="middle" font-size="14" fill="#7fb4d4">physical schema, any engine</text>
+  <!-- top-right -->
+  <rect x="1220" y="250" width="260" height="92" rx="14" fill="url(#card)" stroke="#1e6f93" stroke-width="2" filter="url(#soft)"/>
+  <text x="1350" y="296" text-anchor="middle" font-size="21" font-weight="700" fill="#cdeafe">ERD diagrams</text>
+  <text x="1350" y="322" text-anchor="middle" font-size="14" fill="#7fb4d4">generated, never stale</text>
+  <!-- mid-left -->
+  <rect x="120" y="409" width="260" height="92" rx="14" fill="url(#card)" stroke="#1e6f93" stroke-width="2" filter="url(#soft)"/>
+  <text x="250" y="455" text-anchor="middle" font-size="21" font-weight="700" fill="#cdeafe">Docs</text>
+  <text x="250" y="481" text-anchor="middle" font-size="14" fill="#7fb4d4">auto, always in sync</text>
+  <!-- mid-right -->
+  <rect x="1220" y="409" width="260" height="92" rx="14" fill="url(#card)" stroke="#1e6f93" stroke-width="2" filter="url(#soft)"/>
+  <text x="1350" y="455" text-anchor="middle" font-size="21" font-weight="700" fill="#cdeafe">Tests &amp; contracts</text>
+  <text x="1350" y="481" text-anchor="middle" font-size="14" fill="#7fb4d4">from the model</text>
+  <!-- bottom-left -->
+  <rect x="120" y="568" width="260" height="92" rx="14" fill="url(#card)" stroke="#1e6f93" stroke-width="2" filter="url(#soft)"/>
+  <text x="250" y="614" text-anchor="middle" font-size="21" font-weight="700" fill="#cdeafe">dbt project</text>
+  <text x="250" y="640" text-anchor="middle" font-size="14" fill="#7fb4d4">generated downstream</text>
+  <!-- bottom-right -->
+  <rect x="1220" y="568" width="260" height="92" rx="14" fill="url(#card)" stroke="#1e6f93" stroke-width="2" filter="url(#soft)"/>
+  <text x="1350" y="614" text-anchor="middle" font-size="21" font-weight="700" fill="#cdeafe">Lineage</text>
+  <text x="1350" y="640" text-anchor="middle" font-size="14" fill="#7fb4d4">falls out of the model</text>
+
+  <!-- connectors from center to each -->
+  <g stroke="#38bdf8" stroke-width="2.5" fill="none" opacity="0.8">
+    <line x1="600" y1="430" x2="384" y2="296" marker-end="url(#arrowB)"/>
+    <line x1="600" y1="455" x2="384" y2="455" marker-end="url(#arrowB)"/>
+    <line x1="600" y1="480" x2="384" y2="614" marker-end="url(#arrowB)"/>
+    <line x1="1000" y1="430" x2="1216" y2="296" marker-end="url(#arrowB)"/>
+    <line x1="1000" y1="455" x2="1216" y2="455" marker-end="url(#arrowB)"/>
+    <line x1="1000" y1="480" x2="1216" y2="614" marker-end="url(#arrowB)"/>
+  </g>
+
+  <!-- signature -->
+  <rect x="240" y="744" width="1120" height="62" rx="14" fill="#0b1220" stroke="#334155" stroke-width="1.5"/>
+  <text x="800" y="784" text-anchor="middle" font-size="22" fill="#e2e8f0">
+    <tspan fill="#94a3b8">Design once, generate many — the loop PowerDesigner and ERwin never closed</tspan>
+  </text>
+</svg>

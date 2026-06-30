@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SQL parsing &amp; migration — Jaco van der Laan</title>
-  <meta name="description" content="Parsing legacy SQL into metadata, validating it, and generating clean SQL or dbt back — plus CTE-by-CTE regression testing that proves a migration is identical. Metadata in the middle.">
+  <title>Data Vault — experience with perspective | Jaco van der Laan</title>
+  <meta name="description" content="Certified Data Vault Modeler with a critical, researched stance: borrow the principles — historization, traceability, business keys — without the dogma. When Data Vault fits, and when business-oriented 3NF + SCD2 fits better.">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="SQL parsing & migration — metadata in the middle">
-  <meta property="og:description" content="Parse legacy SQL into a model, validate it, generate clean SQL or dbt back — and prove the migration identical, CTE by CTE.">
-  <meta property="og:url" content="https://www.jacovanderlaan.com/expertise-sql-migration.html">
+  <meta property="og:title" content="Data Vault — principles without the dogma">
+  <meta property="og:description" content="Certified Data Vault Modeler with perspective: borrow the principles, leave the orthodoxy, build what the business can read.">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/expertise-data-vault.html">
   <meta property="og:image" content="https://www.jacovanderlaan.com/assets/structurebeatsmagic/sbm-og-card.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,12 +79,12 @@
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Expertise · SQL parsing &amp; migration</p>
-      <h1>Migration isn't a rewrite. It's a round-trip.</h1>
-      <p class="lead">Most SQL migrations are a hopeful rewrite: copy the logic to the new platform, run it, and pray the numbers match. I do it the other way around — parse the existing SQL into metadata, reason about it, and generate clean SQL (or a dbt project) back. The model in the middle is what makes the move provable instead of risky.</p>
+      <p class="eyebrow">Expertise · Data Vault</p>
+      <h1>Data Vault, with perspective.</h1>
+      <p class="lead">I'm a Certified Data Vault Modeler, and I've built Data Vault at scale at Rabobank and de Volksbank. That's exactly why I'm careful with it. Data Vault gets a lot right — historization, traceability, business keys — but it's a means, not an end. The job is to borrow what's valuable and leave the orthodoxy behind, so the result is something the business can actually read.</p>
       <figure class="graphic" style="margin-top:36px;">
-        <img src="assets/sql-parsing-metadata.svg" alt="Parse existing SQL into a metadata model in the middle, then generate clean SQL, a dbt project, tests and lineage back — a round-trip without drift">
-        <figcaption>Parse → model → generate. The model is the source of truth; the tools are how it ships.</figcaption>
+        <img src="assets/data-vault-stance.svg" alt="Two columns: keep the Data Vault principles (historization, traceability, business keys, insert-only, bi-temporal) and drop the dogma (one model for OLTP and OLAP, hubs/links/sats as religion, full weight on every project) — leading to business-oriented 3NF + SCD2">
+        <figcaption>Keep the principles, drop the dogma — the goals of Data Vault, in a model the business can read.</figcaption>
       </figure>
     </div>
   </section>
@@ -92,27 +92,27 @@
   <!-- The original ideas -->
   <section class="tight">
     <div class="wrap" style="max-width:820px;">
-      <p class="eyebrow">The ideas behind it</p>
-      <h2>What makes my approach different.</h2>
+      <p class="eyebrow">My stance</p>
+      <h2>Experience earns the right to be critical.</h2>
 
       <div class="idea">
-        <h3>Reverse-engineer SQL into <em>functional</em> blocks — not code</h3>
-        <p>I don't capture "how the query works" line by line. I capture <em>what it does</em> — pivot, normalize, union, aggregate — as functional metadata blocks. That abstraction is what survives a platform change; the syntax doesn't.</p>
+        <h3>Borrow from Data Vault without building one</h3>
+        <p>Take Data Vault's best practices — historization, traceability, separating keys from change — but you don't need the full architecture to get them. For many organisations, business-oriented 3NF with bi-temporal SCD2 reaches the same goals with far less to explain.</p>
       </div>
 
       <div class="idea">
-        <h3>CTE-by-CTE regression testing</h3>
-        <p>Comparing only the final output tells you <em>that</em> something differs across thousands of rows. Comparing the query step by step — each CTE before and after — tells you <em>which</em> transformation introduced it. Root cause found, not just symptom. Migration debugging, roughly 10× faster.</p>
+        <h3>"One model for OLTP and OLAP" is a myth — and that's okay</h3>
+        <p>Data Vault's promise of a single universal model rarely holds in practice. Better to accept it and design honestly: an integration layer that's auditable, plus analytics layers shaped for their job. Honesty beats a universal model that fights you.</p>
       </div>
 
       <div class="idea">
-        <h3>Metadata in the middle → generate any target</h3>
-        <p>Once the logic lives as metadata, the new platform's SQL is just one output. The same model can generate a dbt project, tests, lineage and documentation. Tool-agnostic by design — you're never locked to where you landed.</p>
+        <h3>Not every problem needs the full weight</h3>
+        <p>Lighter patterns (like Hook) are sometimes the business-friendlier fit; full Data Vault is sometimes exactly right. The skill is reading the context and choosing — not applying one method as religion.</p>
       </div>
 
       <div class="idea">
-        <h3>AI that's grounded in the model, not guessing</h3>
-        <p>AI accelerates migration only when it has a structured foundation to work against. Parsed metadata gives the model something true to reason over, so it transforms SQL into explainable logic instead of a confident guess.</p>
+        <h3>A controlled, metadata-driven migration path</h3>
+        <p>For teams stuck under Data Vault complexity, there's a controlled route out: migrate from Data Vault to bi-temporal 3NF, model-first, with the metadata driving the lifecycle. Simpler, faster, and still fully historized.</p>
       </div>
     </div>
   </section>
@@ -121,21 +121,23 @@
   <section class="band-dark">
     <div class="wrap" style="max-width:820px;">
       <p class="eyebrow" style="color:#7dd3fc">From the writing</p>
-      <h2>I've worked this out in public.</h2>
+      <h2>I've argued this out in public.</h2>
       <ul class="reading">
-        <li><span class="tag">Signature</span> &nbsp; Reverse Engineering SQL into Functional Metadata Blocks — abstract what the SQL <em>does</em>, not how it reads.</li>
-        <li><span class="tag">Toolkit</span> &nbsp; CTE Regression Testing v4 — the complete SQL migration validation toolkit.</li>
-        <li><span class="tag">Why</span> &nbsp; AI-Assisted SQL Migration: Why It Matters — GenAI + metadata, turning SQL into explainable logic.</li>
-        <li><span class="tag">Sources</span> &nbsp; Reverse Engineering Sources — from physical data models to logical business structures.</li>
+        <li><span class="tag">Cornerstone</span> &nbsp; Borrowing from Data Vault Without Building One — take the principles, skip the architecture.</li>
+        <li><span class="tag">Myth-bust</span> &nbsp; Data Vault Isn't Really "One Model for OLTP and OLAP" — and That's Okay.</li>
+        <li><span class="tag">Nuance</span> &nbsp; Learning from Andrew Foad: Hook vs Data Vault — context decides.</li>
+        <li><span class="tag">Migration</span> &nbsp; Migrating from Data Vault to Bi-Temporal 3NF — a controlled, metadata-driven approach.</li>
+        <li><span class="tag">Performance</span> &nbsp; Insert-Only Design — lessons from Data Vault 2.0, SCD2 and Databricks.</li>
+        <li><span class="tag">Layering</span> &nbsp; Zones vs Layers Demystified — Data Vault inside Medallion, not versus it.</li>
       </ul>
-      <p style="margin-top:20px;"><a class="btn btn-ghost" href="articles.html">Read the full archive →</a></p>
+      <p style="margin-top:20px;"><a class="btn btn-ghost" href="references.html">The thinkers behind this →</a> &nbsp; <a class="btn btn-ghost" href="articles.html">Read the archive →</a></p>
     </div>
   </section>
 
   <section class="cta-block">
     <div class="wrap">
-      <h2>Facing a migration you can't afford to get wrong?</h2>
-      <p class="lead" style="margin:0 auto 28px;">That's exactly the kind of work I take on — prove it identical, step by step, and leave you with the model, not just the new SQL.</p>
+      <h2>Wondering if Data Vault is right for you — or how to move on from it?</h2>
+      <p class="lead" style="margin:0 auto 28px;">That's a conversation I have a lot. Honest answer, grounded in having built it both ways.</p>
       <a class="btn btn-primary" href="contact.html">Start a conversation</a>
     </div>
   </section>

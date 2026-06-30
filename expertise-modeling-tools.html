@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SQL parsing &amp; migration — Jaco van der Laan</title>
-  <meta name="description" content="Parsing legacy SQL into metadata, validating it, and generating clean SQL or dbt back — plus CTE-by-CTE regression testing that proves a migration is identical. Metadata in the middle.">
+  <title>Building modeling tools | Jaco van der Laan</title>
+  <meta name="description" content="Why model in a GUI that only exports one way? Model as code in VS Code and Git, generate SQL, diagrams, docs and dbt from it. Lessons from extending PowerDesigner and building with CrossModel.">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="SQL parsing & migration — metadata in the middle">
-  <meta property="og:description" content="Parse legacy SQL into a model, validate it, generate clean SQL or dbt back — and prove the migration identical, CTE by CTE.">
-  <meta property="og:url" content="https://www.jacovanderlaan.com/expertise-sql-migration.html">
+  <meta property="og:title" content="Your IDE is the modeling tool - model as code">
+  <meta property="og:description" content="Why model in a GUI that only exports one way? Model as code in VS Code and Git, generate SQL, diagrams, docs and dbt from it. Lessons from extending PowerDesigner and building with CrossModel.">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/expertise-modeling-tools.html">
   <meta property="og:image" content="https://www.jacovanderlaan.com/assets/structurebeatsmagic/sbm-og-card.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,70 +79,53 @@
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Expertise · SQL parsing &amp; migration</p>
-      <h1>Migration isn't a rewrite. It's a round-trip.</h1>
-      <p class="lead">Most SQL migrations are a hopeful rewrite: copy the logic to the new platform, run it, and pray the numbers match. I do it the other way around — parse the existing SQL into metadata, reason about it, and generate clean SQL (or a dbt project) back. The model in the middle is what makes the move provable instead of risky.</p>
+      <p class="eyebrow">Expertise &middot; Modeling tools</p>
+      <h1>Your IDE is the modeling tool.</h1>
+      <p class="lead">Traditional modeling tools export SQL once, and your edits to that SQL never flow back &mdash; a broken loop. I build the other way: the model lives as code in your IDE and Git, and SQL, diagrams, docs and dbt are generated from it. The loop closes.</p>
       <figure class="graphic" style="margin-top:36px;">
-        <img src="assets/sql-parsing-metadata.svg" alt="Parse existing SQL into a metadata model in the middle, then generate clean SQL, a dbt project, tests and lineage back — a round-trip without drift">
-        <figcaption>Parse → model → generate. The model is the source of truth; the tools are how it ships.</figcaption>
+        <img src="assets/modeling-tool.svg" alt="The model as code in VS Code and Git generating SQL, ERDs, docs, tests, dbt and lineage">
+        <figcaption>Model as code; generate SQL, diagrams, docs, tests and dbt. The loop PowerDesigner never closed.</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- The original ideas -->
   <section class="tight">
     <div class="wrap" style="max-width:820px;">
       <p class="eyebrow">The ideas behind it</p>
       <h2>What makes my approach different.</h2>
-
-      <div class="idea">
-        <h3>Reverse-engineer SQL into <em>functional</em> blocks — not code</h3>
-        <p>I don't capture "how the query works" line by line. I capture <em>what it does</em> — pivot, normalize, union, aggregate — as functional metadata blocks. That abstraction is what survives a platform change; the syntax doesn't.</p>
-      </div>
-
-      <div class="idea">
-        <h3>CTE-by-CTE regression testing</h3>
-        <p>Comparing only the final output tells you <em>that</em> something differs across thousands of rows. Comparing the query step by step — each CTE before and after — tells you <em>which</em> transformation introduced it. Root cause found, not just symptom. Migration debugging, roughly 10× faster.</p>
-      </div>
-
-      <div class="idea">
-        <h3>Metadata in the middle → generate any target</h3>
-        <p>Once the logic lives as metadata, the new platform's SQL is just one output. The same model can generate a dbt project, tests, lineage and documentation. Tool-agnostic by design — you're never locked to where you landed.</p>
-      </div>
-
-      <div class="idea">
-        <h3>AI that's grounded in the model, not guessing</h3>
-        <p>AI accelerates migration only when it has a structured foundation to work against. Parsed metadata gives the model something true to reason over, so it transforms SQL into explainable logic instead of a confident guess.</p>
-      </div>
+      <div class="idea"><h3>The IDE as the modeling tool</h3><p>What if VS Code was your modeling environment? Model as YAML, edit visually or as code, version in Git - and keep model and SQL in sync both ways. No more GUI-only tools where the SQL export is a dead end.</p></div>
+      <div class="idea"><h3>Extend the tool you have, do not replace it</h3><p>At de Volksbank I extended PowerDesigner with custom extensions until it drove model-based generation. The lesson stuck: a standard tool, extended with structure, beats adopting a whole new platform.</p></div>
+      <div class="idea"><h3>Model merges should not be a nightmare</h3><p>Merging models in PowerDesigner or ERwin is fragile GUI pain. Model-as-code makes a merge a normal Git merge - reviewable, diffable, continuous metadata integration instead of manual reconciliation.</p></div>
+      <div class="idea"><h3>One core, many runtimes</h3><p>A shared abstract core (the SQL and model AST) with thin per-engine adapters - Databricks, Snowflake, Fabric, Spark. Build the logic once; let each platform get its own optimized output.</p></div>
     </div>
   </section>
 
-  <!-- Reading -->
   <section class="band-dark">
     <div class="wrap" style="max-width:820px;">
       <p class="eyebrow" style="color:#7dd3fc">From the writing</p>
-      <h2>I've worked this out in public.</h2>
+      <h2>I build the tools I wish existed.</h2>
       <ul class="reading">
-        <li><span class="tag">Signature</span> &nbsp; Reverse Engineering SQL into Functional Metadata Blocks — abstract what the SQL <em>does</em>, not how it reads.</li>
-        <li><span class="tag">Toolkit</span> &nbsp; CTE Regression Testing v4 — the complete SQL migration validation toolkit.</li>
-        <li><span class="tag">Why</span> &nbsp; AI-Assisted SQL Migration: Why It Matters — GenAI + metadata, turning SQL into explainable logic.</li>
-        <li><span class="tag">Sources</span> &nbsp; Reverse Engineering Sources — from physical data models to logical business structures.</li>
+        <li><span class="tag">Signature</span> &nbsp; Canvas-Based Data Model Editing &mdash; visual data modeling inside your IDE.</li>
+        <li><span class="tag">Architecture</span> &nbsp; One Core, Four Runtimes &mdash; a shared-core pattern for multi-engine SQL tools.</li>
+        <li><span class="tag">Platform</span> &nbsp; Building a Metadata-Driven Modeling Platform &mdash; from YAML to Git, ERDs and DevOps.</li>
+        <li><span class="tag">Tooling</span> &nbsp; CrossModel Meets Model-Driven Data Engineering &mdash; a modern, business-friendly alternative to PowerDesigner and ERwin.</li>
+        <li><span class="tag">Pain-point</span> &nbsp; Merging Models &mdash; from painful reconciliation to continuous metadata integration.</li>
       </ul>
-      <p style="margin-top:20px;"><a class="btn btn-ghost" href="articles.html">Read the full archive →</a></p>
+      <p style="margin-top:20px;"><a class="btn btn-ghost" href="articles.html">Read the archive &rarr;</a></p>
     </div>
   </section>
 
   <section class="cta-block">
     <div class="wrap">
-      <h2>Facing a migration you can't afford to get wrong?</h2>
-      <p class="lead" style="margin:0 auto 28px;">That's exactly the kind of work I take on — prove it identical, step by step, and leave you with the model, not just the new SQL.</p>
+      <h2>Fighting your modeling tool instead of using it?</h2>
+      <p class="lead" style="margin:0 auto 28px;">I build modeling tooling that fits how teams actually work &mdash; model as code, generate the rest.</p>
       <a class="btn btn-primary" href="contact.html">Start a conversation</a>
     </div>
   </section>
 
   <footer class="site">
     <div class="wrap">
-      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>&copy; 2026 Jaco van der Laan &middot; Consilium Information Systems B.V.</div>
       <div>
         <a href="approach.html">Approach</a>
         <a href="services.html">Services</a>

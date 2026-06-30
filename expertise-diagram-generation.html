@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SQL parsing &amp; migration — Jaco van der Laan</title>
-  <meta name="description" content="Parsing legacy SQL into metadata, validating it, and generating clean SQL or dbt back — plus CTE-by-CTE regression testing that proves a migration is identical. Metadata in the middle.">
+  <title>Generating diagrams from metadata | Jaco van der Laan</title>
+  <meta name="description" content="The diagram is a view, not the model. Generate ERDs and docs from metadata with draw.io, yEd, PlantUML, Mermaid and GraphViz - versioned, never stale.">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="SQL parsing & migration — metadata in the middle">
-  <meta property="og:description" content="Parse legacy SQL into a model, validate it, generate clean SQL or dbt back — and prove the migration identical, CTE by CTE.">
-  <meta property="og:url" content="https://www.jacovanderlaan.com/expertise-sql-migration.html">
+  <meta property="og:title" content="Stop drawing diagrams - generate them from metadata">
+  <meta property="og:description" content="The diagram is a view, not the model. Generate ERDs and docs from metadata with draw.io, yEd, PlantUML, Mermaid and GraphViz - versioned, never stale.">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/expertise-diagram-generation.html">
   <meta property="og:image" content="https://www.jacovanderlaan.com/assets/structurebeatsmagic/sbm-og-card.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,70 +79,53 @@
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Expertise · SQL parsing &amp; migration</p>
-      <h1>Migration isn't a rewrite. It's a round-trip.</h1>
-      <p class="lead">Most SQL migrations are a hopeful rewrite: copy the logic to the new platform, run it, and pray the numbers match. I do it the other way around — parse the existing SQL into metadata, reason about it, and generate clean SQL (or a dbt project) back. The model in the middle is what makes the move provable instead of risky.</p>
+      <p class="eyebrow">Expertise &middot; Diagram generation</p>
+      <h1>Stop drawing diagrams. Generate them.</h1>
+      <p class="lead">Hand-drawn diagrams go stale the moment the model changes. I treat the diagram as a <em>view</em> of the metadata, not the source of truth &mdash; so ERDs, docs and lineage are generated from one model, in any tool, and never drift out of date.</p>
       <figure class="graphic" style="margin-top:36px;">
-        <img src="assets/sql-parsing-metadata.svg" alt="Parse existing SQL into a metadata model in the middle, then generate clean SQL, a dbt project, tests and lineage back — a round-trip without drift">
-        <figcaption>Parse → model → generate. The model is the source of truth; the tools are how it ships.</figcaption>
+        <img src="assets/visualization.svg" alt="Diagrams generated from metadata across draw.io, yEd, PlantUML, Mermaid and GraphViz">
+        <figcaption>One model, many diagram tools - generated, versioned, never stale.</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- The original ideas -->
   <section class="tight">
     <div class="wrap" style="max-width:820px;">
       <p class="eyebrow">The ideas behind it</p>
       <h2>What makes my approach different.</h2>
-
-      <div class="idea">
-        <h3>Reverse-engineer SQL into <em>functional</em> blocks — not code</h3>
-        <p>I don't capture "how the query works" line by line. I capture <em>what it does</em> — pivot, normalize, union, aggregate — as functional metadata blocks. That abstraction is what survives a platform change; the syntax doesn't.</p>
-      </div>
-
-      <div class="idea">
-        <h3>CTE-by-CTE regression testing</h3>
-        <p>Comparing only the final output tells you <em>that</em> something differs across thousands of rows. Comparing the query step by step — each CTE before and after — tells you <em>which</em> transformation introduced it. Root cause found, not just symptom. Migration debugging, roughly 10× faster.</p>
-      </div>
-
-      <div class="idea">
-        <h3>Metadata in the middle → generate any target</h3>
-        <p>Once the logic lives as metadata, the new platform's SQL is just one output. The same model can generate a dbt project, tests, lineage and documentation. Tool-agnostic by design — you're never locked to where you landed.</p>
-      </div>
-
-      <div class="idea">
-        <h3>AI that's grounded in the model, not guessing</h3>
-        <p>AI accelerates migration only when it has a structured foundation to work against. Parsed metadata gives the model something true to reason over, so it transforms SQL into explainable logic instead of a confident guess.</p>
-      </div>
+      <div class="idea"><h3>The diagram is a view, not the model</h3><p>The biggest shift: teams stop drawing and start generating. The model lives as metadata; the diagram is just one rendering of it. Change the model, regenerate the picture - it can never lie about what is really there.</p></div>
+      <div class="idea"><h3>Diagrams as code, version-controlled</h3><p>PlantUML, Mermaid and friends turn diagrams into text you can diff, review and merge like any other code. No more screenshots that drifted from reality three sprints ago.</p></div>
+      <div class="idea"><h3>One pipeline, every tool</h3><p>I have programmed draw.io, yEd, PlantUML, GraphViz and Mermaid from the same metadata - each via its own format or API. You pick the tool that fits; the model stays the single source.</p></div>
+      <div class="idea"><h3>Diagrams plus docs from one source</h3><p>The same metadata that draws the ERD also generates the documentation - to draw.io, Mermaid, Confluence - so the picture and the prose are always in sync.</p></div>
     </div>
   </section>
 
-  <!-- Reading -->
   <section class="band-dark">
     <div class="wrap" style="max-width:820px;">
       <p class="eyebrow" style="color:#7dd3fc">From the writing</p>
-      <h2>I've worked this out in public.</h2>
+      <h2>I have built this across every major tool.</h2>
       <ul class="reading">
-        <li><span class="tag">Signature</span> &nbsp; Reverse Engineering SQL into Functional Metadata Blocks — abstract what the SQL <em>does</em>, not how it reads.</li>
-        <li><span class="tag">Toolkit</span> &nbsp; CTE Regression Testing v4 — the complete SQL migration validation toolkit.</li>
-        <li><span class="tag">Why</span> &nbsp; AI-Assisted SQL Migration: Why It Matters — GenAI + metadata, turning SQL into explainable logic.</li>
-        <li><span class="tag">Sources</span> &nbsp; Reverse Engineering Sources — from physical data models to logical business structures.</li>
+        <li><span class="tag">Signature</span> &nbsp; Automating draw.io Diagram Generation from Metadata &mdash; programming a drawing tool via its XML.</li>
+        <li><span class="tag">Multi-tool</span> &nbsp; Automatically Generating yEd Diagrams from Metadata with Python &mdash; including auto-layout.</li>
+        <li><span class="tag">As code</span> &nbsp; Bringing PlantUML Into a Metadata-Driven Diagram Workflow &mdash; diagrams that live in version control.</li>
+        <li><span class="tag">Manifesto</span> &nbsp; From Drawing to Generation &mdash; how Mermaid, draw.io, PlantUML, GraphViz and yEd redefine modeling visualization.</li>
+        <li><span class="tag">Pipeline</span> &nbsp; From YAML to SQL: Generating Physical Models and Diagrams from Metadata.</li>
       </ul>
-      <p style="margin-top:20px;"><a class="btn btn-ghost" href="articles.html">Read the full archive →</a></p>
+      <p style="margin-top:20px;"><a class="btn btn-ghost" href="articles.html">Read the archive &rarr;</a></p>
     </div>
   </section>
 
   <section class="cta-block">
     <div class="wrap">
-      <h2>Facing a migration you can't afford to get wrong?</h2>
-      <p class="lead" style="margin:0 auto 28px;">That's exactly the kind of work I take on — prove it identical, step by step, and leave you with the model, not just the new SQL.</p>
+      <h2>Tired of diagrams that are out of date the day you draw them?</h2>
+      <p class="lead" style="margin:0 auto 28px;">That is exactly what generating from metadata fixes &mdash; let us make your documentation generate itself.</p>
       <a class="btn btn-primary" href="contact.html">Start a conversation</a>
     </div>
   </section>
 
   <footer class="site">
     <div class="wrap">
-      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>&copy; 2026 Jaco van der Laan &middot; Consilium Information Systems B.V.</div>
       <div>
         <a href="approach.html">Approach</a>
         <a href="services.html">Services</a>
