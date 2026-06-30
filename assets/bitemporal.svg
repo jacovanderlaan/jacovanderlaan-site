@@ -12,7 +12,7 @@
   <line x1="150" y1="520" x2="1080" y2="520" stroke="#94a3b8" stroke-width="2" marker-end="url(#ax)"/>
   <text x="1080" y="556" text-anchor="end" font-size="16" fill="#cbd5e1" font-weight="600">Valid time (when true in reality)</text>
   <line x1="150" y1="520" x2="150" y2="140" stroke="#94a3b8" stroke-width="2" marker-end="url(#ax)"/>
-  <text x="135" y="135" text-anchor="end" font-size="16" fill="#cbd5e1" font-weight="600" transform="rotate(-90 135 300)" x="135" y="300">Transaction time (when recorded)</text>
+  <text x="135" y="300" text-anchor="end" font-size="16" fill="#cbd5e1" font-weight="600" transform="rotate(-90 135 300)">Transaction time (when recorded)</text>
 
   <!-- grid hint -->
   <g stroke="#1e293b" stroke-width="1"><line x1="370" y1="160" x2="370" y2="520"/><line x1="610" y1="160" x2="610" y2="520"/><line x1="850" y1="160" x2="850" y2="520"/><line x1="150" y1="400" x2="1080" y2="400"/><line x1="150" y1="280" x2="1080" y2="280"/></g>
