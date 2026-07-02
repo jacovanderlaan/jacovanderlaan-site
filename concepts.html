@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Concepts &amp; vocabulary — Jaco van der Laan</title>
+  <meta name="description" content="The named concepts of Model-Driven Data Engineering — the coined vocabulary of a metadata-driven data platform. Deterministic SQL Generation, Data Capsule, Business-Friendly Mapping, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Concepts &amp; vocabulary — Jaco van der Laan">
+  <meta property="og:description" content="The coined vocabulary behind Model-Driven Data Engineering — one memorable name per idea, from Deterministic SQL Generation to the Metadata Operating System.">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts.html">
+  <meta property="og:image" content="https://www.jacovanderlaan.com/assets/jaco-whiteboard.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+  <style>
+    .cat-title { font-size:15px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;
+                  color:var(--accent); margin:40px 0 18px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+    .cat-title:first-of-type { margin-top:0; }
+    .concept-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .concept { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+                padding:22px 24px; box-shadow:var(--shadow); display:flex; flex-direction:column; }
+    .concept .c-name { font-size:19px; font-weight:700; letter-spacing:-.3px; margin-bottom:6px; }
+    .concept .c-tag { font-size:14px; font-weight:600; color:var(--accent); margin-bottom:10px; }
+    .concept .c-def { color:var(--ink-soft); font-size:15px; margin:0; }
+    @media (max-width:860px){ .concept-grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="approach.html">The approach</a>
+            <a href="principles.html">Principles &amp; manifesto</a>
+            <a href="concepts.html">Concepts &amp; vocabulary</a>
+            <a href="mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="services.html">Services</a>
+            <a href="work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="expertise.html">Overview</a>
+            <a href="expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="expertise-data-vault.html">Data Vault</a>
+            <a href="expertise-data-modeling.html">Data modeling</a>
+            <a href="expertise-diagram-generation.html">Diagram generation</a>
+            <a href="expertise-modeling-tools.html">Modeling tools</a>
+            <a href="expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="about.html">About</a>
+            <a href="references.html">References</a>
+            <a href="ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Concepts</p>
+      <h1>A named vocabulary.</h1>
+      <p class="lead">Model-Driven Data Engineering earns its own words. These are the coined concepts behind the method — one memorable name per idea, so a team can point at it, reuse it, and build on it. A shared language for business, engineers and AI.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap" style="max-width:920px;">
+      <h2 class="cat-title">Umbrella thesis</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Model-Driven Data Engineering</div><div class="c-tag">Building scalable, metadata-driven data platforms from models — not hand-written code.</div><p class="c-def">The master brand: an approach where the data platform is generated from models and metadata rather than written and maintained by hand. Models are the source of truth; SQL, tests, lineage and documentation are derived from them deterministically.</p></div>
+      </div>
+      <h2 class="cat-title">Signature principle</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Structure Beats Magic</div><div class="c-tag">Output quality comes from the structure around the tools, not the tools themselves.</div><p class="c-def">The first principle: results are produced by deliberate structure — models, rules, metadata, patterns — not by clever prompts or hope. The same thesis that anchors the SBM personal brand, applied to enterprise data.</p></div>
+      </div>
+      <h2 class="cat-title">Business-Friendly family</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Business-Friendly Mapping</div><div class="c-tag">Data mappings written so business people can read, review and trust them.</div><p class="c-def">Making the transformation logic between source and target legible to the business — mappings expressed as reviewable, metadata-driven statements of intent instead of opaque code.</p></div>
+        <div class="concept"><div class="c-name">Business-Friendly Diagramming</div><div class="c-tag">Clear, consistent, metadata-driven diagrams that connect business and technology.</div><p class="c-def">The art and practice of generating diagrams from metadata so they are always correct, consistent and readable by both business and technical audiences.</p></div>
+        <div class="concept"><div class="c-name">Business-Friendly Metadata</div><div class="c-tag">Metadata explained and governed so it makes sense to both business and technical audiences.</div><p class="c-def">Bridging data engineering and business understanding — metadata, lineage, data contracts, mappings and models explained, governed and applied so both sides understand them.</p></div>
+        <div class="concept"><div class="c-name">Business-Friendly Data Lineage</div><div class="c-tag">Data lineage made clear and actionable for decision makers.</div><p class="c-def">Lineage rendered for humans who make decisions — not just a technical dependency graph, but an explanation of where data comes from and what it means.</p></div>
+        <div class="concept"><div class="c-name">Business-Friendly Data Mapping</div><div class="c-tag">Bridging technical data models and the people who need to use them.</div><p class="c-def">Modern platforms are full of complex metadata, lineage and technical detail. Business leaders need clarity, not code — this is the practice of delivering it.</p></div>
+        <div class="concept"><div class="c-name">Business-Friendly Data Modeling</div><div class="c-tag">Making data models clear and valuable for the business.</div><p class="c-def">Models designed and presented so the business can see its own concepts in them and derive value, rather than treating the model as a purely technical artefact.</p></div>
+        <div class="concept"><div class="c-name">Collaborative Data Modeling</div><div class="c-tag">Business and engineers model together in real time — the model as a shared conversation.</div><p class="c-def">Modeling as a shared, live activity rather than a handover: business experts and engineers build the model together, using business-friendly notation and diagrams generated from metadata, so the model is a conversation both sides own — not a technical artefact thrown over the wall.</p></div>
+      </div>
+      <h2 class="cat-title">Architecture</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Business-Shaped Integration Layer</div><div class="c-tag">An integration layer whose structure follows business domains, not source-system topology.</div><p class="c-def">An integration architecture organised around business entities and domains — the shape of the business, not the accident of which source systems happen to exist.</p></div>
+        <div class="concept"><div class="c-name">Anti-Corruption Layer</div><div class="c-tag">A boundary that keeps a clean model from being polluted by messy upstream sources.</div><p class="c-def">A translation boundary (borrowed from DDD, owned here for data platforms) that isolates a clean, governed model from the quirks and corruption of upstream source systems.</p></div>
+      </div>
+      <h2 class="cat-title">SQL &amp; generation</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">SQL-First Modeling</div><div class="c-tag">Model in SQL — the language the platform already runs — rather than a separate modeling tool.</div><p class="c-def">Treating SQL itself as the modeling surface: the model lives close to the engine that executes it, avoiding a translation gap between a modeling tool and the running platform.</p></div>
+        <div class="concept"><div class="c-name">Deterministic SQL Generation</div><div class="c-tag">Identical, repeatable SQL from the same metadata — a hard invariant.</div><p class="c-def">Generating SQL that is byte-for-byte reproducible: no non-deterministic functions, no sorting ambiguity, no random tie-breaks. A hard invariant, not a nice-to-have.</p></div>
+        <div class="concept"><div class="c-name">Self-Describing SQL</div><div class="c-tag">SQL that carries its own meaning — metadata embedded where the query lives.</div><p class="c-def">SQL files that describe themselves: structured metadata embedded as part of the file so the query explains its own schema, intent and lineage.</p></div>
+        <div class="concept"><div class="c-name">Atomic SQL</div><div class="c-tag">Each SQL file is self-contained — it carries its own metadata and runs independently.</div><p class="c-def">A pattern where every SQL file is self-contained with all metadata embedded as structured comments — executable on its own, yet deployable into any metadata platform.</p></div>
+        <div class="concept"><div class="c-name">Model Close to the Data</div><div class="c-tag">Metadata, validation and governance live where the data lives — where the SQL runs.</div><p class="c-def">The architectural principle that rules and metadata should sit next to the data and the engine, not in a separate governance system that drifts out of sync.</p></div>
+        <div class="concept"><div class="c-name">CTE Regression Testing</div><div class="c-tag">Compare a migrated query CTE-by-CTE to find the exact step that changed.</div><p class="c-def">Automated CTE-by-CTE comparison of query results before and after a migration — finding the root-cause difference instead of only comparing final output.</p></div>
+      </div>
+      <h2 class="cat-title">Metadata OS</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Metadata Operating System</div><div class="c-tag">Metadata as the operational centre — governing models, lineage, contracts and execution.</div><p class="c-def">A vision where metadata is not documentation on the side but the operating system of the platform: it governs models, lineage, contracts and execution.</p></div>
+        <div class="concept"><div class="c-name">Universal Metadata Models</div><div class="c-tag">A reusable, universal way to structure metadata for models and mappings.</div><p class="c-def">A shared, reusable schema for metadata itself — so models, mappings and platforms describe themselves in one consistent way.</p></div>
+        <div class="concept"><div class="c-name">Universal Data Models</div><div class="c-tag">Reusable patterns for clear, scalable data models.</div><p class="c-def">A catalogue of reusable modeling patterns that make data models consistent and scalable across projects and domains.</p></div>
+        <div class="concept"><div class="c-name">Data Capsule</div><div class="c-tag">Data shipped together with its complete metadata as one versioned, executable unit.</div><p class="c-def">A single, versioned, executable unit where data ships with its full metadata — schema, properties, quality, contracts, classification and lineage — in one place.</p></div>
+        <div class="concept"><div class="c-name">Capsule Slot</div><div class="c-tag">One of the six conventional metadata containers inside a Data Capsule.</div><p class="c-def">The six conventional slots of a capsule — schema, properties, quality, contracts, classification, lineage — each a well-known place for one kind of metadata.</p></div>
+        <div class="concept"><div class="c-name">Completeness Gate</div><div class="c-tag">A CI gate that requires specific metadata slots before a deployment is allowed.</div><p class="c-def">A CI enforcement mechanism that stages capsule adoption: it requires named metadata slots to be present before allowing a deployment, tightening strictness phase by phase.</p></div>
+        <div class="concept"><div class="c-name">Sidecar Tables</div><div class="c-tag">Companion metadata tables that live beside data assets without changing them.</div><p class="c-def">Companion tables in the same schema and dataset that carry lineage, quality checks and masking rules alongside the primary data — metadata that travels with the asset.</p></div>
+        <div class="concept"><div class="c-name">Common Integration Layer</div><div class="c-tag">A governed semantic handshake between domains and systems.</div><p class="c-def">A harmonised, governed representation of business entities and relationships that acts as the shared handshake between domains and systems.</p></div>
+        <div class="concept"><div class="c-name">Metadata Mesh</div><div class="c-tag">Federated, domain-owned metadata that still interoperates through shared standards.</div><p class="c-def">Data Mesh&#x27;s decentralisation applied to metadata: each domain owns and publishes its own metadata as a product, while shared standards and a common model let it interoperate across the enterprise — federation without fragmentation.</p></div>
+        <div class="concept"><div class="c-name">Metadata as Code</div><div class="c-tag">Metadata lives in version-controlled files — reviewed, tested and deployed like code.</div><p class="c-def">Treating metadata as a first-class code artefact: definitions, contracts and models live in version control, get pull-request review, run through CI, and deploy like any other code — no more metadata trapped in a GUI or a wiki.</p></div>
+      </div>
+      <h2 class="cat-title">Lineage &amp; governance</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Semantic Drift</div><div class="c-tag">The slow loss of meaning when definitions and business intent aren&#x27;t actively governed.</div><p class="c-def">The gradual erosion of meaning in data when definitions, classifications and business intent are left ungoverned — combated with metadata-driven, text-first modeling.</p></div>
+        <div class="concept"><div class="c-name">Living Documentation</div><div class="c-tag">Documentation derived from metadata and lineage — so it never goes stale.</div><p class="c-def">Documentation generated directly from the operational model, metadata and lineage — it evolves with the platform instead of rotting in a wiki.</p></div>
+        <div class="concept"><div class="c-name">Lineage Explorer</div><div class="c-tag">An interactive map of concepts, mappings, assets and releases.</div><p class="c-def">An explorable graph that connects concepts, mappings, data assets and releases into one interactive map of how data flows and depends.</p></div>
+        <div class="concept"><div class="c-name">Horizontal vs Vertical Lineage</div><div class="c-tag">Left-to-right flow vs top-to-bottom drill-down.</div><p class="c-def">Two axes of lineage: horizontal traces data flow from sources to targets; vertical traces drill-down within a single asset, from column to table.</p></div>
+        <div class="concept"><div class="c-name">Technical vs Functional Lineage</div><div class="c-tag">Code-level operations vs business meaning.</div><p class="c-def">Two lenses on lineage: technical lineage shows joins and filters at code level; functional lineage shows business meaning and intent — why code-based lineage alone isn&#x27;t enough.</p></div>
+        <div class="concept"><div class="c-name">Rulebooks, Playbooks, and Cookbooks</div><div class="c-tag">Three levels of metadata-driven governance: enforce, procedure, pattern.</div><p class="c-def">Three tiers of governance shaped by metadata: Rulebooks (automated enforcement), Playbooks (procedural steps) and Cookbooks (technical implementation patterns).</p></div>
+        <div class="concept"><div class="c-name">Data Breadcrumbs</div><div class="c-tag">Trace markers left in the data itself, so any row can tell you where it came from.</div><p class="c-def">Lineage carried in-band: every row (or asset) leaves a trail of markers — source, run, transformation, timestamp — so you can walk back from any value to its origin without a separate lineage system. Lineage you can follow from the data itself.</p></div>
+        <div class="concept"><div class="c-name">Model-Driven Data Quality</div><div class="c-tag">Automating data-quality checks with models, metadata and patterns.</div><p class="c-def">Data-quality checks generated and driven by the model and its metadata rather than hand-written per table.</p></div>
+      </div>
+      <h2 class="cat-title">Architecture (anti-pattern)</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Ivory Tower Architecture</div><div class="c-tag">The anti-pattern: architecture designed in isolation, disconnected from delivery.</div><p class="c-def">The failure mode where architecture is designed in an ivory tower — elegant on paper, disconnected from how data is actually delivered and used. MDDE&#x27;s foil.</p></div>
+      </div>
+      <h2 class="cat-title">Temporal patterns</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Dual SCD2</div><div class="c-tag">Two coordinated SCD2 timelines for robust, deterministic history.</div><p class="c-def">A historization design using two coordinated SCD2 layers, enabling deterministic integration and fast, reproducible as-of history.</p></div>
+        <div class="concept"><div class="c-name">Timeline Compression</div><div class="c-tag">Collapse overlapping SCD2 records with identical values into one.</div><p class="c-def">A temporal optimisation that consolidates overlapping SCD2 records carrying identical attribute values into a single record, reducing query complexity.</p></div>
+        <div class="concept"><div class="c-name">Bi-Temporal SCD2 with Redelivery Support</div><div class="c-tag">Track when data was true and when we recorded it — and reprocess corrections.</div><p class="c-def">A historization pattern handling both valid-time and system-time, plus the ability to reprocess late-arriving corrections without losing history.</p></div>
+        <div class="concept"><div class="c-name">PIT Helper Tables</div><div class="c-tag">Pre-joined point-in-time tables that make &#x27;as-of&#x27; queries fast.</div><p class="c-def">Pre-joined point-in-time tables that accelerate &#x27;as-of X&#x27; queries on dual SCD2 models, giving fast, reproducible access to history.</p></div>
+        <div class="concept"><div class="c-name">Exposure Views</div><div class="c-tag">A view layer that delivers clean, consumer-ready data from SCD2.</div><p class="c-def">A layer of views over dual SCD2 tables that hides temporal complexity and delivers clean, consumer-ready data to BI and reporting.</p></div>
+      </div>
+      <h2 class="cat-title">Delivery &amp; method</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Model-Driven Data Delivery</div><div class="c-tag">Where models meet delivery — plan, manage and measure a common data platform.</div><p class="c-def">Using models and metadata to plan, manage and measure the evolution of a shared data platform — the point where modeling meets delivery.</p></div>
+        <div class="concept"><div class="c-name">Model-Driven Data Architecture</div><div class="c-tag">Bridging models, metadata and meaning across the enterprise.</div><p class="c-def">An architecture practice where models and metadata carry meaning across the enterprise, connecting design to running systems.</p></div>
+        <div class="concept"><div class="c-name">Model-Driven Agile Delivery</div><div class="c-tag">Where models guide the flow of work.</div><p class="c-def">Letting models drive the flow of agile delivery — the backlog and the platform stay in step because both derive from the model.</p></div>
+        <div class="concept"><div class="c-name">Model-Driven Migrations</div><div class="c-tag">Plan and execute controlled platform migrations using metadata and automation.</div><p class="c-def">Controlled migration of data platforms, modeling styles and sources driven by metadata and automation rather than manual rewrites.</p></div>
+        <div class="concept"><div class="c-name">Cooking with Data</div><div class="c-tag">Treat mappings as recipes — clear, repeatable, business-readable transformation steps.</div><p class="c-def">Making ETL transformations clear and repeatable by treating mappings as recipes: transparent, business-friendly, step-by-step.</p></div>
+        <div class="concept"><div class="c-name">Shift-Left</div><div class="c-tag">Move quality, validation and schema enforcement earlier — to development time.</div><p class="c-def">Moving quality, validation and schema enforcement earlier in the pipeline — from deployment gates back to development time.</p></div>
+        <div class="concept"><div class="c-name">Batteries Included</div><div class="c-tag">Metadata and governance ship with the platform, pre-configured.</div><p class="c-def">A design philosophy where the metadata and governance infrastructure ships with the data platform itself — pre-configured and ready to deploy.</p></div>
+        <div class="concept"><div class="c-name">Transfer-by-Design</div><div class="c-tag">Knowledge lives in the team from day one — by design, not by handover.</div><p class="c-def">An engagement principle: knowledge is transferred through deliberate pattern selection and shared documentation from day one, never via a late handover.</p></div>
+        <div class="concept"><div class="c-name">Cost-Friendly Data Architecture</div><div class="c-tag">Designing efficient, transparent, sustainable data platforms.</div><p class="c-def">Architecture that treats cost as a first-class design concern — efficient, transparent and sustainable platforms.</p></div>
+      </div>
+      <h2 class="cat-title">AI &amp; innovation</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Next-Gen Data Modeling</div><div class="c-tag">How AI and generative tech are transforming data-model design.</div><p class="c-def">Exploring how AI and generative technologies change the way we design, maintain and evolve data models — for architects who want to stay ahead.</p></div>
+        <div class="concept"><div class="c-name">The Template Paradigm</div><div class="c-tag">The 2013 break: monolithic code generation replaced modular templates.</div><p class="c-def">A named historical break — around 2013 — when modular, composable templates were replaced by monolithic code generation, losing composability and maintainability.</p></div>
+      </div>
+      <h2 class="cat-title">AI &amp; innovation (anti-pattern)</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Vibe-Driven AI</div><div class="c-tag">The anti-pattern: AI steps that are non-deterministic, unspecified and ungated.</div><p class="c-def">The failure mode where AI is dropped into pipelines with no specification, no determinism and no gate — reliable only by hope. The foil to Model-Driven AI.</p></div>
+      </div>
+      <h2 class="cat-title">Method</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="c-name">Architectural Decision Records</div><div class="c-tag">Big architecture choices written down with options and reasoning.</div><p class="c-def">ADRs: durable records of architecture decisions capturing the context, the options considered and the reasoning — so the &#x27;why&#x27; survives the people.</p></div>
+        <div class="concept"><div class="c-name">Contract-Driven Data Engineering</div><div class="c-tag">Data contracts are the source of truth — the platform is built to satisfy them.</div><p class="c-def">An approach where explicit data contracts (schema, semantics, quality, SLAs) come first and the pipeline is generated and validated to satisfy them — producers and consumers agree on the contract, and the platform enforces it. A sibling paradigm to Model-Driven Data Engineering.</p></div>
+        <div class="concept"><div class="c-name">Semantic Data Engineering</div><div class="c-tag">Engineer the meaning, not just the movement — pipelines that carry business semantics.</div><p class="c-def">Engineering pipelines around the meaning of data, not only its movement: business semantics, definitions and relationships are first-class metadata that travel with the data and drive generation, validation and lineage. The counter to plumbing-only data engineering.</p></div>
+        <div class="concept"><div class="c-name">Semantic DevOps</div><div class="c-tag">CI/CD for meaning — semantics and metadata versioned, tested and deployed like software.</div><p class="c-def">The DevOps discipline applied to semantics: definitions, models and contracts flow through the same version-control, review, automated-test and deploy pipeline as code, with semantic changes gated and validated. Meaning ships on a release train, not by hand. Pairs Metadata as Code with the Completeness Gate.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Want these concepts running in your platform?</h2>
+      <p class="lead" style="margin:0 auto 28px;">The personal counterpart — knowledge management for the AI era — lives at <a href="https://structurebeatsmagic.com">structurebeatsmagic.com</a>.</p>
+      <a class="btn btn-primary" href="contact.html">Get in touch</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>&#169; 2026 Jaco van der Laan &#183; Consilium Information Systems B.V.</div>
+      <div>
+        <a href="approach.html">Approach</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="articles.html">Articles</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
