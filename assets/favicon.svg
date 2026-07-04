@@ -7,19 +7,11 @@
   </defs>
   <!-- rounded dark tile -->
   <rect width="64" height="64" rx="14" fill="url(#bg)"/>
-  <!-- 3x3 structural grid of cells; one gold = structure -> intelligence -->
-  <g>
-    <!-- row 1 -->
-    <rect x="12" y="12" width="11" height="11" rx="2.5" fill="#38bdf8"/>
-    <rect x="26.5" y="12" width="11" height="11" rx="2.5" fill="#1e6f93"/>
-    <rect x="41" y="12" width="11" height="11" rx="2.5" fill="#38bdf8"/>
-    <!-- row 2 -->
-    <rect x="12" y="26.5" width="11" height="11" rx="2.5" fill="#1e6f93"/>
-    <rect x="26.5" y="26.5" width="11" height="11" rx="2.5" fill="#fde68a"/>
-    <rect x="41" y="26.5" width="11" height="11" rx="2.5" fill="#1e6f93"/>
-    <!-- row 3 -->
-    <rect x="12" y="41" width="11" height="11" rx="2.5" fill="#38bdf8"/>
-    <rect x="26.5" y="41" width="11" height="11" rx="2.5" fill="#1e6f93"/>
-    <rect x="41" y="41" width="11" height="11" rx="2.5" fill="#38bdf8"/>
-  </g>
+  <!-- a bold J: top bar + stem curving left into a foot -->
+  <path d="M 24 15 L 45 15 L 45 22 L 39.5 22 L 39.5 38
+           A 13.5 13.5 0 0 1 16.5 47.5 L 22.2 43
+           A 6.5 6.5 0 0 0 32.5 38 L 32.5 22 L 24 22 Z"
+        fill="#38bdf8"/>
+  <!-- gold serif dot on the J's shoulder = the payoff accent -->
+  <circle cx="42.25" cy="18.5" r="3" fill="#fde68a"/>
 </svg>
