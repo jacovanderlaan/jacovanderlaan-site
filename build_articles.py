@@ -341,8 +341,128 @@ def copy_assets(folder: Path) -> int:
     return n
 
 
+# --- Concept linking (ported from the SBM builder; MDDE variant) --------------
+# MDDE has ONE concepts page (concepts.html) with per-concept anchor ids, so
+# links are ../concepts.html#<slug> rather than a per-concept page. Auto-links
+# the first mention of each concept name (+ curated synonyms) in an article body,
+# and renders a Related section from related_concepts / related_articles.
+CONCEPTS_PAGE = "../concepts.html"
+
+CONCEPT_SYNONYMS = {
+    "the-missing-system": ["missing system"],
+    "the-rear-view-mirror-problem": ["rear-view mirror", "rear view mirror"],
+    "the-validation-loop": ["flag, don't guess", "flag don't guess", "validation loop"],
+    "model-driven-data-quality": ["data quality", "plausibility check", "plausibility checks"],
+    "deterministic-sql-generation": ["deterministic sql"],
+    "business-friendly-metadata": ["business-friendly metadata"],
+}
+
+
+def _norm_reflist(v) -> list:
+    if not v:
+        return []
+    return v if isinstance(v, list) else [v]
+
+
+def _load_concept_map() -> tuple:
+    """(list of (name, slug, pattern), dict slug->name) from MDDE concepts.html.
+
+    Reads the per-concept anchor ids (id="<slug>") + their c-name. Includes
+    curated synonyms (case-insensitive). Empty if concepts.html isn't built.
+    """
+    idx = HERE / "concepts.html"
+    if not idx.exists():
+        return [], {}
+    txt = idx.read_text(encoding="utf-8")
+    pairs = re.findall(r'id="([a-z0-9-]+)"[^>]*>\s*<div class="c-name">([^<]+)</div>', txt)
+    names = {}
+    for slug, raw in pairs:
+        names.setdefault(slug, html.unescape(raw).strip())
+    valid = set(names)
+    syn = [(slug, phrase) for slug, ph in CONCEPT_SYNONYMS.items() if slug in valid for phrase in ph]
+    out = []
+    for is_syn, (slug, raw) in ([(False, p) for p in pairs] + [(True, p) for p in syn]):
+        name = html.unescape(raw).strip()
+        if len(name) < 3:
+            continue
+        flags = re.IGNORECASE if is_syn else 0
+        out.append((name, slug, re.compile(r"(?<![\w-])" + re.escape(name) + r"(?![\w-])", flags)))
+    out.sort(key=lambda t: len(t[0]), reverse=True)
+    return out, names
+
+
+def autolink_concepts(body: str, concept_map: list, self_slug: str) -> str:
+    if not concept_map:
+        return body
+    linked, out_lines, in_code = set(), [], False
+    for ln in body.split("\n"):
+        st = ln.strip()
+        if st.startswith("```"):
+            in_code = not in_code
+            out_lines.append(ln); continue
+        if in_code or st.startswith(("#", ">", "[[figure:")):
+            out_lines.append(ln); continue
+        stash = []
+        def _hold(m):
+            stash.append(m.group(0)); return f"\x00{len(stash)-1}\x00"
+        safe = re.sub(r"\[[^\]]+\]\([^)]+\)|`[^`]+`", _hold, ln)
+        for name, slug, pat in concept_map:
+            if slug in linked or slug == self_slug:
+                continue
+            m = pat.search(safe)
+            if not m:
+                continue
+            safe = safe[:m.start()] + f"[{m.group(0)}]({CONCEPTS_PAGE}#{slug})" + safe[m.end():]
+            linked.add(slug)
+        safe = re.sub(r"\x00(\d+)\x00", lambda m: stash[int(m.group(1))], safe)
+        out_lines.append(safe)
+    return "\n".join(out_lines)
+
+
+def build_related_section(meta: dict, article_titles: dict, concept_names: dict) -> str:
+    rc = _norm_reflist(meta.get("related_concepts"))
+    ra = _norm_reflist(meta.get("related_articles"))
+    if not rc and not ra:
+        return ""
+    blocks = []
+    if rc:
+        lis = []
+        for c in rc:
+            key = str(c).strip()
+            bare = key[len("concept-"):] if key.startswith("concept-") else key
+            label = concept_names.get(bare) or bare.replace("-", " ").title()
+            lis.append(f'<li><a href="{CONCEPTS_PAGE}#{html.escape(bare, quote=True)}">{html.escape(label)}</a></li>')
+        blocks.append(f"<h3>Related concepts</h3><ul>{''.join(lis)}</ul>")
+    if ra:
+        lis = []
+        for a in ra:
+            if isinstance(a, dict) and a.get("url"):
+                lis.append(f'<li><a href="{html.escape(a["url"], quote=True)}">{html.escape(a.get("title") or a["url"])}</a></li>')
+            else:
+                aslug = str(a).strip()
+                if aslug in article_titles:
+                    lis.append(f'<li><a href="{html.escape(aslug, quote=True)}.html">{html.escape(article_titles[aslug])}</a></li>')
+        if lis:
+            blocks.append(f"<h3>Related writing</h3><ul>{''.join(lis)}</ul>")
+    if not blocks:
+        return ""
+    return f'<aside class="article-related"><h2>Related</h2>{"".join(blocks)}</aside>'
+
+
+def _article_titles() -> dict:
+    titles = {}
+    for slug in ARTICLES:
+        src = ARTICLES_ROOT / slug / f"{slug}.md"
+        if src.exists():
+            meta, _ = split_frontmatter(src.read_text(encoding="utf-8"))
+            titles[slug] = str(meta.get("title", slug)).strip().strip('"')
+    return titles
+
+
 def main() -> None:
     OUT.mkdir(exist_ok=True)
+    article_titles = _article_titles()
+    concept_map, concept_names = _load_concept_map()
     cards = []
     for slug in ARTICLES:
         folder = ARTICLES_ROOT / slug
@@ -353,6 +473,7 @@ def main() -> None:
         copied = copy_assets(folder)
         meta, body = split_frontmatter(src.read_text(encoding="utf-8"))
         body = strip_private_sections(body)
+        body = autolink_concepts(body, concept_map, slug)
         title = str(meta.get("title", slug)).strip().strip('"')
         subtitle = str(meta.get("subtitle", "")).strip().strip('"')
         created = str(meta.get("created", "")).strip().strip("'\"")
@@ -372,7 +493,7 @@ def main() -> None:
             subtitle=html.escape(subtitle, quote=True),
             face=face_label(meta), date=date, hero=hero,
             canonical=canonical, og_image=og_image, json_ld=json_ld,
-            nav=NAV, body=md_to_html(body),
+            nav=NAV, body=md_to_html(body) + build_related_section(meta, article_titles, concept_names),
         ), encoding="utf-8")
         print(f"  + articles/{slug}.html  ({copied} assets)")
         cards.append((created, title, subtitle, f"articles/{slug}.html"))
