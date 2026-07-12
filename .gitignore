@@ -3,3 +3,6 @@ Thumbs.db
 node_modules/
 *.log
 .netlify/
+
+__pycache__/
+*.pyc

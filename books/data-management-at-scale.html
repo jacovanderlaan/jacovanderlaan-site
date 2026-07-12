@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Management at Scale — Books — Jaco van der Laan</title>
+  <meta name="description" content="Data Management at Scale by Piethein Strengholt — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta name="author" content="Jaco van der Laan">
+  <link rel="canonical" href="https://jacovanderlaan.com/books/data-management-at-scale.html">
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Data Management at Scale">
+  <meta property="og:description" content="Data Management at Scale by Piethein Strengholt — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta property="og:url" content="https://jacovanderlaan.com/books/data-management-at-scale.html">
+  <meta property="og:image" content="https://jacovanderlaan.com/assets/book-data-management-at-scale.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Data Management at Scale",
+  "description": "Data Management at Scale by Piethein Strengholt — why it's in Jaco van der Laan's curated data-architecture library, and what he built with it.",
+  "image": "https://jacovanderlaan.com/assets/book-data-management-at-scale.jpg",
+  "url": "https://jacovanderlaan.com/books/data-management-at-scale.html",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Piethein Strengholt"
+    }
+  ],
+  "datePublished": "2023",
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Jaco van der Laan",
+      "url": "https://jacovanderlaan.com"
+    }
+  }
+}
+  </script>
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 { margin-top: 40px; }
+    .article-body p, .article-body li { font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
+    .article-body blockquote { border-left: 4px solid var(--accent); margin: 24px 0; padding: 4px 0 4px 20px; color: var(--ink); font-style: italic; }
+    .book-hero { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+    .book-hero img { width: 180px; max-width: 40vw; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .book-rating { color: var(--accent); letter-spacing: 2px; font-size: 20px; }
+    .article-meta { max-width: 720px; margin: 0 auto 8px; color: var(--ink-faint); font-size: 15px; }
+    .book-disclosure { font-size: 14px; color: var(--ink-faint); }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach.html">The approach</a>
+            <a href="../principles.html">Principles &amp; manifesto</a>
+            <a href="../concepts.html">Concepts &amp; vocabulary</a>
+            <a href="../mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services.html">Services</a>
+            <a href="../work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise.html">Overview</a>
+            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault.html">Data Vault</a>
+            <a href="../expertise-data-modeling.html">Data modeling</a>
+            <a href="../expertise-diagram-generation.html">Diagram generation</a>
+            <a href="../expertise-modeling-tools.html">Modeling tools</a>
+            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about.html">About</a>
+            <a href="../references.html">References</a>
+            <a href="../ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><a href="../references.html" style="color:inherit;">References &amp; sources</a> · Books</p>
+      <div class="book-hero">
+        <img src="../assets/book-data-management-at-scale.jpg" alt="Data Management at Scale cover">
+        <div>
+          <h1 style="max-width:680px;">Data Management at Scale</h1>
+          <p class="lead">Piethein Strengholt · 2023 · data architecture</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="article-body">
+<h2>Why this is in my collection</h2>
+<p><em>From the publisher:</em></p>
+<blockquote><p>Today's world is about quickly turning data into value. This requires a paradigm shift in the way we federate responsibilities, manage data, and make it available to others. With this practical book, you'll learn how to design a next-gen data architecture that takes into account the scale you need for your organization. Executives, architects and engineers, analytics teams, and compliance and governance staff will learn how to build a next-gen data landscape. Author Piethein Strengholt provides blueprints, principles, observations, best practices, and patterns to get you up to speed.</p></blockquote>
+<h2>Highlights (AI · MDDE/SBM lens)</h2>
+<blockquote><p>AI-distilled highlights, not personal reading highlights — the ideas in this book that connect to Jaco's MDDE / Structure-Beats-Magic work, selected and paraphrased through that lens. Paraphrased (never verbatim); verbatim quotes await the book text.</p></blockquote>
+<ul><li><strong>Scale forces federation, federation forces explicit contracts</strong> — Strengholt's core argument is that beyond a certain size you must distribute data ownership, and distribution only works when interfaces, schemas, and expectations are written down; implicit structure stops scaling long before data does.</li><li><strong>Blueprints over improvisation</strong> — the book delivers reusable architectural patterns (data product architectures, integration styles, distribution patterns) rather than one reference design; pattern catalogs are what make architecture teachable and, eventually, generatable.</li><li><strong>Metadata is the management plane</strong> — at scale, you govern through catalogs, lineage, and classification rather than through people who remember things; the same move MDDE makes when it puts the model, not the codebase, in charge.</li><li><strong>Governance must be computational</strong> — policies for quality, security, and access have to execute as code at the boundaries, not live in PDF policy documents; rules as the third pillar, deployed rather than declared.</li><li><strong>Domain boundaries are modeling decisions</strong> — how you cut the landscape into domains and data products determines everything downstream, which puts conceptual modeling back at the center of what looks like an infrastructure problem.</li><li><strong>Master data and integration don't disappear in decentralization</strong> — Strengholt is honest that federating ownership doesn't dissolve the hard integration problems Data Vault-style layers exist to solve; someone still has to model the enterprise view.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Structure beats magic.</h2>
+      <p class="lead" style="margin:0 auto 28px;">These are the sources behind the method. Want it built into how your team works?</p>
+      <a class="btn btn-primary" href="../contact.html">Start a conversation</a>
+      &nbsp; <a class="btn btn-ghost" href="../references.html">All references →</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach.html">Approach</a>
+        <a href="../references.html">References</a>
+        <a href="../about.html">About</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

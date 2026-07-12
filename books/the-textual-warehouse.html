@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Textual Warehouse — Books — Jaco van der Laan</title>
+  <meta name="description" content="The Textual Warehouse by Bill Inmon, Ranjeet Srivastava — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta name="author" content="Jaco van der Laan">
+  <link rel="canonical" href="https://jacovanderlaan.com/books/the-textual-warehouse.html">
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="The Textual Warehouse">
+  <meta property="og:description" content="The Textual Warehouse by Bill Inmon, Ranjeet Srivastava — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta property="og:url" content="https://jacovanderlaan.com/books/the-textual-warehouse.html">
+  <meta property="og:image" content="https://jacovanderlaan.com/assets/book-the-textual-warehouse.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Textual Warehouse",
+  "description": "The Textual Warehouse by Bill Inmon, Ranjeet Srivastava — why it's in Jaco van der Laan's curated data-architecture library, and what he built with it.",
+  "image": "https://jacovanderlaan.com/assets/book-the-textual-warehouse.jpg",
+  "url": "https://jacovanderlaan.com/books/the-textual-warehouse.html",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Bill Inmon"
+    },
+    {
+      "@type": "Person",
+      "name": "Ranjeet Srivastava"
+    }
+  ],
+  "datePublished": "2021",
+  "isbn": "9781634629546",
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Jaco van der Laan",
+      "url": "https://jacovanderlaan.com"
+    }
+  }
+}
+  </script>
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 { margin-top: 40px; }
+    .article-body p, .article-body li { font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
+    .article-body blockquote { border-left: 4px solid var(--accent); margin: 24px 0; padding: 4px 0 4px 20px; color: var(--ink); font-style: italic; }
+    .book-hero { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+    .book-hero img { width: 180px; max-width: 40vw; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .book-rating { color: var(--accent); letter-spacing: 2px; font-size: 20px; }
+    .article-meta { max-width: 720px; margin: 0 auto 8px; color: var(--ink-faint); font-size: 15px; }
+    .book-disclosure { font-size: 14px; color: var(--ink-faint); }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach.html">The approach</a>
+            <a href="../principles.html">Principles &amp; manifesto</a>
+            <a href="../concepts.html">Concepts &amp; vocabulary</a>
+            <a href="../mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services.html">Services</a>
+            <a href="../work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise.html">Overview</a>
+            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault.html">Data Vault</a>
+            <a href="../expertise-data-modeling.html">Data modeling</a>
+            <a href="../expertise-diagram-generation.html">Diagram generation</a>
+            <a href="../expertise-modeling-tools.html">Modeling tools</a>
+            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about.html">About</a>
+            <a href="../references.html">References</a>
+            <a href="../ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><a href="../references.html" style="color:inherit;">References &amp; sources</a> · Books</p>
+      <div class="book-hero">
+        <img src="../assets/book-the-textual-warehouse.jpg" alt="The Textual Warehouse cover">
+        <div>
+          <h1 style="max-width:680px;">The Textual Warehouse</h1>
+          <p class="lead">Bill Inmon, Ranjeet Srivastava · 2021 · data warehousing</p>
+          <p class="book-rating" title="My rating">★★★★★</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="article-body">
+<h2>Why this is in my collection</h2>
+<p><em>From the publisher:</em></p>
+<blockquote><p>Build a Textual Warehouse to help your organization understand and analyze documents through text analytics (both sentiment and non-sentiment analysis), to make better business decisions. Learn the important role of documents and text within your organization, the difference between identifying and qualifying text, and when you need document preprocessing. Appreciate the power of taxonomies and the necessity of textual ETL. Know how the textual warehouse architecture differs from the conventional data warehouse architecture and when to apply contextualization and textual disambiguation.About B</p></blockquote>
+<h2>Highlights (AI · MDDE/SBM lens)</h2>
+<blockquote><p>AI-distilled highlights, not personal reading highlights — the ideas in this book that connect to Jaco's MDDE / Structure-Beats-Magic work, selected and paraphrased through that lens. Paraphrased (never verbatim); verbatim quotes await the book text.</p></blockquote>
+<ul><li><strong>Text deserves warehouse-grade architecture</strong> — Inmon extends the data warehouse discipline to documents: narrative text is most of an organization's information, and treating it with ad-hoc search instead of architecture wastes it; the same claim behind treating a markdown vault as a governed corpus, not a pile.</li><li><strong>Textual ETL turns narrative into queryable data</strong> — the core mechanism is transforming free text into structured, contextualized records; structurally identical to the vault→DuckDB pattern where files stay the source of truth and the database is the queryable view.</li><li><strong>Taxonomies do the heavy lifting</strong> — classification vocabularies are what let raw words resolve into business meaning, which makes taxonomies a rules layer: the forgotten third pillar sitting between the data and the AI.</li><li><strong>Context must be attached, not assumed</strong> — contextualization and disambiguation (whose "court": tennis or law?) show that words carry meaning only with surrounding metadata; the warrant for frontmatter-rich notes where context travels with the content.</li><li><strong>Identifying vs qualifying text</strong> — not all text is worth loading; deciding what qualifies before ingestion is a modelling decision, the MDDE reflex of designing the model before building the pipe.</li><li><strong>A different architecture, derived from the data's nature</strong> — the textual warehouse deliberately diverges from the conventional DW because the model of the data dictates the architecture, not the platform du jour.</li><li><strong>2021 foreshadowing of the AI-context problem</strong> — Inmon specified what text needs to become machine-usable (structure, taxonomy, disambiguation) years before RAG made it urgent; the book reads today as a requirements document for feeding a knowledge vault to an LLM.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Structure beats magic.</h2>
+      <p class="lead" style="margin:0 auto 28px;">These are the sources behind the method. Want it built into how your team works?</p>
+      <a class="btn btn-primary" href="../contact.html">Start a conversation</a>
+      &nbsp; <a class="btn btn-ghost" href="../references.html">All references →</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach.html">Approach</a>
+        <a href="../references.html">References</a>
+        <a href="../about.html">About</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snowflake Cookbook: Techniques for Building Modern Cloud Data Warehousing Solutions — Books — Jaco van der Laan</title>
+  <meta name="description" content="Snowflake Cookbook: Techniques for Building Modern Cloud Data Warehousing Solutions by Hamid Mahmood Qureshi, Hammad Sharif — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta name="author" content="Jaco van der Laan">
+  <link rel="canonical" href="https://jacovanderlaan.com/books/snowflake-cookbook-techniques-for-building-modern-cloud-data-warehousing-solutio.html">
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Snowflake Cookbook: Techniques for Building Modern Cloud Data Warehousing Solutions">
+  <meta property="og:description" content="Snowflake Cookbook: Techniques for Building Modern Cloud Data Warehousing Solutions by Hamid Mahmood Qureshi, Hammad Sharif — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta property="og:url" content="https://jacovanderlaan.com/books/snowflake-cookbook-techniques-for-building-modern-cloud-data-warehousing-solutio.html">
+  <meta property="og:image" content="https://jacovanderlaan.com/assets/book-snowflake-cookbook-techniques-for-building-modern-cloud-data-warehousing-solutio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Snowflake Cookbook: Techniques for Building Modern Cloud Data Warehousing Solutions",
+  "description": "Snowflake Cookbook: Techniques for Building Modern Cloud Data Warehousing Solutions by Hamid Mahmood Qureshi, Hammad Sharif — why it's in Jaco van der Laan's curated data-architecture library, and what he built with it.",
+  "image": "https://jacovanderlaan.com/assets/book-snowflake-cookbook-techniques-for-building-modern-cloud-data-warehousing-solutio.jpg",
+  "url": "https://jacovanderlaan.com/books/snowflake-cookbook-techniques-for-building-modern-cloud-data-warehousing-solutio.html",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Hamid Mahmood Qureshi"
+    },
+    {
+      "@type": "Person",
+      "name": "Hammad Sharif"
+    }
+  ],
+  "datePublished": "2021",
+  "isbn": "9781800560185",
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Jaco van der Laan",
+      "url": "https://jacovanderlaan.com"
+    }
+  }
+}
+  </script>
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 { margin-top: 40px; }
+    .article-body p, .article-body li { font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
+    .article-body blockquote { border-left: 4px solid var(--accent); margin: 24px 0; padding: 4px 0 4px 20px; color: var(--ink); font-style: italic; }
+    .book-hero { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+    .book-hero img { width: 180px; max-width: 40vw; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .book-rating { color: var(--accent); letter-spacing: 2px; font-size: 20px; }
+    .article-meta { max-width: 720px; margin: 0 auto 8px; color: var(--ink-faint); font-size: 15px; }
+    .book-disclosure { font-size: 14px; color: var(--ink-faint); }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach.html">The approach</a>
+            <a href="../principles.html">Principles &amp; manifesto</a>
+            <a href="../concepts.html">Concepts &amp; vocabulary</a>
+            <a href="../mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services.html">Services</a>
+            <a href="../work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise.html">Overview</a>
+            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault.html">Data Vault</a>
+            <a href="../expertise-data-modeling.html">Data modeling</a>
+            <a href="../expertise-diagram-generation.html">Diagram generation</a>
+            <a href="../expertise-modeling-tools.html">Modeling tools</a>
+            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about.html">About</a>
+            <a href="../references.html">References</a>
+            <a href="../ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><a href="../references.html" style="color:inherit;">References &amp; sources</a> · Books</p>
+      <div class="book-hero">
+        <img src="../assets/book-snowflake-cookbook-techniques-for-building-modern-cloud-data-warehousing-solutio.jpg" alt="Snowflake Cookbook: Techniques for Building Modern Cloud Data Warehousing Solutions cover">
+        <div>
+          <h1 style="max-width:680px;">Snowflake Cookbook: Techniques for Building Modern Cloud Data Warehousing Solutions</h1>
+          <p class="lead">Hamid Mahmood Qureshi, Hammad Sharif · 2021 · data warehousing</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="article-body">
+<h2>Why this is in my collection</h2>
+<p><em>From the publisher:</em></p>
+<blockquote><p>Develop modern solutions with Snowflake's unique architecture and integration capabilities; process bulk and real-time data into a data lake; and leverage time travel, cloning, and data-sharing features to optimize data operationsKey FeaturesBuild and scale modern data solutions using the all-in-one Snowflake platformPerform advanced cloud analytics for implementing big data and data science solutionsMake quicker and better-informed business decisions by uncovering key insights from your dataBook DescriptionSnowflake is a unique cloud-based data warehousing platform built from scratch to perfo</p></blockquote>
+<h2>Highlights (AI · MDDE/SBM lens)</h2>
+<blockquote><p>AI-distilled highlights, not personal reading highlights — the ideas in this book that connect to Jaco's MDDE / Structure-Beats-Magic work, selected and paraphrased through that lens. Paraphrased (never verbatim); verbatim quotes await the book text.</p></blockquote>
+<ul><li><strong>The recipe format itself proves pattern density</strong> — a whole book of repeatable technique-shaped solutions (load, transform, secure, share) is evidence that warehouse work is patterned enough to generate; what a cookbook does for humans, a model-driven generator does mechanically.</li><li><strong>Storage/compute separation changes economics, not modeling</strong> — virtual warehouses that scale independently solve capacity, but they don't answer what a hub, a satellite, or a fact table should be; the model remains a separate, prior concern.</li><li><strong>Time Travel is an ops safety net, not modeled history</strong> — Snowflake's retention window rescues mistakes, but auditable business history still has to be designed (Data Vault satellites); confusing the two is a classic platform-magic trap.</li><li><strong>Zero-copy cloning enables environment strategy</strong> — instant dev/test/prod clones make a generated, redeployable pipeline realistic: regenerate against a clone, validate, promote.</li><li><strong>Sharing data without copying it</strong> — secure data sharing removes the extract-and-ship reflex, but shared data is only usable if its semantics travel with it — the model and definitions are the actual contract.</li><li><strong>Micro-partitions and clustering keys are platform trivia</strong> — physical tuning knowledge is real but perishable; the durable layer in any of these recipes is the design intent, which survives the next platform.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Structure beats magic.</h2>
+      <p class="lead" style="margin:0 auto 28px;">These are the sources behind the method. Want it built into how your team works?</p>
+      <a class="btn btn-primary" href="../contact.html">Start a conversation</a>
+      &nbsp; <a class="btn btn-ghost" href="../references.html">All references →</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach.html">Approach</a>
+        <a href="../references.html">References</a>
+        <a href="../about.html">About</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

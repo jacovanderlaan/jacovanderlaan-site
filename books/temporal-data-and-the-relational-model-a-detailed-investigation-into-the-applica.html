@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temporal Data and the Relational Model: A Detailed Investigation Into the Application of Interval and Relation Theory to the Problem of Temporal Database Management — Books — Jaco van der Laan</title>
+  <meta name="description" content="Temporal Data and the Relational Model: A Detailed Investigation Into the Application of Interval and Relation Theory to the Problem of Temporal Database Management by C. J. Date, Hugh Darwen, Nikos A. Lorentzos — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built w">
+  <meta name="author" content="Jaco van der Laan">
+  <link rel="canonical" href="https://jacovanderlaan.com/books/temporal-data-and-the-relational-model-a-detailed-investigation-into-the-applica.html">
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Temporal Data and the Relational Model: A Detailed Investigation Into the Application of Interval and Relation Theory to the Problem of Temporal Database Management">
+  <meta property="og:description" content="Temporal Data and the Relational Model: A Detailed Investigation Into the Application of Interval and Relation Theory to the Problem of Temporal Database Management by C. J. Date, Hugh Darwen, Nikos A. Lorentzos — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built w">
+  <meta property="og:url" content="https://jacovanderlaan.com/books/temporal-data-and-the-relational-model-a-detailed-investigation-into-the-applica.html">
+  <meta property="og:image" content="https://jacovanderlaan.com/assets/book-temporal-data-and-the-relational-model-a-detailed-investigation-into-the-applica.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Temporal Data and the Relational Model: A Detailed Investigation Into the Application of Interval and Relation Theory to the Problem of Temporal Database Management",
+  "description": "Temporal Data and the Relational Model: A Detailed Investigation Into the Application of Interval and Relation Theory to the Problem of Temporal Database Management by C. J. Date, Hugh Darwen, Nikos A. Lorentzos — why it's in Jaco van der Laan's curated data-architecture library, and what he built w",
+  "image": "https://jacovanderlaan.com/assets/book-temporal-data-and-the-relational-model-a-detailed-investigation-into-the-applica.jpg",
+  "url": "https://jacovanderlaan.com/books/temporal-data-and-the-relational-model-a-detailed-investigation-into-the-applica.html",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "C. J. Date"
+    },
+    {
+      "@type": "Person",
+      "name": "Hugh Darwen"
+    },
+    {
+      "@type": "Person",
+      "name": "Nikos A. Lorentzos"
+    }
+  ],
+  "datePublished": "2003",
+  "isbn": "9781558608559",
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Jaco van der Laan",
+      "url": "https://jacovanderlaan.com"
+    }
+  }
+}
+  </script>
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 { margin-top: 40px; }
+    .article-body p, .article-body li { font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
+    .article-body blockquote { border-left: 4px solid var(--accent); margin: 24px 0; padding: 4px 0 4px 20px; color: var(--ink); font-style: italic; }
+    .book-hero { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+    .book-hero img { width: 180px; max-width: 40vw; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .book-rating { color: var(--accent); letter-spacing: 2px; font-size: 20px; }
+    .article-meta { max-width: 720px; margin: 0 auto 8px; color: var(--ink-faint); font-size: 15px; }
+    .book-disclosure { font-size: 14px; color: var(--ink-faint); }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach.html">The approach</a>
+            <a href="../principles.html">Principles &amp; manifesto</a>
+            <a href="../concepts.html">Concepts &amp; vocabulary</a>
+            <a href="../mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services.html">Services</a>
+            <a href="../work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise.html">Overview</a>
+            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault.html">Data Vault</a>
+            <a href="../expertise-data-modeling.html">Data modeling</a>
+            <a href="../expertise-diagram-generation.html">Diagram generation</a>
+            <a href="../expertise-modeling-tools.html">Modeling tools</a>
+            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about.html">About</a>
+            <a href="../references.html">References</a>
+            <a href="../ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><a href="../references.html" style="color:inherit;">References &amp; sources</a> · Books</p>
+      <div class="book-hero">
+        <img src="../assets/book-temporal-data-and-the-relational-model-a-detailed-investigation-into-the-applica.jpg" alt="Temporal Data and the Relational Model: A Detailed Investigation Into the Application of Interval and Relation Theory to the Problem of Temporal Database Management cover">
+        <div>
+          <h1 style="max-width:680px;">Temporal Data and the Relational Model: A Detailed Investigation Into the Application of Interval and Relation Theory to the Problem of Temporal Database Management</h1>
+          <p class="lead">C. J. Date, Hugh Darwen, Nikos A. Lorentzos · 2003 · data modeling</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="article-body">
+<h2>Why this is in my collection</h2>
+<p><em>From the publisher:</em></p>
+<blockquote><p>Temporal database systems are systems that provide special support for storing, querying, and updating historical and/or future data. Current DBMSs provide essentially no temporal features at all, but this situation is likely to change soon for a variety of reasons; in fact, temporal databases are virtually certain to become important sooner rather than later, in the commercial world as well as in academia. This book provides an in-depth description of the foundations and principles on which those temporal DBMSs will be built. These foundations and principles are firmly rooted in the relationa</p></blockquote>
+<h2>Highlights (AI · MDDE/SBM lens)</h2>
+<blockquote><p>AI-distilled highlights, not personal reading highlights — the ideas in this book that connect to Jaco's MDDE / Structure-Beats-Magic work, selected and paraphrased through that lens. Paraphrased (never verbatim); verbatim quotes await the book text.</p></blockquote>
+<ul><li><strong>Time as intervals, with proper operators</strong> — Date, Darwen and Lorentzos treat time periods as first-class values with interval algebra (including PACK/UNPACK to normalize overlapping ranges), giving temporal data the rigorous foundation that ad-hoc valid-from/valid-to columns never get.</li><li><strong>Temporal integrity must be stated as explicit constraints</strong> — no gaps, no overlaps, no contradictory concurrent versions: the book shows these are rules the model must declare and enforce, a textbook case of rules as the third pillar rather than an afterthought in ETL code.</li><li><strong>Extreme decomposition anticipates satellite thinking</strong> — splitting relations so each carries its own timeline (the 6NF direction) is the theoretical ancestor of Data Vault satellites and anchor modeling: history tracked per context, not per wide row.</li><li><strong>Valid time and transaction time are different questions</strong> — when something was true in the world versus when the database learned it; this separation is exactly what DV implements with load dates plus effectivity, and conflating the two corrupts both answers.</li><li><strong>The DBMS won't save you</strong> — written in 2003 on the premise that engines lack real temporal support, and two decades later that is still largely true: temporal correctness has to live in the model and its rules, which is why it survives platform churn.</li><li><strong>Foundations outlast features</strong> — the book derives everything from relational theory rather than any vendor's syntax; the payoff is that its reasoning still applies unchanged, a proof by longevity that the durable layer is the formal model.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Structure beats magic.</h2>
+      <p class="lead" style="margin:0 auto 28px;">These are the sources behind the method. Want it built into how your team works?</p>
+      <a class="btn btn-primary" href="../contact.html">Start a conversation</a>
+      &nbsp; <a class="btn btn-ghost" href="../references.html">All references →</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach.html">Approach</a>
+        <a href="../references.html">References</a>
+        <a href="../about.html">About</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

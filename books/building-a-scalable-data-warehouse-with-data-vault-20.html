@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building a Scalable Data Warehouse With Data Vault 2.0 — Books — Jaco van der Laan</title>
+  <meta name="description" content="Building a Scalable Data Warehouse With Data Vault 2.0 by Dan Linstedt, Michael Olschimke — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta name="author" content="Jaco van der Laan">
+  <link rel="canonical" href="https://jacovanderlaan.com/books/building-a-scalable-data-warehouse-with-data-vault-20.html">
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Building a Scalable Data Warehouse With Data Vault 2.0">
+  <meta property="og:description" content="Building a Scalable Data Warehouse With Data Vault 2.0 by Dan Linstedt, Michael Olschimke — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta property="og:url" content="https://jacovanderlaan.com/books/building-a-scalable-data-warehouse-with-data-vault-20.html">
+  <meta property="og:image" content="https://jacovanderlaan.com/assets/book-building-a-scalable-data-warehouse-with-data-vault-20.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Building a Scalable Data Warehouse With Data Vault 2.0",
+  "description": "Building a Scalable Data Warehouse With Data Vault 2.0 by Dan Linstedt, Michael Olschimke — why it's in Jaco van der Laan's curated data-architecture library, and what he built with it.",
+  "image": "https://jacovanderlaan.com/assets/book-building-a-scalable-data-warehouse-with-data-vault-20.jpg",
+  "url": "https://jacovanderlaan.com/books/building-a-scalable-data-warehouse-with-data-vault-20.html",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Dan Linstedt"
+    },
+    {
+      "@type": "Person",
+      "name": "Michael Olschimke"
+    }
+  ],
+  "datePublished": "2015",
+  "isbn": "9780128026489",
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Jaco van der Laan",
+      "url": "https://jacovanderlaan.com"
+    }
+  }
+}
+  </script>
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 { margin-top: 40px; }
+    .article-body p, .article-body li { font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
+    .article-body blockquote { border-left: 4px solid var(--accent); margin: 24px 0; padding: 4px 0 4px 20px; color: var(--ink); font-style: italic; }
+    .book-hero { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+    .book-hero img { width: 180px; max-width: 40vw; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .book-rating { color: var(--accent); letter-spacing: 2px; font-size: 20px; }
+    .article-meta { max-width: 720px; margin: 0 auto 8px; color: var(--ink-faint); font-size: 15px; }
+    .book-disclosure { font-size: 14px; color: var(--ink-faint); }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach.html">The approach</a>
+            <a href="../principles.html">Principles &amp; manifesto</a>
+            <a href="../concepts.html">Concepts &amp; vocabulary</a>
+            <a href="../mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services.html">Services</a>
+            <a href="../work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise.html">Overview</a>
+            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault.html">Data Vault</a>
+            <a href="../expertise-data-modeling.html">Data modeling</a>
+            <a href="../expertise-diagram-generation.html">Diagram generation</a>
+            <a href="../expertise-modeling-tools.html">Modeling tools</a>
+            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about.html">About</a>
+            <a href="../references.html">References</a>
+            <a href="../ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><a href="../references.html" style="color:inherit;">References &amp; sources</a> · Books</p>
+      <div class="book-hero">
+        <img src="../assets/book-building-a-scalable-data-warehouse-with-data-vault-20.jpg" alt="Building a Scalable Data Warehouse With Data Vault 2.0 cover">
+        <div>
+          <h1 style="max-width:680px;">Building a Scalable Data Warehouse With Data Vault 2.0</h1>
+          <p class="lead">Dan Linstedt, Michael Olschimke · 2015 · data vault</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="article-body">
+<h2>Why this is in my collection</h2>
+<p>This is the canonical text from the inventor himself — Linstedt created Data Vault, and this book with Olschimke is the definitive end-to-end statement of DV 2.0 as a <em>system</em>: not just the modeling technique but the architecture, the methodology, the loading patterns, and the implementation discipline around it. If you practice Data Vault professionally, this is the book you have to have read, because it is the standard everything else in the field argues with, extends, or simplifies.</p>
+<p>What earns it a permanent place on my shelf is its insistence that Data Vault 2.0 is more than hubs, links, and satellites. Linstedt frames it as a full delivery method — staging, raw vault, business vault, information marts, plus the project methodology — where the modeling standard exists precisely so the rest can be systematized. The book's own claim, that the standard's simplified and uniform design is what prevents typical data warehousing failures, is the ancestral form of my working thesis: uniform structure is what makes engineering repeatable.</p>
+<p>It is also the reference that keeps both Data Vault schools honest. I work across Linstedt's DV 2.0 and Hultgren's ensemble-modeling lineage, and having the primary source for the 2.0 side means I can be precise about where the schools genuinely differ (hash keys, methodology scope, business vault) versus where practitioners just use different words for the same thing. In a field full of second-hand Data Vault knowledge, this is the first-hand source.</p>
+<h2>Highlights (AI · MDDE/SBM lens)</h2>
+<blockquote><p>AI-distilled highlights, not personal reading highlights — the ideas in this book that connect to Jaco's MDDE / Structure-Beats-Magic work, selected and paraphrased through that lens. Paraphrased (never verbatim); verbatim quotes await the book text.</p></blockquote>
+<ul><li><strong>DV 2.0 is a system of standards, not a table style</strong> — Linstedt and Olschimke present modeling, architecture, methodology, and implementation as one package; the completeness is the point, because a standard that covers only the model leaves the pipeline as craft.</li><li><strong>Hubs, links, and satellites separate what changes at different speeds</strong> — business keys, relationships, and descriptive context each get their own structure and their own clock; isolating rates of change is the deepest design idea in the book and the reason the shapes stay stable while everything around them moves.</li><li><strong>Uniformity is a failure-prevention strategy</strong> — the authors argue warehouse projects die of bespoke complexity, and a simplified repeating design removes the bespoke part; read forward, this is the strongest published argument that strict standards are what make generation viable at all.</li><li><strong>Raw vault records, business vault interprets</strong> — unmodified auditable history is kept strictly apart from applied business logic; an explicit, physically separated rules layer years before "rules as the third pillar" had a name.</li><li><strong>Hash keys buy parallelism and platform independence</strong> — deterministic keys computable without lookups let loads run in any order on any engine; a modeling decision made for automation's sake, proof that the model layer can deliberately serve the generator.</li><li><strong>Loading patterns are deterministic templates</strong> — every hub, link, and satellite loads the same way, so the book can specify the ETL as repeatable procedure; when implementation is fully mechanical, hand-coding it becomes the anomaly to explain.</li><li><strong>Methodology scales the same discipline to teams</strong> — CMMI-flavored process, defined deliverables, and repeatable sprints extend the standardization from tables to the humans building them; structure at every level, from column to project plan.</li></ul>
+<h2>My application</h2>
+<p>This book defines the standard behind the MDDE framework I built at de Volksbank / ASN: the raw-vault / business-vault layering, the deterministic loading patterns, and the hash-key discipline that DV 2.0 introduced are exactly the things a model-driven pipeline can generate rather than hand-code. When I audit or troubleshoot a generated vault, I am effectively checking it against Linstedt and Olschimke's patterns.</p>
+<p>It also shaped the historical argument in my MDDE writing: DV 2.0 proved at industrial scale that when a modeling standard is strict enough, implementation becomes mechanical — which is the step before my claim that it should therefore be <em>generated</em>. I cite this book as the point where data warehousing stopped being craft and became pattern engineering.</p>
+<h2>Key ideas worth citing</h2>
+<ul><li>Data Vault 2.0 is a system of standards — modeling, architecture, methodology, and implementation together — not merely a table-shape convention.</li><li>The hub/link/satellite separation isolates the three things that change at different speeds: business keys, relationships, and descriptive context.</li><li>Uniform, simplified design is a failure-prevention strategy: most warehouse failures come from bespoke complexity, and the standard removes the bespoke part.</li><li>Raw vault vs. business vault separates unmodified auditable history from applied business rules — an early, rigorous form of "rules as an explicit layer."</li><li>Hash keys and insert-only loading make the patterns parallelizable and platform-portable, which is what opened the door to full automation.</li></ul>
+<h2>Related</h2>
+<ul><li>→ concept: data-vault</li><li>→ concept: model-driven-data-engineering (DV 2.0 as the proof that strict standards enable generation)</li><li>→ concept: the-missing-system (business vault = the rules layer made explicit)</li><li>→ article: from pattern to generator — the Data Vault lineage of MDDE (candidate)</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Structure beats magic.</h2>
+      <p class="lead" style="margin:0 auto 28px;">These are the sources behind the method. Want it built into how your team works?</p>
+      <a class="btn btn-primary" href="../contact.html">Start a conversation</a>
+      &nbsp; <a class="btn btn-ghost" href="../references.html">All references →</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach.html">Approach</a>
+        <a href="../references.html">References</a>
+        <a href="../about.html">About</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

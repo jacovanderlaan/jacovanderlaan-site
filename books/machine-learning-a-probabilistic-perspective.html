@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine Learning: A Probabilistic Perspective — Books — Jaco van der Laan</title>
+  <meta name="description" content="Machine Learning: A Probabilistic Perspective by Kevin P. Murphy — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta name="author" content="Jaco van der Laan">
+  <link rel="canonical" href="https://jacovanderlaan.com/books/machine-learning-a-probabilistic-perspective.html">
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Machine Learning: A Probabilistic Perspective">
+  <meta property="og:description" content="Machine Learning: A Probabilistic Perspective by Kevin P. Murphy — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta property="og:url" content="https://jacovanderlaan.com/books/machine-learning-a-probabilistic-perspective.html">
+  <meta property="og:image" content="https://jacovanderlaan.com/assets/book-machine-learning-a-probabilistic-perspective.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Machine Learning: A Probabilistic Perspective",
+  "description": "Machine Learning: A Probabilistic Perspective by Kevin P. Murphy — why it's in Jaco van der Laan's curated data-architecture library, and what he built with it.",
+  "image": "https://jacovanderlaan.com/assets/book-machine-learning-a-probabilistic-perspective.jpg",
+  "url": "https://jacovanderlaan.com/books/machine-learning-a-probabilistic-perspective.html",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Kevin P. Murphy"
+    }
+  ],
+  "datePublished": "2012",
+  "isbn": "9780262018029",
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Jaco van der Laan",
+      "url": "https://jacovanderlaan.com"
+    }
+  }
+}
+  </script>
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 { margin-top: 40px; }
+    .article-body p, .article-body li { font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
+    .article-body blockquote { border-left: 4px solid var(--accent); margin: 24px 0; padding: 4px 0 4px 20px; color: var(--ink); font-style: italic; }
+    .book-hero { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+    .book-hero img { width: 180px; max-width: 40vw; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .book-rating { color: var(--accent); letter-spacing: 2px; font-size: 20px; }
+    .article-meta { max-width: 720px; margin: 0 auto 8px; color: var(--ink-faint); font-size: 15px; }
+    .book-disclosure { font-size: 14px; color: var(--ink-faint); }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach.html">The approach</a>
+            <a href="../principles.html">Principles &amp; manifesto</a>
+            <a href="../concepts.html">Concepts &amp; vocabulary</a>
+            <a href="../mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services.html">Services</a>
+            <a href="../work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise.html">Overview</a>
+            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault.html">Data Vault</a>
+            <a href="../expertise-data-modeling.html">Data modeling</a>
+            <a href="../expertise-diagram-generation.html">Diagram generation</a>
+            <a href="../expertise-modeling-tools.html">Modeling tools</a>
+            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about.html">About</a>
+            <a href="../references.html">References</a>
+            <a href="../ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><a href="../references.html" style="color:inherit;">References &amp; sources</a> · Books</p>
+      <div class="book-hero">
+        <img src="../assets/book-machine-learning-a-probabilistic-perspective.jpg" alt="Machine Learning: A Probabilistic Perspective cover">
+        <div>
+          <h1 style="max-width:680px;">Machine Learning: A Probabilistic Perspective</h1>
+          <p class="lead">Kevin P. Murphy · 2012 · data engineering</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="article-body">
+<h2>Why this is in my collection</h2>
+<p><em>From the publisher:</em></p>
+<blockquote><p>A comprehensive introduction to machine learning that uses probabilistic models and inference as a unifying approach.Today's Web-enabled deluge of electronic data calls for automated methods of data analysis. Machine learning provides these, developing methods that can automatically detect patterns in data and then use the uncovered patterns to predict future data. This textbook offers a comprehensive and self-contained introduction to the field of machine learning, based on a unified, probabilistic approach.The coverage combines breadth and depth, offering necessary background material on suc</p></blockquote>
+<h2>Highlights (AI · MDDE/SBM lens)</h2>
+<blockquote><p>AI-distilled highlights, not personal reading highlights — the ideas in this book that connect to Jaco's MDDE / Structure-Beats-Magic work, selected and paraphrased through that lens. Paraphrased (never verbatim); verbatim quotes await the book text.</p></blockquote>
+<ul><li><strong>One formalism, many algorithms</strong> — Murphy's whole project is to show that hundreds of seemingly unrelated ML methods fall out of a single probabilistic modeling language; that is the MDDE argument transposed to statistics: get the model representation right and the machinery becomes derivable rather than hand-crafted.</li><li><strong>Model first, inference second</strong> — the book consistently separates the declarative statement of a model (what generates the data) from the computational question of fitting it; that split between the durable specification and the replaceable execution engine is exactly the layer-separation MDDE bets on.</li><li><strong>Graphical models make structure explicit</strong> — Bayesian networks encode which variables depend on which, turning assumptions into an inspectable diagram instead of buried code; structure you can see is structure you can validate, generate from, and reason about — the opposite of black-box magic.</li><li><strong>Uncertainty as a first-class citizen</strong> — probabilistic outputs carry their own confidence, unlike point predictions; for a data-quality and rules practice, this is the reminder that a pipeline should propagate what it does not know, not just what it does.</li><li><strong>Priors are declared assumptions</strong> — Bayesian priors force you to write down what you believed before seeing data, making the reasoning auditable; the same discipline SBM demands of knowledge work: state the rule, don't hide it in intuition.</li><li><strong>Overfitting is memorizing instead of modeling</strong> — a system that clings to every training quirk fails on new data; the parallel for knowledge systems is direct: raw accumulation without a compressing structure produces recall, not understanding.</li><li><strong>The textbook itself is a structured corpus</strong> — Murphy's achievement is curatorial as much as mathematical: a sprawling field distilled into one coherent, cross-referenced framework, which is what a concept-library tries to do for a professional domain.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Structure beats magic.</h2>
+      <p class="lead" style="margin:0 auto 28px;">These are the sources behind the method. Want it built into how your team works?</p>
+      <a class="btn btn-primary" href="../contact.html">Start a conversation</a>
+      &nbsp; <a class="btn btn-ghost" href="../references.html">All references →</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach.html">Approach</a>
+        <a href="../references.html">References</a>
+        <a href="../about.html">About</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
