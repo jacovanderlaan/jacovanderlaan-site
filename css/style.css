@@ -208,3 +208,4 @@ footer.site a:hover { color: var(--accent); }
   .proof, .grid-2, .grid-3, .fit, .svc { grid-template-columns: 1fr; }
   section { padding: 60px 0; }
 }
+.ai-note{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.82rem;color:var(--ink-faint)}
