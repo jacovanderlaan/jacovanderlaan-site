@@ -104,7 +104,12 @@ def strip_placeholder_sections(body: str) -> str:
 
 
 def _fm_str(meta: dict, key: str, default: str = "") -> str:
-    return str(meta.get(key, default)).strip().strip("'\"")
+    # A present-but-null YAML value (e.g. "year:" with nothing after it) parses
+    # to None; without this guard str(None) -> "None" leaks into bylines.
+    val = meta.get(key, default)
+    if val is None:
+        val = default
+    return str(val).strip().strip("'\"")
 
 
 def discover_books() -> list[str]:
