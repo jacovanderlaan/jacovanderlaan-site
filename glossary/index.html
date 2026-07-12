@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glossary — Jaco van der Laan</title>
+  <meta name="description" content="The non-concept vocabulary of Model-Driven Data Engineering — field terms and distinctions defined and linked. A volatile layer under the concept library.">
+  <meta name="author" content="Jaco van der Laan">
+  <link rel="canonical" href="https://jacovanderlaan.com/glossary/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Glossary — Jaco van der Laan">
+  <meta property="og:description" content="The vocabulary of Model-Driven Data Engineering, defined and linked.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<style>
+    .gl-hero { max-width:820px; margin:0 auto; padding:48px 0 8px; text-align:center; }
+    .gl-eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:13px; font-weight:700; color:var(--accent); }
+    .gl-hero h1 { font-size:52px; margin:.2em 0 .3em; letter-spacing:-.02em; }
+    .gl-intro { max-width:720px; margin:0 auto; color:var(--ink-soft); font-size:18px; line-height:1.65; }
+    .gl-intro code { background:var(--surface); padding:1px 6px; border-radius:5px; font-size:.9em; }
+    .gl-wrap { max-width:820px; margin:0 auto; padding:24px 0 64px; }
+    .gl-group { margin-top:2.4rem; }
+    .gl-group h2 { font-size:14px; text-transform:uppercase; letter-spacing:.04em; color:var(--accent); margin:0 0 .9rem; }
+    .gl-list { display:grid; gap:14px; }
+    .gl-term { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 20px; }
+    .gl-term .t { font-size:18px; font-weight:800; color:var(--ink); margin-bottom:5px; }
+    .gl-term .d { font-size:16px; color:var(--ink-soft); margin:0; line-height:1.6; }
+    .gl-term .d code { background:var(--bg); padding:1px 5px; border-radius:4px; font-size:.88em; }
+    .gl-note { margin-top:2.4rem; font-size:15px; color:var(--ink-faint); border-top:1px solid var(--line); padding-top:1rem; }
+</style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach.html">The approach</a>
+            <a href="../principles.html">Principles &amp; manifesto</a>
+            <a href="../concepts.html">Concepts &amp; vocabulary</a>
+            <a href="../mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services.html">Services</a>
+            <a href="../work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise.html">Overview</a>
+            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault.html">Data Vault</a>
+            <a href="../expertise-data-modeling.html">Data modeling</a>
+            <a href="../expertise-diagram-generation.html">Diagram generation</a>
+            <a href="../expertise-modeling-tools.html">Modeling tools</a>
+            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about.html">About</a>
+            <a href="../references.html">References</a>
+            <a href="../ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="gl-hero">
+      <div class="gl-eyebrow">The vocabulary, defined</div>
+      <h1>Glossary</h1>
+      <p class="gl-intro">The <strong>non-concept vocabulary</strong> of Model-Driven Data Engineering: field terms, distinctions and borrowed ideas that deserve a shared definition and a link — but aren't <em>ownable coined concepts</em> (those live in the concept library). A <strong>volatile, promotable layer</strong>: a term that keeps recurring or earns its own article gets promoted to a concept.</p>
+    </div>
+    <div class="gl-wrap">
+<div class="gl-group">
+<h2>Data &amp; modelling</h2>
+<div class="gl-list">
+<div class="gl-term"><div class="t">Metadata</div><p class="d">Data about data: the typed, structured description (schema, meaning, lineage, rules) that makes raw data legible and governable. The layer MDDE treats as the operating system. → Metadata Operating System · Metadata As Code.</p></div>
+<div class="gl-term"><div class="t">Entity-Relationship (ER) model</div><p class="d">The conceptual data-model picture: boxes for entities, lines for relationships, cardinality marks for the rules. The artefact the business signs off on. → Visual Thinking · Drawing It Together.</p></div>
+<div class="gl-term"><div class="t">Plausibility Check</div><p class="d">A validation that asks "is this <em>believable</em>?" rather than only "is this <em>well-formed</em>?" — catching implausible-but-valid data (a €0 invoice, a date in 2099) that passes schema checks. Part of the validate-don't-guess discipline. → The Validation Loop · The Validated Exchange Layer.</p></div>
+<div class="gl-term"><div class="t">Drift</div><p class="d">The slow divergence between what a system <em>claims</em> is true and what's actually stored or deployed. What one-way publishing and validation exist to prevent. → One Way Publishing; cf. MDDE Semantic Drift.</p></div>
+<div class="gl-term"><div class="t">Data Modeling</div><p class="d">Designing the shape of information: the entities that matter, how they relate, the rules that hold. Not SQL or tables — the conceptual picture where humans and machines agree on meaning. Jaco's core craft. → Visual Thinking · Drawing It Together; MDDE owns the coined variants Business Friendly Data Modeling · Collaborative Data Modeling.</p></div>
+<div class="gl-term"><div class="t">Decompose &amp; Reassemble</div><p class="d">Breaking a body of knowledge into atomic, reusable units and recomposing them into new wholes (article, course, talk) without rebuilding. The Lego move applied to knowledge. → candidate concept; overlaps Play With The Blocks · Content To Training.</p></div>
+<div class="gl-term"><div class="t">Frontmatter</div><p class="d">The YAML metadata block at the top of a markdown file (type, domain, status, links) that turns a loose note into a queryable data record. The typed fields <em>are</em> the model. → The Vault Is The Data Model (article) · Document Vault.</p></div>
+<div class="gl-term"><div class="t">Markdown (.md)</div><p class="d">Plain-text format, greppable and versionable for decades; the open, portable source-of-truth unit for notes, articles and skills. You own the files, not a vendor's database. → Rent The Ai Own The Structure.</p></div>
+<div class="gl-term"><div class="t">YAML</div><p class="d">Human-readable key-value markup used for frontmatter and config; itself validatable as valid/invalid, so structure can be checked, not hoped for.</p></div>
+</div></div>
+<div class="gl-group">
+<h2>Visual &amp; facilitation</h2>
+<div class="gl-list">
+<div class="gl-term"><div class="t">Visual Facilitation</div><p class="d">The field of guiding a group to a shared picture of a contested idea (sketchnoting, graphic facilitation). The neighbouring discipline to Drawing It Together — others' profession; the co-drawing <em>with the business</em> is the part Jaco owns.</p></div>
+</div></div>
+<div class="gl-group">
+<h2>Business &amp; delivery</h2>
+<div class="gl-list">
+<div class="gl-term"><div class="t">Business Model</div><p class="d">How value is created, delivered and captured — what you sell and how you get paid (e.g. give the recipe free, sell the kitchen). → Give The Recipe Sell The Kitchen.</p></div>
+<div class="gl-term"><div class="t">Delivery Model</div><p class="d">How the work actually gets done and handed over — engagement shape, transfer-by-design, who owns the result afterward. Distinct from the business model: <em>how you deliver</em> vs <em>how you charge</em>. → Smart Teams.</p></div>
+</div></div>
+<div class="gl-group">
+<h2>AI &amp; tooling</h2>
+<div class="gl-list">
+<div class="gl-term"><div class="t">DuckDB</div><p class="d">An in-process analytical (OLAP) SQL database used as the local, rebuildable <em>view</em> over the file corpus — the query layer beside the vault, never the source of truth. → A Brain That Publishes Itself.</p></div>
+<div class="gl-term"><div class="t">MCP (Model Context Protocol)</div><p class="d">A connection/server that lets the AI <em>query a live source directly</em> rather than being handed pasted data. One of four tools (with prompts, skills, plugins) to reach for deliberately. → article <em>Prompts, Skills, Plugins, MCP</em>.</p></div>
+<div class="gl-term"><div class="t">Skill (Claude Code)</div><p class="d">A procedure written once as a markdown file, invoked as <code>/name</code>, that the AI runs the same way every time — the unit that compounds. → Runbooks; article <em>Skills Are the Unit That Compounds</em>.</p></div>
+<div class="gl-term"><div class="t">Prompt</div><p class="d">A one-off instruction typed in the moment; the right tool only when you'll do the thing once. Past that, promote it to a skill. → Stop Prompting Start Directing.</p></div>
+<div class="gl-term"><div class="t">RAG (retrieval-augmented generation)</div><p class="d">Handing a model the right <em>retrieved</em> passages to reason over instead of relying on its memory — structure feeding the reasoning. → The Reasoning Layer.</p></div>
+<div class="gl-term"><div class="t">Idempotent</div><p class="d">A process safe to re-run: it skips what's already done and never clobbers existing work. What makes an enrichment or import trustworthy to run daily. → The Validation Loop.</p></div>
+<div class="gl-term"><div class="t">Importer vs connector</div><p class="d">An importer <em>lands</em> a source's export into a local table; a connector lets the AI <em>query the live source</em> directly. Two ways to bring a source under structure. → Connect And Dispatch.</p></div>
+</div></div>
+<div class="gl-group">
+<h2>Security &amp; governance</h2>
+<div class="gl-list">
+<div class="gl-term"><div class="t">SSRF (Server-Side Request Forgery)</div><p class="d">An attack that tricks an agent into fetching internal URLs (e.g. cloud metadata) on the attacker's behalf. Why an agent's reach must be governed. → article <em>Governing What Your AI Can Touch</em>.</p></div>
+<div class="gl-term"><div class="t">Prompt injection</div><p class="d">Malicious instructions hidden in content the AI reads, hijacking its next action. The reason least-privilege matters for agents. → article <em>Governing What Your AI Can Touch</em>.</p></div>
+<div class="gl-term"><div class="t">Least privilege</div><p class="d">Granting only the minimum access needed, just in time; deny beats ask beats allow. The guard on an agent's power. → article <em>Governing What Your AI Can Touch</em>.</p></div>
+</div></div>
+<div class="gl-group">
+<h2>Web &amp; publishing</h2>
+<div class="gl-list">
+<div class="gl-term"><div class="t">Static-site generator</div><p class="d">A website compiled to plain files at build time (e.g. Astro), served with no runtime server or CMS or database. The mechanism behind a brain that publishes itself. → A Brain That Publishes Itself.</p></div>
+<div class="gl-term"><div class="t">rel=canonical</div><p class="d">An HTML link that declares the original home of a piece: publish on your own site first, then point syndicated copies (Medium) back to it, so Google credits you. → One Way Publishing.</p></div>
+<div class="gl-term"><div class="t">Model Outlives the Tool</div><p class="d">The principle that your data model / structure survives every tool that renders it (diagramming app, BI tool, the AI itself). Folded into → Rent The Ai Own The Structure.</p></div>
+</div></div>
+      <p class="gl-note">A volatile, promotable layer: a term that keeps recurring or earns its own article gets promoted to a <a href="../concepts.html">concept</a>. The coined concepts live in <a href="../concepts.html">concepts &amp; vocabulary</a>.</p>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach.html">Approach</a>
+        <a href="../services.html">Services</a>
+        <a href="../about.html">About</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
