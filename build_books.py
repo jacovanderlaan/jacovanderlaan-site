@@ -326,12 +326,50 @@ def _book_titles(slugs: list[str]) -> dict:
     return titles
 
 
+# Privacy gate: the book source lives on W: and is scanned by the pipeline's
+# check_book_privacy.py before we publish anything public. A leak (employer name,
+# biographical vendor tool, own-corpus figure, decision-record id, personal name)
+# in a published section aborts the build. Override with JVDL_SKIP_PRIVACY=1.
+PRIVACY_CHECK = "W:/systems/code/scripts/books/check_book_privacy.py"
+
+
+def privacy_gate(site: str) -> None:
+    if os.environ.get("JVDL_SKIP_PRIVACY") == "1":
+        print("  (privacy gate skipped via JVDL_SKIP_PRIVACY=1)")
+        return
+    import importlib.util
+    if not Path(PRIVACY_CHECK).is_file():
+        print(f"  ! privacy check not found ({PRIVACY_CHECK}) — proceeding WITHOUT gate")
+        return
+    spec = importlib.util.spec_from_file_location("check_book_privacy", PRIVACY_CHECK)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    root = mod.ROOTS.get(site)
+    files = [str(f) for f in Path(root).glob("*/*.md")
+             if f.name not in ("notes.md", "books.md")] if root and Path(root).is_dir() else []
+    total = 0
+    for f in sorted(files):
+        hits = mod.scan_note(f)
+        if hits:
+            total += len(hits)
+            print(f"  PRIVACY LEAK in {os.path.basename(os.path.dirname(f))}:")
+            for label, match, line in hits:
+                print(f"    [{label}] {match!r}  … {line[:100]}")
+    if total:
+        raise SystemExit(
+            f"\nBUILD ABORTED: {total} private detail(s) in published book sections. "
+            f"Generalize them, or set JVDL_SKIP_PRIVACY=1 to override.")
+    print(f"  privacy gate OK ({len(files)} book pages clean)")
+
+
 def main() -> None:
     OUT.mkdir(exist_ok=True)
     slugs = discover_books()
     if not slugs:
         print("  (no books to publish — check status gate / allow-list)")
         return
+    # Site of this builder = 'data' (jvdl). Gate before writing any HTML.
+    privacy_gate("data")
     book_titles = _book_titles(slugs)
     concept_map, concept_names = _load_concept_map()
     cards = []
