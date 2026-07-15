@@ -23,11 +23,19 @@
                   color:var(--accent); margin:40px 0 18px; padding-bottom:8px; border-bottom:1px solid var(--line); }
     .cat-title:first-of-type { margin-top:0; }
     .concept-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    /* The card is an <a> (ADR-084: each card links to its detail page), so it must
+       reset the site's global link styling — otherwise every line inside the card
+       inherits blue + underline. */
     .concept { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
-                padding:22px 24px; box-shadow:var(--shadow); display:flex; flex-direction:column; }
-    .concept .c-name { font-size:19px; font-weight:700; letter-spacing:-.3px; margin-bottom:6px; }
-    .concept .c-tag { font-size:14px; font-weight:600; color:var(--accent); margin-bottom:10px; }
-    .concept .c-def { color:var(--ink-soft); font-size:15px; margin:0; }
+                padding:22px 24px; box-shadow:var(--shadow); display:flex; flex-direction:column;
+                text-decoration:none; color:var(--ink); transition:border-color .15s, box-shadow .15s; }
+    .concept:hover { border-color:var(--accent); box-shadow:0 8px 24px rgba(15,23,42,.10); }
+    .concept:hover .c-name { color:var(--accent); }
+    .concept .c-name { font-size:19px; font-weight:700; letter-spacing:-.3px; margin-bottom:6px;
+                color:var(--ink); text-decoration:none; }
+    .concept .c-tag { font-size:14px; font-weight:600; color:var(--accent); margin-bottom:10px;
+                text-decoration:none; }
+    .concept .c-def { color:var(--ink-soft); font-size:15px; margin:0; text-decoration:none; }
     @media (max-width:860px){ .concept-grid{ grid-template-columns:1fr; } }
   </style>
 </head>
