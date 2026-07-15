@@ -2,8 +2,8 @@
 """Build the MDDE glossary page (jacovanderlaan.com) -> glossary/index.html.
 
 Source of truth = TWO vault markdown files, merged in order:
-    D:/vault/system/glossary/glossary-mdde.md    (MDDE-only terms + intro)
-    D:/vault/system/glossary/glossary-shared.md  (terms shared with SBM)
+    W:/systems/glossary/glossary-mdde.md    (MDDE-only terms + intro)
+    W:/systems/glossary/glossary-shared.md  (terms shared with SBM)
 
 Companion to the SBM glossary builder in C:/Repos/structurebeatsmagic. The
 glossary was split by brand (2026-07-12): SBM-only, MDDE-only, shared. The MDDE
@@ -28,7 +28,7 @@ from pathlib import Path
 from dataclasses import dataclass, field
 
 HERE = Path(__file__).parent
-GLOSSARY_DIR = Path(os.environ.get("MDDE_GLOSSARY_DIR", "D:/vault/system/glossary"))
+GLOSSARY_DIR = Path(os.environ.get("MDDE_GLOSSARY_DIR", "W:/systems/glossary"))
 SRC_MDDE = GLOSSARY_DIR / "glossary-mdde.md"      # MDDE-only terms (+ intro)
 SRC_SHARED = GLOSSARY_DIR / "glossary-shared.md"  # terms shared with SBM
 OUT = HERE / "glossary"
