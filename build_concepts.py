@@ -142,11 +142,37 @@ def load_concepts() -> dict:
         m = re.search(r"(?m)^#\s+(.+)$", body)
         title = m.group(1).strip() if m else folder.name.replace("-", " ").title()
         tag = str(meta.get("description", "")).strip()
+        # optional concept hero: <slug>/assets/<file>, copied into the site
+        # assets/ at build time. Mirrors the SBM concept builder (ADR-080/075).
+        hero_image = str(meta.get("hero_image") or md.get("hero_image") or "").strip().strip('"')
+        hero_caption = str(meta.get("hero_caption") or md.get("hero_caption") or "").strip().strip('"')
         rows.append((cat, {"slug": folder.name, "title": title, "tag": tag,
-                           "def_raw": extract_def(body)}))
+                           "def_raw": extract_def(body),
+                           "hero_image": hero_image, "hero_caption": hero_caption}))
     for cat, row in rows:
         by_cat.setdefault(cat, []).append(row)
     return by_cat
+
+
+def copy_concept_assets(by_cat: dict) -> int:
+    """Copy each concept's hero image from <slug>/assets/<file> into the site
+    assets/. A concept whose image isn't on disk yet is skipped with a warning —
+    the page simply builds without it (brief written, image not generated yet)."""
+    import shutil
+    site_assets = HERE / "assets"
+    site_assets.mkdir(parents=True, exist_ok=True)
+    copied = 0
+    for items in by_cat.values():
+        for c in items:
+            if not c.get("hero_image"):
+                continue
+            src = SRC / c["slug"] / "assets" / c["hero_image"]
+            if src.is_file():
+                shutil.copy2(src, site_assets / c["hero_image"])
+                copied += 1
+            else:
+                print(f"  ! concept hero missing on disk: {c['slug']} -> {c['hero_image']}")
+    return copied
 
 
 def render_cards(by_cat: dict) -> str:
@@ -200,6 +226,16 @@ def _page_shell():
 def render_detail(c: dict, cat: str, head: str, header: str, footer: str) -> str:
     title = html.escape(c["title"])
     tag = html.escape(c["tag"])
+    hero_html = ""
+    # Render the figure only when the image actually exists on disk: a brief may
+    # be written (hero_image set) long before the image is generated, and an
+    # <img> pointing at a missing file would ship a broken image to the site.
+    if c.get("hero_image") and (SRC / c["slug"] / "assets" / c["hero_image"]).is_file():
+        cap = (f'<figcaption>{html.escape(c["hero_caption"])}</figcaption>'
+               if c.get("hero_caption") else "")
+        hero_html = (f'<figure class="c-hero">'
+                     f'<img src="../assets/{html.escape(c["hero_image"], quote=True)}" '
+                     f'alt="{title}" loading="eager"/>{cap}</figure>\n      ')
     body_html = inline(c["def_raw"], in_detail=True)
     # detail-specific <head>: reprefix assets, swap title/description/og:url
     d_head = _reprefix(head)
@@ -219,6 +255,11 @@ def render_detail(c: dict, cat: str, head: str, header: str, footer: str) -> str
         " text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }\n"
         "  .c-detail h1 { margin-bottom:14px; }\n"
         "  .c-detail .c-body { font-size:17px; line-height:1.7; color:var(--ink-soft); }\n"
+        "  .c-hero { margin:0 0 2rem; }\n"
+        "  .c-hero img { width:100%; height:auto; display:block; border-radius:12px;"
+        " border:1px solid var(--line); box-shadow:0 10px 30px rgba(15,23,42,.07); }\n"
+        "  .c-hero figcaption { font-size:.85rem; color:var(--ink-faint);"
+        " margin-top:.7rem; text-align:center; line-height:1.5; }\n"
         "  .c-back { display:inline-block; margin-top:2.4rem; font-weight:600;"
         " color:var(--accent); text-decoration:none; }\n"
         "  .c-back:hover { text-decoration:underline; }\n"
@@ -241,7 +282,7 @@ def render_detail(c: dict, cat: str, head: str, header: str, footer: str) -> str
 
   <section class="tight">
     <div class="wrap c-detail">
-      <p class="c-body">{body_html}</p>
+      {hero_html}<p class="c-body">{body_html}</p>
       <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
     </div>
   </section>
@@ -280,6 +321,9 @@ def write_index(by_cat: dict) -> int:
 def main() -> None:
     by_cat = load_concepts()
     total = write_index(by_cat)
+    n_assets = copy_concept_assets(by_cat)
+    if n_assets:
+        print(f"  copied {n_assets} concept hero image(s) -> assets/")
     OUT.mkdir(exist_ok=True)
     head, header, footer = _page_shell()
     n = 0
