@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seam Date — Concepts — Jaco van der Laan</title>
+  <meta name="description" content="The pivot date where an old source table hands history over to a new one.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Concepts &amp; vocabulary — Jaco van der Laan">
+  <meta property="og:description" content="The coined vocabulary behind Model-Driven Data Engineering — one memorable name per idea, from Deterministic SQL Generation to the Metadata Operating System.">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/seam-date.html">
+  <meta property="og:image" content="https://www.jacovanderlaan.com/assets/jaco-whiteboard.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <style>
+    .cat-title { font-size:15px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;
+                  color:var(--accent); margin:40px 0 18px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+    .cat-title:first-of-type { margin-top:0; }
+    .concept-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .concept { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+                padding:22px 24px; box-shadow:var(--shadow); display:flex; flex-direction:column; }
+    .concept .c-name { font-size:19px; font-weight:700; letter-spacing:-.3px; margin-bottom:6px; }
+    .concept .c-tag { font-size:14px; font-weight:600; color:var(--accent); margin-bottom:10px; }
+    .concept .c-def { color:var(--ink-soft); font-size:15px; margin:0; }
+    @media (max-width:860px){ .concept-grid{ grid-template-columns:1fr; } }
+  </style>
+<style>
+  .c-detail { max-width:760px; }
+  .c-detail .eyebrow { color:var(--accent); }
+  .c-detail .c-cat { font-size:14px; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
+  .c-detail h1 { margin-bottom:14px; }
+  .c-detail .c-body { font-size:17px; line-height:1.7; color:var(--ink-soft); }
+  .c-back { display:inline-block; margin-top:2.4rem; font-weight:600; color:var(--accent); text-decoration:none; }
+  .c-back:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach.html">The approach</a>
+            <a href="../principles.html">Principles &amp; manifesto</a>
+            <a href="../concepts.html">Concepts &amp; vocabulary</a>
+            <a href="../mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services.html">Services</a>
+            <a href="../work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise.html">Overview</a>
+            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault.html">Data Vault</a>
+            <a href="../expertise-data-modeling.html">Data modeling</a>
+            <a href="../expertise-diagram-generation.html">Diagram generation</a>
+            <a href="../expertise-modeling-tools.html">Modeling tools</a>
+            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about.html">About</a>
+            <a href="../references.html">References</a>
+            <a href="../ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap c-detail">
+      <p class="c-cat">SQL &amp; generation</p>
+      <h1>Seam Date</h1>
+      <p class="lead">The pivot date where an old source table hands history over to a new one.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap c-detail">
+      <p class="c-body">In a SOURCE_MERGES cell, the seam date is the precise pivot point where an old source table stops and a new one takes over, with explicit rules for the overlapping history around the seam. It makes a source migration a controlled, dated handover instead of a silent discontinuity in the data.</p>
+      <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
+    </div>
+  </section>
+
+<footer class="site">
+    <div class="wrap">
+      <div>&#169; 2026 Jaco van der Laan &#183; Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach.html">Approach</a>
+        <a href="../services.html">Services</a>
+        <a href="../about.html">About</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
