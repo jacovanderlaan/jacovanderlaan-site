@@ -46,7 +46,18 @@ ARTICLES = [
     "stop-driving-by-the-rear-view-mirror",
 ]
 
-BASE_URL = os.environ.get("JVDL_BASE_URL", "https://jacovanderlaan.com").rstrip("/")
+# ⚠️ Canonical base = where these pages ACTUALLY live.
+# jacovanderlaan.com is the live WordPress site (nginx/SiteGround, 35.214.139.114)
+# — NOT this static site. Pointing the canonical at jacovanderlaan.com/articles/...
+# yields a 404 (verified 2026-07-15), which is worse than no canonical at all.
+# So we canonicalise to the github.io URL where these pages are really served,
+# until the hosting decision is made (WordPress publish vs DNS cutover) — see
+# action_move-b2b-articles-to-jacovanderlaan. Override via JVDL_BASE_URL once the
+# domain question is settled.
+BASE_URL = os.environ.get(
+    "JVDL_BASE_URL",
+    "https://jacovanderlaan.github.io/jacovanderlaan-site",
+).rstrip("/")
 OG_DEFAULT = f"{BASE_URL}/assets/structurebeatsmagic/sbm-og-card.png"
 
 # The shared nav block (dropdown menu) — kept identical to the site's pages.
