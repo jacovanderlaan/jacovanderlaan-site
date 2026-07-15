@@ -449,6 +449,7 @@ def main() -> None:
         cards.append({
             "slug": slug, "title": title, "authors": authors, "year": year,
             "cluster": cluster, "curated": curated, "stars": stars,
+            "cover": cover_file,
         })
 
     inject_library(cards)
@@ -487,11 +488,19 @@ def inject_library(cards: list) -> None:
         for c in sorted(cards, key=sort_key):
             meta_bits = " · ".join(b for b in [c["authors"], str(c["year"]) if c["year"] else "", c["cluster"].replace("-", " ")] if b)
             stars = f'<span class="book-rating">{c["stars"]}</span> ' if c["stars"] else ""
+            thumb = (
+                f'          <figure class="book-thumb"><img loading="lazy" src="assets/{c["cover"]}" '
+                f'alt="{html.escape(c["title"], quote=True)} cover"></figure>\n'
+                if c.get("cover") else ""
+            )
             rows.append(
-                f'        <div class="card">\n'
-                f'          <h3><a href="books/{c["slug"]}.html" style="color:inherit;text-decoration:none;">{html.escape(c["title"])}</a></h3>\n'
-                f'          <p class="muted">{stars}{html.escape(meta_bits)}</p>\n'
-                f'          <p><a href="books/{c["slug"]}.html">Why it&rsquo;s in my library →</a></p>\n'
+                f'        <div class="card card--book">\n'
+                f'{thumb}'
+                f'          <div class="card-body">\n'
+                f'            <h3><a href="books/{c["slug"]}.html" style="color:inherit;text-decoration:none;">{html.escape(c["title"])}</a></h3>\n'
+                f'            <p class="muted">{stars}{html.escape(meta_bits)}</p>\n'
+                f'            <p><a href="books/{c["slug"]}.html">Why it&rsquo;s in my library →</a></p>\n'
+                f'          </div>\n'
                 f'        </div>'
             )
         start_line_end = txt.find("-->", i) + len("-->")
