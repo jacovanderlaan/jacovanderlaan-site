@@ -3,10 +3,17 @@
 Build jacovanderlaan.com B2B/MDDE article pages from markdown -> articles/*.html
 + inject an "On this site" list into articles.html.
 
-Mirror of the SBM builder (structurebeatsmagic/build_articles.py), adapted to the
-jacovanderlaan.com brand: this site's css/style.css, the dropdown nav, the jvdl
-favicon/OG card, and canonical_home = jacovanderlaan.com. This is the B2B / MDDE
-lane per ADR-062 (two canonical-homes, routed by audience).
+Mirror of the SBM builder (structurebeatsmagic/build_articles.py), adapted to this
+site's brand: css/style.css, the dropdown nav, the favicon/OG card.
+
+⚠️ THIS REPO IS AN EXAMPLE / INSPIRATION SITE, NOT A PUBLISHING TARGET (ADR-061,
+confirmed 2026-07-15). jacovanderlaan.com is the LIVE WORDPRESS site (nginx/
+SiteGround, 35.214.139.114), managed by Annemarie — never a DNS cutover. This
+repo only ever serves from jacovanderlaan.github.io/jacovanderlaan-site/.
+So: the canonical here points at github.io (where these pages actually live).
+Real B2B publishing goes through WordPress (C:/Repos/pdwh/articles/ + kwpublisher).
+Only set JVDL_BASE_URL=https://jacovanderlaan.com once the WP route exists AND the
+page is really published there — canonical = where the page is, never an aspiration.
 
 Source of truth = folder-per-article markdown under ARTICLES_ROOT. Only slugs in
 ARTICLES publish, so unrelated drafts stay private.
