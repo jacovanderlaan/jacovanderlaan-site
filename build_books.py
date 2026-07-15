@@ -392,11 +392,30 @@ def privacy_gate(site: str) -> None:
     print(f"  privacy gate OK ({len(files)} book pages clean)")
 
 
+def prune_orphans(live_slugs: set) -> None:
+    """Delete published book pages whose source no longer passes the gate. The
+    generator writes but never used to clean up, so scaffold pages published under
+    an older (looser) gate lingered live. Only touches books/<slug>.html (never
+    index.html); git-tracked so any deletion is recoverable."""
+    removed = 0
+    for pg in OUT.glob("*.html"):
+        if pg.name == "index.html":
+            continue
+        if pg.stem not in live_slugs:
+            pg.unlink()
+            removed += 1
+    if removed:
+        print(f"  - pruned {removed} orphaned book page(s) no longer passing the gate")
+
+
 def main() -> None:
     OUT.mkdir(exist_ok=True)
     slugs = discover_books()
     if not slugs:
         print("  (no books to publish — check status gate / allow-list)")
+        # Deliberately do NOT prune here: a zero-result gate is ambiguous (misconfig
+        # or wrong CWD), and prune-all would wipe every live page. Prune only runs
+        # after a successful build with a real cards set (below).
         return
     # Site of this builder = 'data' (jvdl). Gate before writing any HTML.
     privacy_gate("data")
@@ -453,6 +472,7 @@ def main() -> None:
         })
 
     inject_library(cards)
+    prune_orphans({c["slug"] for c in cards})
 
 
 def inject_library(cards: list) -> None:

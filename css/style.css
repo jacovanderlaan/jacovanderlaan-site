@@ -123,6 +123,12 @@ p { margin: 0 0 18px; }
   padding: 32px; box-shadow: var(--shadow);
 }
 .card.accent { border-top: 3px solid var(--accent); }
+.card--book { display: flex; gap: 18px; align-items: flex-start; padding: 20px 22px; }
+.card--book .book-thumb { flex: 0 0 auto; width: 64px; margin: 0; border-radius: 4px;
+  overflow: hidden; box-shadow: 0 1px 5px rgba(0,0,0,.2); background: var(--line); }
+.card--book .book-thumb img { display: block; width: 64px; height: auto; object-fit: cover; }
+.card--book .card-body { min-width: 0; flex: 1 1 auto; }
+.card--book .card-body h3 { margin-top: 0; }
 
 /* ---- Dark band (for the stance / quotes / infographic context) ---- */
 .band-dark { background: var(--navy-card); color: #e2e8f0; }
