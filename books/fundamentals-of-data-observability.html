@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fundamentals of Data Observability — Books — Jaco van der Laan</title>
+  <meta name="description" content="Fundamentals of Data Observability by Andy Petrella — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta name="author" content="Jaco van der Laan">
+  <link rel="canonical" href="https://jacovanderlaan.github.io/jacovanderlaan-site/books/fundamentals-of-data-observability.html">
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Fundamentals of Data Observability">
+  <meta property="og:description" content="Fundamentals of Data Observability by Andy Petrella — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta property="og:url" content="https://jacovanderlaan.github.io/jacovanderlaan-site/books/fundamentals-of-data-observability.html">
+  <meta property="og:image" content="https://jacovanderlaan.github.io/jacovanderlaan-site/assets/book-fundamentals-of-data-observability.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Fundamentals of Data Observability",
+  "description": "Fundamentals of Data Observability by Andy Petrella — why it's in Jaco van der Laan's curated data-architecture library, and what he built with it.",
+  "image": "https://jacovanderlaan.github.io/jacovanderlaan-site/assets/book-fundamentals-of-data-observability.jpg",
+  "url": "https://jacovanderlaan.github.io/jacovanderlaan-site/books/fundamentals-of-data-observability.html",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Andy Petrella"
+    }
+  ],
+  "datePublished": "2023",
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Jaco van der Laan",
+      "url": "https://jacovanderlaan.github.io/jacovanderlaan-site"
+    }
+  }
+}
+  </script>
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 { margin-top: 40px; }
+    .article-body p, .article-body li { font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
+    .article-body blockquote { border-left: 4px solid var(--accent); margin: 24px 0; padding: 4px 0 4px 20px; color: var(--ink); font-style: italic; }
+    .book-hero { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+    .book-hero img { width: 180px; max-width: 40vw; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .book-rating { color: var(--accent); letter-spacing: 2px; font-size: 20px; }
+    .article-meta { max-width: 720px; margin: 0 auto 8px; color: var(--ink-faint); font-size: 15px; }
+    .book-disclosure { font-size: 14px; color: var(--ink-faint); }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach.html">The approach</a>
+            <a href="../principles.html">Principles &amp; manifesto</a>
+            <a href="../concepts.html">Concepts &amp; vocabulary</a>
+            <a href="../mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services.html">Services</a>
+            <a href="../work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise.html">Overview</a>
+            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault.html">Data Vault</a>
+            <a href="../expertise-data-modeling.html">Data modeling</a>
+            <a href="../expertise-diagram-generation.html">Diagram generation</a>
+            <a href="../expertise-modeling-tools.html">Modeling tools</a>
+            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about.html">About</a>
+            <a href="../references.html">References</a>
+            <a href="../ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><a href="../references.html" style="color:inherit;">References &amp; sources</a> · Books</p>
+      <div class="book-hero">
+        <img src="../assets/book-fundamentals-of-data-observability.jpg" alt="Fundamentals of Data Observability cover">
+        <div>
+          <h1 style="max-width:680px;">Fundamentals of Data Observability</h1>
+          <p class="lead">Andy Petrella · 2023 · data quality governance</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="article-body">
+<h2>Why this is in my collection</h2>
+<p><em>From the publisher:</em></p>
+<blockquote><p>Quickly detect, troubleshoot, and prevent a wide range of data issues through data observability, a set of best practices that enable data teams to gain greater visibility of data and its usage. If you're a data engineer, data architect, or machine learning engineer, or if the quality of your work depends on the quality of your data, this book shows you how to focus on the practical aspects of introducing data observability in your everyday work.</p></blockquote>
+<h2>Highlights</h2>
+<ul><li><strong>Observability is built in, monitoring is bolted on</strong> — Petrella's core distinction: visibility into data and its usage must be produced by the systems themselves, not reconstructed afterwards by an external watcher; instrumentation as a structural property, not an add-on product.</li><li><strong>Expectations as code</strong> — declaring what data should look like (shape, freshness, distributions) and executing those declarations continuously turns quality from opinion into rules; the rules-as-third-pillar argument applied at runtime.</li><li><strong>Shift observability to the producer</strong> — the engineers who generate data should instrument it at the source, rather than downstream teams inferring problems from symptoms; the same shift-left economics as fixing ambiguity at requirements time.</li><li><strong>Lineage is the runtime shadow of the model</strong> — knowing where data came from and what consumed it is model information observed in motion; a warehouse generated from a model gets this lineage by construction instead of by archaeology.</li><li><strong>Detection complements prevention — and checks can be generated</strong> — observability finds the issues that slip through, while a sound model prevents whole classes of them; through the MDDE lens the natural synthesis is deriving the observability checks from the same model that generates the pipeline.</li><li><strong>Silent data issues compound downstream</strong> — the longer a broken assumption travels, the more expensive it becomes; the cost curve that justifies structural guarantees early over heroic debugging late.</li></ul><p class="ai-note"><em>Highlights on this page are generated with the help of AI.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Structure beats magic.</h2>
+      <p class="lead" style="margin:0 auto 28px;">These are the sources behind the method. Want it built into how your team works?</p>
+      <a class="btn btn-primary" href="../contact.html">Start a conversation</a>
+      &nbsp; <a class="btn btn-ghost" href="../references.html">All references →</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach.html">Approach</a>
+        <a href="../references.html">References</a>
+        <a href="../about.html">About</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

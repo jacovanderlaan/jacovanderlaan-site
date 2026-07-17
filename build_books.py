@@ -131,8 +131,8 @@ def _has_cover(folder: Path) -> bool:
 
 
 def discover_books() -> list[str]:
-    """Slugs to build: the allow-list if given, else every folder whose note's
-    status is in PUBLISH_STATUS AND which has real highlights + a cover."""
+    """Slugs to build: the allow-list if given, else every folder with real
+    (AI) highlights + a cover image. See the publish-gate note below."""
     if _ALLOW:
         return _ALLOW
     slugs, skipped = [], 0
@@ -146,16 +146,20 @@ def discover_books() -> list[str]:
         if not note.exists():
             continue
         meta, body = split_frontmatter(note.read_text(encoding="utf-8"))
-        if _fm_str(meta, "status").lower() not in PUBLISH_STATUS:
+        # Publish gate (revised 2026-07-18): a book goes live with real highlights
+        # (AI summary is fine) AND a cover image — the personal "Why / My application"
+        # pass is NOT required. A collection is worth showing as a browsable shelf;
+        # empty personal sections are stripped by strip_placeholder_sections(), so an
+        # unreviewed book shows summary + cover with no empty headings. Only an explicit
+        # status:excluded (off-topic, e.g. rehomed to life) is held back by status.
+        if _fm_str(meta, "status").lower() == "excluded":
             continue
-        # Publish gate (2026-07-12): live ONLY with real highlights AND a cover.
-        # Stubs ("_To write…_") and cover-less books wait — content + image first.
         if not _has_real_highlights(body) or not _has_cover(folder):
             skipped += 1
             continue
         slugs.append(folder.name)
     if skipped:
-        print(f"  (held back {skipped} incomplete book(s): missing real highlights or cover)")
+        print(f"  (held back {skipped} book(s): missing highlights or cover)")
     return slugs
 
 
@@ -375,8 +379,15 @@ def privacy_gate(site: str) -> None:
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     root = mod.ROOTS.get(site)
-    files = [str(f) for f in Path(root).glob("*/*.md")
-             if f.name not in ("notes.md", "books.md")] if root and Path(root).is_dir() else []
+    # Scan ONLY the folder-note (<slug>/<slug>.md) — the sole file that becomes a
+    # published page. Sibling working files (notes.md, scan-plan.md, toc.md) are
+    # private and never published, so their working memos must not trip the gate.
+    files = []
+    if root and Path(root).is_dir():
+        for folder in Path(root).iterdir():
+            note = folder / f"{folder.name}.md"
+            if folder.is_dir() and note.is_file():
+                files.append(str(note))
     total = 0
     for f in sorted(files):
         hits = mod.scan_note(f)

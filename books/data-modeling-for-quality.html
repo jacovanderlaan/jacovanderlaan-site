@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Modeling for Quality — Books — Jaco van der Laan</title>
+  <meta name="description" content="Data Modeling for Quality by Graham Witt — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta name="author" content="Jaco van der Laan">
+  <link rel="canonical" href="https://jacovanderlaan.github.io/jacovanderlaan-site/books/data-modeling-for-quality.html">
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Data Modeling for Quality">
+  <meta property="og:description" content="Data Modeling for Quality by Graham Witt — why it&#x27;s in Jaco van der Laan&#x27;s curated data-architecture library, and what he built with it.">
+  <meta property="og:url" content="https://jacovanderlaan.github.io/jacovanderlaan-site/books/data-modeling-for-quality.html">
+  <meta property="og:image" content="https://jacovanderlaan.github.io/jacovanderlaan-site/assets/book-data-modeling-for-quality.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Data Modeling for Quality",
+  "description": "Data Modeling for Quality by Graham Witt — why it's in Jaco van der Laan's curated data-architecture library, and what he built with it.",
+  "image": "https://jacovanderlaan.github.io/jacovanderlaan-site/assets/book-data-modeling-for-quality.jpg",
+  "url": "https://jacovanderlaan.github.io/jacovanderlaan-site/books/data-modeling-for-quality.html",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Graham Witt"
+    }
+  ],
+  "datePublished": "2021",
+  "isbn": "9781634629157",
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Jaco van der Laan",
+      "url": "https://jacovanderlaan.github.io/jacovanderlaan-site"
+    }
+  }
+}
+  </script>
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 { margin-top: 40px; }
+    .article-body p, .article-body li { font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
+    .article-body blockquote { border-left: 4px solid var(--accent); margin: 24px 0; padding: 4px 0 4px 20px; color: var(--ink); font-style: italic; }
+    .book-hero { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+    .book-hero img { width: 180px; max-width: 40vw; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .book-rating { color: var(--accent); letter-spacing: 2px; font-size: 20px; }
+    .article-meta { max-width: 720px; margin: 0 auto 8px; color: var(--ink-faint); font-size: 15px; }
+    .book-disclosure { font-size: 14px; color: var(--ink-faint); }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach.html">The approach</a>
+            <a href="../principles.html">Principles &amp; manifesto</a>
+            <a href="../concepts.html">Concepts &amp; vocabulary</a>
+            <a href="../mdde.html">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services.html">Services</a>
+            <a href="../work.html">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise.html">Overview</a>
+            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault.html">Data Vault</a>
+            <a href="../expertise-data-modeling.html">Data modeling</a>
+            <a href="../expertise-diagram-generation.html">Diagram generation</a>
+            <a href="../expertise-modeling-tools.html">Modeling tools</a>
+            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles.html">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about.html">About</a>
+            <a href="../references.html">References</a>
+            <a href="../ideas.html">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><a href="../references.html" style="color:inherit;">References &amp; sources</a> · Books</p>
+      <div class="book-hero">
+        <img src="../assets/book-data-modeling-for-quality.jpg" alt="Data Modeling for Quality cover">
+        <div>
+          <h1 style="max-width:680px;">Data Modeling for Quality</h1>
+          <p class="lead">Graham Witt · 2021 · data modeling</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="article-body">
+<h2>Why this is in my collection</h2>
+<p><em>From the publisher:</em></p>
+<blockquote><p>This book is for all data modelers, data architects, and database designers―be they novices who want to learn what’s involved in data modeling, or experienced modelers who want to brush up their skills. A novice will not only gain an overview of data modeling, they will also learn how to follow the data modeling process, including the activities required for each step. The experienced practitioner will discover (or rediscover) techniques to ensure that data models accurately reflect business requirements. This book describes rigorous yet easily implemented approaches to:· modeling of business</p></blockquote>
+<h2>Highlights</h2>
+<ul><li><strong>Quality is built into the modeling process, not inspected in afterwards</strong> — Witt structures modeling as a sequence of activities each with its own verification step; process rigor as the quality mechanism, the same philosophy behind gated pipelines and two-gate review workflows.</li><li><strong>Verbalize the model in structured natural language</strong> — Witt's hallmark technique: express every entity, relationship, and constraint as a precise business sentence the domain expert can confirm or reject; the missing handshake between business truth and model structure, and the pattern behind rule-verbalization everywhere.</li><li><strong>A model the business cannot read cannot be validated</strong> — if fidelity checking requires the business to learn ER notation, fidelity checking won't happen; translating structure into reviewable sentences is what makes model quality socially achievable, not just technically defined.</li><li><strong>Requirements fidelity outranks notational elegance</strong> — the expensive defects are models that beautifully formalize the wrong understanding; a warning with extra weight in MDDE, where generation faithfully mass-produces whatever the model got wrong.</li><li><strong>Constraints are requirements too</strong> — Witt (co-author of the business-rules classic with Simsion, and author of <em>Writing Effective Business Rules</em>) treats rules capture as inseparable from structure capture; the rules pillar embedded in the modeling method itself.</li><li><strong>Repeatable process makes quality transferable</strong> — codifying how a good modeler works turns individual craft into team capability; the structure-beats-magic move applied to the modeling profession's own expertise.</li></ul><p class="ai-note"><em>Highlights on this page are generated with the help of AI.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark cta-block">
+    <div class="wrap">
+      <h2>Structure beats magic.</h2>
+      <p class="lead" style="margin:0 auto 28px;">These are the sources behind the method. Want it built into how your team works?</p>
+      <a class="btn btn-primary" href="../contact.html">Start a conversation</a>
+      &nbsp; <a class="btn btn-ghost" href="../references.html">All references →</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Jaco van der Laan · Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach.html">Approach</a>
+        <a href="../references.html">References</a>
+        <a href="../about.html">About</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
