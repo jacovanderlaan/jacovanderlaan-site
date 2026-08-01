@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Model-Driven Data Engineering — Concepts — Jaco van der Laan</title>
-  <meta name="description" content="Building scalable, metadata-driven data platforms from models — not hand-written code.">
+  <title>The Semantic Layer Blackhole — Concepts — Jaco van der Laan</title>
+  <meta name="description" content="A semantic layer collapses not from too little governance but from too much — every entity, dimension and glossary term added until the layer is unbrowsable and no one trusts it.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Concepts &amp; vocabulary — Jaco van der Laan">
   <meta property="og:description" content="The coined vocabulary behind Model-Driven Data Engineering — one memorable name per idea, from Deterministic SQL Generation to the Metadata Operating System.">
-  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/model-driven-data-engineering.html">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/the-semantic-layer-blackhole.html">
   <meta property="og:image" content="https://www.jacovanderlaan.com/assets/jaco-whiteboard.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,16 +102,15 @@
 
   <section class="hero">
     <div class="wrap c-detail">
-      <p class="c-cat">Umbrella thesis</p>
-      <h1>Model-Driven Data Engineering</h1>
-      <p class="lead">Building scalable, metadata-driven data platforms from models — not hand-written code.</p>
+      <p class="c-cat">Semantics</p>
+      <h1>The Semantic Layer Blackhole</h1>
+      <p class="lead">A semantic layer collapses not from too little governance but from too much — every entity, dimension and glossary term added until the layer is unbrowsable and no one trusts it.</p>
     </div>
   </section>
 
   <section class="tight">
     <div class="wrap c-detail">
-      <figure class="c-hero"><img src="../assets/model-driven-data-engineering-hero.png" alt="Model-Driven Data Engineering" loading="eager"/></figure>
-      <p class="c-body">The master brand, and the thesis the rest of the corpus elaborates: a data platform's structure and logic are <strong>data, not code</strong>. Entities, attributes, mappings, filters, time policies, rules — and even the generated SQL — live as rows in a metamodel, and the platform's artifacts (DDL, dbt, pipelines, tests, lineage, documentation, diagrams) are <em>generated views</em> of that metadata. Models are the source of truth; everything downstream is derived from them deterministically. The bet is easy to state and hard to hold: <strong>you write the model, not the pipeline.</strong> A five-table demo is enough to prove the trick — SQL generated from metadata instead of typed by hand. The full metamodel is 268 tables, and the honest question is why it grows that far. The answer is not sprawl but discipline: repeating groups become tables (an identifier has member columns, in order), declaration and call are separated the way a programming language separates them (a function has declared parameters; each use binds arguments), and capabilities arrive in coherent clusters (Data Vault, fact-oriented modeling, import bridges) you can adopt or ignore. The model is large the way a city is large — districts, not sprawl — and roughly two-thirds of it is optional. What makes the approach trustworthy is that the metadata is <a href="executable-metadata.html">executable</a>, not descriptive: it does not document what the platform does, it <em>is</em> what the platform does. Because SQL, tests, lineage and docs are all executions of the same metadata, they cannot drift out of sync — the <a href="metadata-star.html">metadata star</a> is the image, <a href="deterministic-sql-generation.html">deterministic generation</a> is the mechanism, and the <a href="metadata-operating-system.html">metadata operating system</a> is the engineered whole. MDDE is not a tool; it is the way of thinking the tools implement. The framework even documents itself — its own reference, DDL and diagrams are generated from the metamodel database, because a metadata framework whose documentation is hand-maintained would be a contradiction.</p>
+      <p class="c-body">There are two ways a semantic layer dies, and they are opposites. <a href="semantic-drift.html">Semantic drift</a> is death by neglect: meaning erodes because no one governs it. The blackhole is death by accumulation: meaning is governed so thoroughly, so exhaustively, that the layer collapses under its own mass. Every entity, every dimension, every measure, every hierarchy, every glossary term, every access rule — each one added for a good reason, all of them together forming something no human can hold and no one dares prune. Past a certain weight it stops being a map of the business and becomes a second business to maintain. The mechanism is gravitational, which is why the metaphor fits. Each new definition pulls in the next: a metric needs a dimension, the dimension needs a hierarchy, the hierarchy needs a glossary entry, the entry needs an owner and an access rule. Nothing is wrong locally — every addition is defensible in isolation — but the layer's total mass grows faster than anyone's ability to reason across it. The tell is when people stop consulting the semantic layer and start rebuilding the definition they need in their own query, because finding the sanctioned one costs more than redefining it. At that point the layer has passed its event horizon: it still exists, it is still "governed", and it no longer governs anything. The trap is that the discipline which was supposed to prevent chaos becomes the thing that produces it. A team that has been burned by drift over-corrects toward completeness — <em>model everything, define everything, govern everything</em> — and mistakes volume for rigor. But a semantic layer's value is not proportional to how much it contains; it is proportional to how much of it people actually use and trust. A complete layer nobody can navigate is worth less than a small one everyone reaches for. The escape is not less governance but <em>governed restraint</em>: define only where meaning genuinely diverges from the obvious (you don't redefine every term, only the ones your business bends — the discipline of <a href="semantic-design.html">semantic design</a>), start from the decisions that actually need it rather than from an urge to be exhaustive, and treat the layer's size as a cost to be justified, not a completeness score to be maximized. The question that keeps a semantic layer out of the blackhole is not "what else could we define?" but "what here has earned its place — and what is mass we are paying to carry?"</p>
       <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
     </div>
   </section>

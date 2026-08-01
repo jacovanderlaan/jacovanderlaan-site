@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Model-Driven Data Engineering — Concepts — Jaco van der Laan</title>
-  <meta name="description" content="Building scalable, metadata-driven data platforms from models — not hand-written code.">
+  <title>The Retrieval Layer Is a Product Decision — Concepts — Jaco van der Laan</title>
+  <meta name="description" content="Great data architecture still yields broken AI when the retrieval layer is treated as plumbing. What the model is handed — and whether the rule&#x27;s exceptions came with it — decides the answer.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Concepts &amp; vocabulary — Jaco van der Laan">
   <meta property="og:description" content="The coined vocabulary behind Model-Driven Data Engineering — one memorable name per idea, from Deterministic SQL Generation to the Metadata Operating System.">
-  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/model-driven-data-engineering.html">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/the-retrieval-layer-is-a-product-decision.html">
   <meta property="og:image" content="https://www.jacovanderlaan.com/assets/jaco-whiteboard.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,16 +102,15 @@
 
   <section class="hero">
     <div class="wrap c-detail">
-      <p class="c-cat">Umbrella thesis</p>
-      <h1>Model-Driven Data Engineering</h1>
-      <p class="lead">Building scalable, metadata-driven data platforms from models — not hand-written code.</p>
+      <p class="c-cat">Architecture</p>
+      <h1>The Retrieval Layer Is a Product Decision</h1>
+      <p class="lead">Great data architecture still yields broken AI when the retrieval layer is treated as plumbing. What the model is handed — and whether the rule&#x27;s exceptions came with it — decides the answer.</p>
     </div>
   </section>
 
   <section class="tight">
     <div class="wrap c-detail">
-      <figure class="c-hero"><img src="../assets/model-driven-data-engineering-hero.png" alt="Model-Driven Data Engineering" loading="eager"/></figure>
-      <p class="c-body">The master brand, and the thesis the rest of the corpus elaborates: a data platform's structure and logic are <strong>data, not code</strong>. Entities, attributes, mappings, filters, time policies, rules — and even the generated SQL — live as rows in a metamodel, and the platform's artifacts (DDL, dbt, pipelines, tests, lineage, documentation, diagrams) are <em>generated views</em> of that metadata. Models are the source of truth; everything downstream is derived from them deterministically. The bet is easy to state and hard to hold: <strong>you write the model, not the pipeline.</strong> A five-table demo is enough to prove the trick — SQL generated from metadata instead of typed by hand. The full metamodel is 268 tables, and the honest question is why it grows that far. The answer is not sprawl but discipline: repeating groups become tables (an identifier has member columns, in order), declaration and call are separated the way a programming language separates them (a function has declared parameters; each use binds arguments), and capabilities arrive in coherent clusters (Data Vault, fact-oriented modeling, import bridges) you can adopt or ignore. The model is large the way a city is large — districts, not sprawl — and roughly two-thirds of it is optional. What makes the approach trustworthy is that the metadata is <a href="executable-metadata.html">executable</a>, not descriptive: it does not document what the platform does, it <em>is</em> what the platform does. Because SQL, tests, lineage and docs are all executions of the same metadata, they cannot drift out of sync — the <a href="metadata-star.html">metadata star</a> is the image, <a href="deterministic-sql-generation.html">deterministic generation</a> is the mechanism, and the <a href="metadata-operating-system.html">metadata operating system</a> is the engineered whole. MDDE is not a tool; it is the way of thinking the tools implement. The framework even documents itself — its own reference, DDL and diagrams are generated from the metamodel database, because a metadata framework whose documentation is hand-maintained would be a contradiction.</p>
+      <p class="c-body">You can do everything upstream right — clean pipelines, a governed semantic layer, trusted data — and still ship an AI that gives wrong answers. The reason sits in a layer most teams treat as pipework: retrieval. Retrieval is where the question gets shaped, the right context gets found and filtered, and the answer gets assembled — and every one of those is a design choice, not a technical default. Hand the model a good foundation through a careless retrieval layer and the foundation never reaches the decision. The failure is quiet, which is what makes it dangerous. Retrieval that returns <em>part</em> of what was needed produces an answer that looks right and is wrong — the model fills the gap plausibly, the output is fluent, and nothing flags that a piece was missing. The canonical case is the rule that has an exception: a policy that holds "resolve within 24 hours, except for accounts under $10K, which get 72." Retrieve the rule without its exception and the agent confidently applies the wrong SLA. The rule without its exception isn't a smaller truth — it's an operational risk wearing the costume of a correct answer. Which is why the shape of what gets retrieved is a <em>product</em> decision, owned deliberately, not an infrastructure setting left on its default. It determines whether meaning survives the trip from your governed data to the model's context: does the retrieval carry the rule <em>and</em> its exceptions, the definition <em>and</em> its scope, the number <em>and</em> the caveat that qualifies it? Get that right — the rule and its exception together — and you get trusted output. Get it wrong and no amount of upstream quality saves you, because the model reasons over what it was handed, not over what you stored. For a semantic-first architecture this is the last mile and the one most likely to be skipped. The semantic layer defines meaning; the retrieval layer decides how much of that meaning reaches each decision. Treat it as plumbing and you've built a beautiful foundation that leaks at the tap. Treat it as a product surface — designed, owned, tested against the exception cases — and the foundation finally shows up where it counts.</p>
       <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
     </div>
   </section>

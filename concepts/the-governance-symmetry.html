@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Model-Driven Data Engineering — Concepts — Jaco van der Laan</title>
-  <meta name="description" content="Building scalable, metadata-driven data platforms from models — not hand-written code.">
+  <title>The Governance Symmetry — Concepts — Jaco van der Laan</title>
+  <meta name="description" content="Data governance controls the inputs; AI governance controls the outputs. They are two ends of one chain — and you cannot govern the outputs of a system whose inputs are ungoverned.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Concepts &amp; vocabulary — Jaco van der Laan">
   <meta property="og:description" content="The coined vocabulary behind Model-Driven Data Engineering — one memorable name per idea, from Deterministic SQL Generation to the Metadata Operating System.">
-  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/model-driven-data-engineering.html">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/the-governance-symmetry.html">
   <meta property="og:image" content="https://www.jacovanderlaan.com/assets/jaco-whiteboard.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,16 +102,15 @@
 
   <section class="hero">
     <div class="wrap c-detail">
-      <p class="c-cat">Umbrella thesis</p>
-      <h1>Model-Driven Data Engineering</h1>
-      <p class="lead">Building scalable, metadata-driven data platforms from models — not hand-written code.</p>
+      <p class="c-cat">Lineage &amp; governance</p>
+      <h1>The Governance Symmetry</h1>
+      <p class="lead">Data governance controls the inputs; AI governance controls the outputs. They are two ends of one chain — and you cannot govern the outputs of a system whose inputs are ungoverned.</p>
     </div>
   </section>
 
   <section class="tight">
     <div class="wrap c-detail">
-      <figure class="c-hero"><img src="../assets/model-driven-data-engineering-hero.png" alt="Model-Driven Data Engineering" loading="eager"/></figure>
-      <p class="c-body">The master brand, and the thesis the rest of the corpus elaborates: a data platform's structure and logic are <strong>data, not code</strong>. Entities, attributes, mappings, filters, time policies, rules — and even the generated SQL — live as rows in a metamodel, and the platform's artifacts (DDL, dbt, pipelines, tests, lineage, documentation, diagrams) are <em>generated views</em> of that metadata. Models are the source of truth; everything downstream is derived from them deterministically. The bet is easy to state and hard to hold: <strong>you write the model, not the pipeline.</strong> A five-table demo is enough to prove the trick — SQL generated from metadata instead of typed by hand. The full metamodel is 268 tables, and the honest question is why it grows that far. The answer is not sprawl but discipline: repeating groups become tables (an identifier has member columns, in order), declaration and call are separated the way a programming language separates them (a function has declared parameters; each use binds arguments), and capabilities arrive in coherent clusters (Data Vault, fact-oriented modeling, import bridges) you can adopt or ignore. The model is large the way a city is large — districts, not sprawl — and roughly two-thirds of it is optional. What makes the approach trustworthy is that the metadata is <a href="executable-metadata.html">executable</a>, not descriptive: it does not document what the platform does, it <em>is</em> what the platform does. Because SQL, tests, lineage and docs are all executions of the same metadata, they cannot drift out of sync — the <a href="metadata-star.html">metadata star</a> is the image, <a href="deterministic-sql-generation.html">deterministic generation</a> is the mechanism, and the <a href="metadata-operating-system.html">metadata operating system</a> is the engineered whole. MDDE is not a tool; it is the way of thinking the tools implement. The framework even documents itself — its own reference, DDL and diagrams are generated from the metamodel database, because a metadata framework whose documentation is hand-maintained would be a contradiction.</p>
+      <p class="c-body">"AI governance" and "data governance" are usually run as two programs, by two teams, with two budgets — and treated as if they were separate subjects. They aren't. They are the same chain seen from opposite ends. Data governance protects the enterprise from what goes <em>in</em>: poor-quality, incomplete or unauthorized data entering the system. AI governance protects it from what comes <em>out</em>: opaque decisions, bias, and automation running unchecked. Inputs on one side, outputs on the other, and a set of shared concerns — privacy, lineage, auditability, risk — sitting between them. Seeing the symmetry settles a common confusion, which is the belief that you can bolt AI governance onto an organization that never governed its data. You can write all the model cards, fairness checks and output guardrails you like; if the data feeding the model is ungoverned, you are inspecting the outputs of a process whose inputs you don't control. The output guardrail catches a bad answer <em>after</em> the bad input produced it — useful, but downstream of the real leak. Governing one end while neglecting the other isn't half a solution; it's a solution to the wrong half. The symmetry also locates a layer most models miss: the enforcement in the <em>middle</em>, at runtime. Design-time governance — policies, standards, catalogs — is necessary but static. What agentic systems add is the need for governance that acts in real time: policy checked, access enforced, quality validated at the moment a decision is made, with escalation when something crosses a threshold. That runtime layer is where input-control and output-control actually meet — the point where the two ends of the chain are held together instead of managed apart. The practical consequence for anyone selling or building this: lead with the chain, not the halves. An organization proud of its AI-governance policy but weak on its data foundation is governing the wrong end, and the fix isn't more output controls — it's the missing input discipline underneath. Structure at the source is what makes governance at the surface mean anything.</p>
       <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
     </div>
   </section>

@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Model-Driven Data Engineering — Concepts — Jaco van der Laan</title>
-  <meta name="description" content="Building scalable, metadata-driven data platforms from models — not hand-written code.">
+  <title>Governance at the Point of Consumption — Concepts — Jaco van der Laan</title>
+  <meta name="description" content="Most quality and policy checks fire at ingestion. The failure that hurts happens at the moment of use — when a dashboard, app or AI agent reads the data and acts.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Concepts &amp; vocabulary — Jaco van der Laan">
   <meta property="og:description" content="The coined vocabulary behind Model-Driven Data Engineering — one memorable name per idea, from Deterministic SQL Generation to the Metadata Operating System.">
-  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/model-driven-data-engineering.html">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/governance-at-the-point-of-consumption.html">
   <meta property="og:image" content="https://www.jacovanderlaan.com/assets/jaco-whiteboard.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,16 +102,15 @@
 
   <section class="hero">
     <div class="wrap c-detail">
-      <p class="c-cat">Umbrella thesis</p>
-      <h1>Model-Driven Data Engineering</h1>
-      <p class="lead">Building scalable, metadata-driven data platforms from models — not hand-written code.</p>
+      <p class="c-cat">Lineage &amp; governance</p>
+      <h1>Governance at the Point of Consumption</h1>
+      <p class="lead">Most quality and policy checks fire at ingestion. The failure that hurts happens at the moment of use — when a dashboard, app or AI agent reads the data and acts.</p>
     </div>
   </section>
 
   <section class="tight">
     <div class="wrap c-detail">
-      <figure class="c-hero"><img src="../assets/model-driven-data-engineering-hero.png" alt="Model-Driven Data Engineering" loading="eager"/></figure>
-      <p class="c-body">The master brand, and the thesis the rest of the corpus elaborates: a data platform's structure and logic are <strong>data, not code</strong>. Entities, attributes, mappings, filters, time policies, rules — and even the generated SQL — live as rows in a metamodel, and the platform's artifacts (DDL, dbt, pipelines, tests, lineage, documentation, diagrams) are <em>generated views</em> of that metadata. Models are the source of truth; everything downstream is derived from them deterministically. The bet is easy to state and hard to hold: <strong>you write the model, not the pipeline.</strong> A five-table demo is enough to prove the trick — SQL generated from metadata instead of typed by hand. The full metamodel is 268 tables, and the honest question is why it grows that far. The answer is not sprawl but discipline: repeating groups become tables (an identifier has member columns, in order), declaration and call are separated the way a programming language separates them (a function has declared parameters; each use binds arguments), and capabilities arrive in coherent clusters (Data Vault, fact-oriented modeling, import bridges) you can adopt or ignore. The model is large the way a city is large — districts, not sprawl — and roughly two-thirds of it is optional. What makes the approach trustworthy is that the metadata is <a href="executable-metadata.html">executable</a>, not descriptive: it does not document what the platform does, it <em>is</em> what the platform does. Because SQL, tests, lineage and docs are all executions of the same metadata, they cannot drift out of sync — the <a href="metadata-star.html">metadata star</a> is the image, <a href="deterministic-sql-generation.html">deterministic generation</a> is the mechanism, and the <a href="metadata-operating-system.html">metadata operating system</a> is the engineered whole. MDDE is not a tool; it is the way of thinking the tools implement. The framework even documents itself — its own reference, DDL and diagrams are generated from the metamodel database, because a metadata framework whose documentation is hand-maintained would be a contradiction.</p>
+      <p class="c-body">Ask most teams where their data quality lives and they point at the front door: validation at ingestion, checks in the pipeline, a certified layer. All correct, all necessary — and all upstream of the moment that actually matters. Data doesn't cause damage when it enters; it causes damage when it is <em>used</em>. The dashboard that drives a decision, the app that shows a customer a number, the AI agent that reads a value and acts on it — that is where a stale or wrong figure turns into a wrong outcome, and it is precisely where almost no one is checking. The reassuring sentence that hides the gap is <em>"the data passed all its quality checks last quarter."</em> Quality is not a quarterly snapshot; it is a property of the data at the instant of consumption. A row that was valid at ingestion can be stale by the time a dashboard serves it, superseded by the time an agent retrieves it, or correct in isolation but wrong for <em>this</em> decision in <em>this</em> moment. Governance that only guards the entrance certifies that the data was fine when it arrived — a claim that gets weaker every hour it sits. This reframes governance from retrospective to inline. The traditional model is after-the-fact: audit the lineage, review the access logs, run the human review cycles, catch the problem next quarter. The point-of-consumption model enforces at the decision point: policy, access and quality checked at the exact moment the data is read, so a bad value is caught before it becomes a bad action rather than reconstructed afterward. It is the difference between a smoke detector and a fire report. For an AI-native platform this stops being optional. When the consumer is a human analyst, a slightly stale number is usually survivable — they sanity-check, they notice. When the consumer is an autonomous agent, there is no sanity-check between the data and the action; the point of consumption <em>is</em> the last line of defense. Which is the whole argument: build the checks where the data is used, not only where it enters, because that is where the cost lands.</p>
       <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
     </div>
   </section>
