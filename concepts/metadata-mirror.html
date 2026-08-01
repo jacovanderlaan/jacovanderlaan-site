@@ -110,7 +110,7 @@
 
   <section class="tight">
     <div class="wrap c-detail">
-      <figure class="c-hero"><img src="../assets/metadata-mirror-hero.png" alt="Metadata Mirror" loading="eager"/></figure>
+      <figure class="c-hero"><img src="../assets/metadata-mirror-hero.webp" alt="Metadata Mirror" loading="eager"/></figure>
       <p class="c-body">Once the knowledge is captured as metadata files, you need to be able to <em>query</em> it at speed &amp;mdash; and markdown-in-folders isn&amp;rsquo;t a query engine. The metadata mirror solves this: the files are read into a fast analytical database, typically DuckDB, that reflects their content. The crucial rule is directionality &amp;mdash; <strong>files stay the source of truth, the database is the mirror.</strong> You never edit the database directly; you edit the files (in git, reviewable) and regenerate the reflection. That keeps the human-editable curation layer authoritative while giving everything downstream a fast, structured surface to run against. The mirror is what makes the brain usable. Apps read from it, <a href="brain-access-via-mcp.html">MCP servers</a> query it, analysts join across it &amp;mdash; all at database speed, all from a reflection that was generated, not hand-maintained. Because it&amp;rsquo;s regenerated from files, it can never silently drift: if the mirror is wrong, the files are wrong, and the files are where you fix it. This is the pattern the whole ecosystem uses (concepts, the metadata model, the demo browser): <a href="metadata-first.html">metadata</a> as files = truth, DuckDB as the queryable spiegel. Structure once, reflect fast, query everything.</p>
       <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
     </div>

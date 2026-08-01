@@ -110,7 +110,7 @@
 
   <section class="tight">
     <div class="wrap c-detail">
-      <figure class="c-hero"><img src="../assets/data-versioning-hero.png" alt="Data Versioning" loading="eager"/></figure>
+      <figure class="c-hero"><img src="../assets/data-versioning-hero.webp" alt="Data Versioning" loading="eager"/></figure>
       <p class="c-body">Data versioning is the discipline of keeping the history of the <em>data</em> itself: not just the current value, but every value it has had, with the dates that make time queryable. The workhorse is bi-temporal SCD2 &amp;mdash; two timelines, one for when something was true in the world and one for when the platform knew it &amp;mdash; extended with redelivery support so a corrected or re-sent load slots into history without rewriting it. Ask &amp;ldquo;what did this record say on the first of March, as we understood it then?&amp;rdquo; and the answer is a query, not an archaeology project. It is the twin of <a href="model-versioning.html">model versioning</a>, and the pair matters. Data versioning captures how the <em>data</em> changed; model versioning captures how the <em>model and platform</em> changed. Confuse the two and history lies: a value that looks like a data change might really be a model change, and only tracking both clocks tells them apart. Together they let you reconstruct not just the numbers but the system that produced them, at any point in time. This is the foundation audits, reconciliations and reality checks stand on. You cannot prove new equals old, or explain why a number moved, without a faithful record of what the data was and when. Version the data, and the past stays answerable.</p>
       <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
     </div>
