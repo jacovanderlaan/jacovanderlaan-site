@@ -1,0 +1,17 @@
+# Cloudflare Pages headers.
+#
+# While jacovanderlaan.com still runs on WordPress, the *.pages.dev preview must
+# stay out of Google — otherwise the same 285 articles get indexed twice and the
+# preview can outrank the live site.
+#
+# Remove this block on the day the DNS moves over. Nothing else here depends on it.
+
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+
+# Long-cache the fingerprinted assets; they never change under the same name.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/*
+  Cache-Control: public, max-age=604800
