@@ -2,15 +2,15 @@
 <!-- TODO: update <loc> domain to www.jacovanderlaan.com once DNS is pointed -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.jacovanderlaan.com/</loc></url>
-  <url><loc>https://www.jacovanderlaan.com/approach.html</loc></url>
-  <url><loc>https://www.jacovanderlaan.com/services.html</loc></url>
-  <url><loc>https://www.jacovanderlaan.com/about.html</loc></url>
-  <url><loc>https://www.jacovanderlaan.com/articles.html</loc></url>
-  <url><loc>https://www.jacovanderlaan.com/contact.html</loc></url>
-  <url><loc>https://www.jacovanderlaan.com/expertise.html</loc></url>
-  <url><loc>https://www.jacovanderlaan.com/work.html</loc></url>
-  <url><loc>https://www.jacovanderlaan.com/references.html</loc></url>
-  <url><loc>https://www.jacovanderlaan.com/ideas.html</loc></url>  <url><loc>https://www.jacovanderlaan.com/principles.html</loc></url>  <url><loc>https://www.jacovanderlaan.com/mdde.html</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/approach/</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/services/</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/about/</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/articles/</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/contact/</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/expertise/</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/work/</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/references/</loc></url>
+  <url><loc>https://www.jacovanderlaan.com/ideas/</loc></url>  <url><loc>https://www.jacovanderlaan.com/principles/</loc></url>  <url><loc>https://www.jacovanderlaan.com/mdde/</loc></url>
 
 
 </urlset>

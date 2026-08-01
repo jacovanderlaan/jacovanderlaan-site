@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Time-Travel the Model — Concepts — Jaco van der Laan</title>
+  <meta name="description" content="Load the git history of the metadata files into the mirror as versioned snapshots, so an app can scrub any object — a table, a rule — back to how it looked at any point in time. Git becomes the model-versioning clock.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Concepts &amp; vocabulary — Jaco van der Laan">
+  <meta property="og:description" content="The coined vocabulary behind Model-Driven Data Engineering — one memorable name per idea, from Deterministic SQL Generation to the Metadata Operating System.">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/time-travel-the-model.html">
+  <meta property="og:image" content="https://www.jacovanderlaan.com/assets/jaco-whiteboard.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <style>
+    .cat-title { font-size:15px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;
+                  color:var(--accent); margin:40px 0 18px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+    .cat-title:first-of-type { margin-top:0; }
+    .concept-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    /* The card is an <a> (ADR-084: each card links to its detail page), so it must
+       reset the site's global link styling — otherwise every line inside the card
+       inherits blue + underline. */
+    .concept { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+                padding:22px 24px; box-shadow:var(--shadow); display:flex; flex-direction:column;
+                text-decoration:none; color:var(--ink); transition:border-color .15s, box-shadow .15s; }
+    .concept:hover { border-color:var(--accent); box-shadow:0 8px 24px rgba(15,23,42,.10); }
+    .concept:hover .c-name { color:var(--accent); }
+    .concept .c-name { font-size:19px; font-weight:700; letter-spacing:-.3px; margin-bottom:6px;
+                color:var(--ink); text-decoration:none; }
+    .concept .c-tag { font-size:14px; font-weight:600; color:var(--accent); margin-bottom:10px;
+                text-decoration:none; }
+    .concept .c-def { color:var(--ink-soft); font-size:15px; margin:0; text-decoration:none; }
+    @media (max-width:860px){ .concept-grid{ grid-template-columns:1fr; } }
+  </style>
+<style>
+  .c-detail { max-width:760px; }
+  .c-detail .eyebrow { color:var(--accent); }
+  .c-detail .c-cat { font-size:14px; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
+  .c-detail h1 { margin-bottom:14px; }
+  .c-detail .c-body { font-size:17px; line-height:1.7; color:var(--ink-soft); }
+  .c-hero { margin:0 0 2rem; }
+  .c-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); box-shadow:0 10px 30px rgba(15,23,42,.07); }
+  .c-hero figcaption { font-size:.85rem; color:var(--ink-faint); margin-top:.7rem; text-align:center; line-height:1.5; }
+  .c-back { display:inline-block; margin-top:2.4rem; font-weight:600; color:var(--accent); text-decoration:none; }
+  .c-back:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach/">The approach</a>
+            <a href="../principles/">Principles &amp; manifesto</a>
+            <a href="../concepts/">Concepts &amp; vocabulary</a>
+            <a href="../mdde/">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services/">Services</a>
+            <a href="../work/">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise/">Overview</a>
+            <a href="../expertise-sql-migration/">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault/">Data Vault</a>
+            <a href="../expertise-data-modeling/">Data modeling</a>
+            <a href="../expertise-diagram-generation/">Diagram generation</a>
+            <a href="../expertise-modeling-tools/">Modeling tools</a>
+            <a href="../expertise-engineering/">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles/">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about/">About</a>
+            <a href="../references/">References</a>
+            <a href="../ideas/">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact/">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap c-detail">
+      <p class="c-cat">Metadata OS</p>
+      <h1>Time-Travel the Model</h1>
+      <p class="lead">Load the git history of the metadata files into the mirror as versioned snapshots, so an app can scrub any object — a table, a rule — back to how it looked at any point in time. Git becomes the model-versioning clock.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap c-detail">
+      <figure class="c-hero"><img src="../assets/time-travel-the-model-hero.png" alt="Time-Travel the Model" loading="eager"/></figure>
+      <p class="c-body">The <a href="metadata-mirror.html">metadata mirror</a> shows the current state: the files as they are now, read into a fast database. But the files live in git, and git already holds every earlier version of every one of them. Time-travel the model turns that latent history into a first-class dimension of the mirror. Instead of loading only the working tree, you walk the git log and load <em>each commit's</em> version of the metadata, tagging every row with the commit it came from and when it landed. The mirror stops being a snapshot and becomes a timeline. That makes a new kind of question answerable in an app: not "what does this table look like" but "what did this table look like on the fifteenth of July, and what changed since." A version column and a point-in-time filter is all it takes — pick a moment, and the mirror returns the state as of that moment, one row per object. It's an <a href="bi-temporal-scd2-with-redelivery-support.html">SCD2</a> pattern, except the history isn't hand-maintained: it's reconstructed from git, which was recording it for free the whole time. The symmetry is the point. Git is the version-control layer under the metadata files; <a href="model-versioning.html">model versioning</a> is the concept of tracking how the model itself evolves. Here they become the same thing — git <em>is</em> the model-versioning clock, and the mirror reads its history the way it already reads the files' content. Structure once as files, version for free in git, and the model's whole evolution becomes queryable — you can watch a definition drift, catch when a rule was introduced, and trace, with <a href="lineage-to-source.html">lineage</a>, the exact commit a change came from.</p>
+      <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
+    </div>
+  </section>
+
+<footer class="site">
+    <div class="wrap">
+      <div>&#169; 2026 Jaco van der Laan &#183; Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach/">Approach</a>
+        <a href="../services/">Services</a>
+        <a href="../about/">About</a>
+        <a href="../articles/">Articles</a>
+        <a href="../contact/">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

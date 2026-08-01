@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Continuous Learning — Concepts — Jaco van der Laan</title>
+  <meta name="description" content="The field changes constantly — new tech, new roles, new methods — so everyone keeps learning: not just the modelers, but the whole team and the stakeholders too.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Concepts &amp; vocabulary — Jaco van der Laan">
+  <meta property="og:description" content="The coined vocabulary behind Model-Driven Data Engineering — one memorable name per idea, from Deterministic SQL Generation to the Metadata Operating System.">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/continuous-learning.html">
+  <meta property="og:image" content="https://www.jacovanderlaan.com/assets/jaco-whiteboard.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <style>
+    .cat-title { font-size:15px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;
+                  color:var(--accent); margin:40px 0 18px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+    .cat-title:first-of-type { margin-top:0; }
+    .concept-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    /* The card is an <a> (ADR-084: each card links to its detail page), so it must
+       reset the site's global link styling — otherwise every line inside the card
+       inherits blue + underline. */
+    .concept { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+                padding:22px 24px; box-shadow:var(--shadow); display:flex; flex-direction:column;
+                text-decoration:none; color:var(--ink); transition:border-color .15s, box-shadow .15s; }
+    .concept:hover { border-color:var(--accent); box-shadow:0 8px 24px rgba(15,23,42,.10); }
+    .concept:hover .c-name { color:var(--accent); }
+    .concept .c-name { font-size:19px; font-weight:700; letter-spacing:-.3px; margin-bottom:6px;
+                color:var(--ink); text-decoration:none; }
+    .concept .c-tag { font-size:14px; font-weight:600; color:var(--accent); margin-bottom:10px;
+                text-decoration:none; }
+    .concept .c-def { color:var(--ink-soft); font-size:15px; margin:0; text-decoration:none; }
+    @media (max-width:860px){ .concept-grid{ grid-template-columns:1fr; } }
+  </style>
+<style>
+  .c-detail { max-width:760px; }
+  .c-detail .eyebrow { color:var(--accent); }
+  .c-detail .c-cat { font-size:14px; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
+  .c-detail h1 { margin-bottom:14px; }
+  .c-detail .c-body { font-size:17px; line-height:1.7; color:var(--ink-soft); }
+  .c-hero { margin:0 0 2rem; }
+  .c-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); box-shadow:0 10px 30px rgba(15,23,42,.07); }
+  .c-hero figcaption { font-size:.85rem; color:var(--ink-faint); margin-top:.7rem; text-align:center; line-height:1.5; }
+  .c-back { display:inline-block; margin-top:2.4rem; font-weight:600; color:var(--accent); text-decoration:none; }
+  .c-back:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach/">The approach</a>
+            <a href="../principles/">Principles &amp; manifesto</a>
+            <a href="../concepts/">Concepts &amp; vocabulary</a>
+            <a href="../mdde/">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services/">Services</a>
+            <a href="../work/">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise/">Overview</a>
+            <a href="../expertise-sql-migration/">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault/">Data Vault</a>
+            <a href="../expertise-data-modeling/">Data modeling</a>
+            <a href="../expertise-diagram-generation/">Diagram generation</a>
+            <a href="../expertise-modeling-tools/">Modeling tools</a>
+            <a href="../expertise-engineering/">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles/">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about/">About</a>
+            <a href="../references/">References</a>
+            <a href="../ideas/">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact/">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap c-detail">
+      <p class="c-cat">Signature principle</p>
+      <h1>Continuous Learning</h1>
+      <p class="lead">The field changes constantly — new tech, new roles, new methods — so everyone keeps learning: not just the modelers, but the whole team and the stakeholders too.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap c-detail">
+      <figure class="c-hero"><img src="../assets/continuous-learning-hero.png" alt="Continuous Learning" loading="eager"/></figure>
+      <p class="c-body">Continuous learning is the concept that is most often forgotten and matters most. The field is not standing still: AI, generative modeling, new platforms, new methods, the shifting role of the architect &amp;mdash; the ground moves every few months. A skill set that was current two years ago is already partly stale. So learning cannot be a one-off training you did once; it has to be <strong>continuous</strong>, built into how the work runs, or you quietly fall behind while feeling busy. And it is not only the modelers. <strong>The whole team has a lot of new things to learn &amp;mdash; and so do the stakeholders.</strong> People need to learn the new concepts, understand the business model, the glossary and the processes, and get comfortable with using AI and prompt engineering. That is a real curriculum, not a memo. If only the abstract thinkers learn and everyone else stays where they were, the gap between the model and the people who must use it only widens. Bringing the stakeholders along &amp;mdash; teaching, not just delivering &amp;mdash; is part of the job now. And we should certainly <strong>not</strong> depend on sending people to a single training or workshop and expecting everything is then done. It isn&amp;rsquo;t. A one-off session plants a seed at best; without reinforcement it fades within weeks. Real learning is continuous and embedded in the work &amp;mdash; revisited, practiced, and supported day to day &amp;mdash; not a box ticked once on a calendar. Crucially, continuous learning cannot be left to good intentions &amp;mdash; it has to be <strong>supported by a method and a structure.</strong> The same discipline BTM applies to data applies to learning: a structured place for what the team is learning, curated knowledge that compounds instead of scattering, trainings and workshops with a repeatable shape, and AI to help surface and reinforce what matters. Structure is what turns &amp;ldquo;we should all keep learning&amp;rdquo; from a slogan into something that actually happens, week after week. Take it one step further and do the BTM thing: <strong>build continuous training into the system, and model the learning itself.</strong> Just as we model contracts, deliveries and incidents, we can model the learning &amp;mdash; what each person and role needs to know, which concepts and processes are covered, and keep track of knowledge levels over time. When learning is metadata, gaps become visible (&amp;ldquo;who still needs the new glossary, the new AI workflow?&amp;rdquo;), onboarding has a defined path, and the training is not a hopeful event but a tracked, improving part of the platform. Model the learning, and you can actually manage it. This is why the trainings and workshops matter, and why the whole approach leans on a growth mindset. Continuous learning turns the pace of change from a threat into an advantage: the teams that keep learning compound their skill the way structured knowledge compounds. Keep learning, together &amp;mdash; it is also, genuinely, part of the <a href="enjoy-the-ride.html">fun</a>.</p>
+      <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
+    </div>
+  </section>
+
+<footer class="site">
+    <div class="wrap">
+      <div>&#169; 2026 Jaco van der Laan &#183; Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach/">Approach</a>
+        <a href="../services/">Services</a>
+        <a href="../about/">About</a>
+        <a href="../articles/">Articles</a>
+        <a href="../contact/">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

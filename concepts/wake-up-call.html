@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wake Up Call — Concepts — Jaco van der Laan</title>
+  <meta name="description" content="The change is already underway while people and organizations are still tiptoeing around it. This is the wake-up call: stop circling, face it, and move — before the gap to the ones who did becomes too big to close.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Concepts &amp; vocabulary — Jaco van der Laan">
+  <meta property="og:description" content="The coined vocabulary behind Model-Driven Data Engineering — one memorable name per idea, from Deterministic SQL Generation to the Metadata Operating System.">
+  <meta property="og:url" content="https://www.jacovanderlaan.com/concepts/wake-up-call.html">
+  <meta property="og:image" content="https://www.jacovanderlaan.com/assets/jaco-whiteboard.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+  <style>
+    .cat-title { font-size:15px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;
+                  color:var(--accent); margin:40px 0 18px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+    .cat-title:first-of-type { margin-top:0; }
+    .concept-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    /* The card is an <a> (ADR-084: each card links to its detail page), so it must
+       reset the site's global link styling — otherwise every line inside the card
+       inherits blue + underline. */
+    .concept { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+                padding:22px 24px; box-shadow:var(--shadow); display:flex; flex-direction:column;
+                text-decoration:none; color:var(--ink); transition:border-color .15s, box-shadow .15s; }
+    .concept:hover { border-color:var(--accent); box-shadow:0 8px 24px rgba(15,23,42,.10); }
+    .concept:hover .c-name { color:var(--accent); }
+    .concept .c-name { font-size:19px; font-weight:700; letter-spacing:-.3px; margin-bottom:6px;
+                color:var(--ink); text-decoration:none; }
+    .concept .c-tag { font-size:14px; font-weight:600; color:var(--accent); margin-bottom:10px;
+                text-decoration:none; }
+    .concept .c-def { color:var(--ink-soft); font-size:15px; margin:0; text-decoration:none; }
+    @media (max-width:860px){ .concept-grid{ grid-template-columns:1fr; } }
+  </style>
+<style>
+  .c-detail { max-width:760px; }
+  .c-detail .eyebrow { color:var(--accent); }
+  .c-detail .c-cat { font-size:14px; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
+  .c-detail h1 { margin-bottom:14px; }
+  .c-detail .c-body { font-size:17px; line-height:1.7; color:var(--ink-soft); }
+  .c-hero { margin:0 0 2rem; }
+  .c-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); box-shadow:0 10px 30px rgba(15,23,42,.07); }
+  .c-hero figcaption { font-size:.85rem; color:var(--ink-faint); margin-top:.7rem; text-align:center; line-height:1.5; }
+  .c-back { display:inline-block; margin-top:2.4rem; font-weight:600; color:var(--accent); text-decoration:none; }
+  .c-back:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<header class="site">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Jaco van der&nbsp;Laan</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
+      <label for="navtoggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+      <nav class="main">
+        <span class="navgroup">
+          <button class="navtop" type="button">Approach</button>
+          <span class="navmenu">
+            <a href="../approach/">The approach</a>
+            <a href="../principles/">Principles &amp; manifesto</a>
+            <a href="../concepts/">Concepts &amp; vocabulary</a>
+            <a href="../mdde/">MDDE</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Services</button>
+          <span class="navmenu">
+            <a href="../services/">Services</a>
+            <a href="../work/">Work &amp; case studies</a>
+          </span>
+        </span>
+        <span class="navgroup">
+          <button class="navtop" type="button">Expertise</button>
+          <span class="navmenu">
+            <a href="../expertise/">Overview</a>
+            <a href="../expertise-sql-migration/">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault/">Data Vault</a>
+            <a href="../expertise-data-modeling/">Data modeling</a>
+            <a href="../expertise-diagram-generation/">Diagram generation</a>
+            <a href="../expertise-modeling-tools/">Modeling tools</a>
+            <a href="../expertise-engineering/">Engineering &amp; architecture</a>
+          </span>
+        </span>
+        <a href="../articles/">Articles</a>
+        <span class="navgroup">
+          <button class="navtop" type="button">About</button>
+          <span class="navmenu">
+            <a href="../about/">About</a>
+            <a href="../references/">References</a>
+            <a href="../ideas/">Ideas</a>
+          </span>
+        </span>
+        <a class="nav-cta" href="../contact/">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap c-detail">
+      <p class="c-cat">Signature principle</p>
+      <h1>Wake Up Call</h1>
+      <p class="lead">The change is already underway while people and organizations are still tiptoeing around it. This is the wake-up call: stop circling, face it, and move — before the gap to the ones who did becomes too big to close.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap c-detail">
+      <figure class="c-hero"><img src="../assets/wake-up-call-hero.png" alt="Wake Up Call" loading="eager"/></figure>
+      <p class="c-body">Right now, most people and organizations are still tiptoeing around it. They sense that AI changes everything, that the old way of modeling and working won&amp;rsquo;t hold, that a transformation is coming &amp;mdash; and they circle it, run a pilot, form a committee, wait for it to get clearer. They <strong>postpone, because underneath it they&amp;rsquo;re uncertain</strong> &amp;mdash; unsure where to start, unsure it&amp;rsquo;s worth the upheaval, so they delay. Meanwhile the ground is already moving. This is the wake-up call: <strong>the change isn&amp;rsquo;t on the horizon, it&amp;rsquo;s here</strong>, and hesitating is itself a decision with a cost. This is exactly the <strong>impasse</strong> we started from. People postpone because there is still too much unclear &amp;mdash; the field is fragmented, the tools contradict each other, the new roles and methods haven&amp;rsquo;t settled, and AI has scrambled the rules faster than anyone has answered them. That lack of clarity is not laziness; it is a genuine stuck point. And it is precisely the impasse Breakthrough Modeling exists to break: impasse &amp;rarr; wake-up call &amp;rarr; breakthrough &amp;rarr; momentum. A wake-up call is not panic; it is clarity arriving suddenly. It names what everyone half-knows but hasn&amp;rsquo;t acted on: the tools are ready, the smaller and smarter organizations are already moving, and the comfortable pace of &amp;ldquo;we&amp;rsquo;ll get to it&amp;rdquo; has quietly become dangerous. The honest response is to stop circling and face it &amp;mdash; accept that <a href="it-comes-with-a-price.html">it comes with a price</a>, that it takes real change, and start now. And here is the turn: <strong>Breakthrough Modeling offers the clarity</strong> the impasse lacks. Where things are murky, BTM makes them explicit &amp;mdash; one model uniting structure, movement and meaning, a shared vocabulary of concepts, everything as open, versioned, readable metadata. Full <a href="radical-clarity.html">openness</a> &amp;mdash; openheid van zaken &amp;mdash; is the answer to &amp;ldquo;there&amp;rsquo;s still too much unclear&amp;rdquo;: not another opaque tool, but a way of working where what is agreed, what is modeled and how it&amp;rsquo;s measured are all in the open. The wake-up call points at the problem; BTM is the clear way through it. This is <a href="sense-of-urgency.html">urgency</a> with the alarm turned on, and it is <a href="keep-challenging.html">provocation</a> pointed at the whole industry&amp;rsquo;s hesitation. The point isn&amp;rsquo;t fear &amp;mdash; it&amp;rsquo;s momentum. Wake up, look at what&amp;rsquo;s actually happening, and move deliberately while there is still room to lead rather than scramble to catch up. And of course &amp;mdash; consistent with everything BTM stands for &amp;mdash; the insights of BTM itself may be challenged. That&amp;rsquo;s not a weakness; it&amp;rsquo;s the point. An approach built on openness and challenging has to hold itself to the same test, and it welcomes it.</p>
+      <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
+    </div>
+  </section>
+
+<footer class="site">
+    <div class="wrap">
+      <div>&#169; 2026 Jaco van der Laan &#183; Consilium Information Systems B.V.</div>
+      <div>
+        <a href="../approach/">Approach</a>
+        <a href="../services/">Services</a>
+        <a href="../about/">About</a>
+        <a href="../articles/">Articles</a>
+        <a href="../contact/">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

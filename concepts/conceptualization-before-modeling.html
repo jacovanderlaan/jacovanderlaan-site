@@ -61,41 +61,41 @@
         <span class="navgroup">
           <button class="navtop" type="button">Approach</button>
           <span class="navmenu">
-            <a href="../approach.html">The approach</a>
-            <a href="../principles.html">Principles &amp; manifesto</a>
-            <a href="../concepts.html">Concepts &amp; vocabulary</a>
-            <a href="../mdde.html">MDDE</a>
+            <a href="../approach/">The approach</a>
+            <a href="../principles/">Principles &amp; manifesto</a>
+            <a href="../concepts/">Concepts &amp; vocabulary</a>
+            <a href="../mdde/">MDDE</a>
           </span>
         </span>
         <span class="navgroup">
           <button class="navtop" type="button">Services</button>
           <span class="navmenu">
-            <a href="../services.html">Services</a>
-            <a href="../work.html">Work &amp; case studies</a>
+            <a href="../services/">Services</a>
+            <a href="../work/">Work &amp; case studies</a>
           </span>
         </span>
         <span class="navgroup">
           <button class="navtop" type="button">Expertise</button>
           <span class="navmenu">
-            <a href="../expertise.html">Overview</a>
-            <a href="../expertise-sql-migration.html">SQL parsing &amp; migration</a>
-            <a href="../expertise-data-vault.html">Data Vault</a>
-            <a href="../expertise-data-modeling.html">Data modeling</a>
-            <a href="../expertise-diagram-generation.html">Diagram generation</a>
-            <a href="../expertise-modeling-tools.html">Modeling tools</a>
-            <a href="../expertise-engineering.html">Engineering &amp; architecture</a>
+            <a href="../expertise/">Overview</a>
+            <a href="../expertise-sql-migration/">SQL parsing &amp; migration</a>
+            <a href="../expertise-data-vault/">Data Vault</a>
+            <a href="../expertise-data-modeling/">Data modeling</a>
+            <a href="../expertise-diagram-generation/">Diagram generation</a>
+            <a href="../expertise-modeling-tools/">Modeling tools</a>
+            <a href="../expertise-engineering/">Engineering &amp; architecture</a>
           </span>
         </span>
-        <a href="../articles.html">Articles</a>
+        <a href="../articles/">Articles</a>
         <span class="navgroup">
           <button class="navtop" type="button">About</button>
           <span class="navmenu">
-            <a href="../about.html">About</a>
-            <a href="../references.html">References</a>
-            <a href="../ideas.html">Ideas</a>
+            <a href="../about/">About</a>
+            <a href="../references/">References</a>
+            <a href="../ideas/">Ideas</a>
           </span>
         </span>
-        <a class="nav-cta" href="../contact.html">Get in touch</a>
+        <a class="nav-cta" href="../contact/">Get in touch</a>
       </nav>
     </div>
   </header>
@@ -110,6 +110,7 @@
 
   <section class="tight">
     <div class="wrap c-detail">
+      <figure class="c-hero"><img src="../assets/conceptualization-before-modeling-hero.png" alt="Conceptualization Before Modeling" loading="eager"/></figure>
       <p class="c-body">There is an order-of-operations error at the root of most data models, and Ronald Ross names it cleanly: data modeling is an engineering concern — it asks how records should be organized in a system — while <em>conceptualization</em> asks what the business actually means before any of that. Start at storage and you get a model of tables. Start at meaning and you get a model of the business that tables can then serve. Both produce a diagram; only one of them models the right thing. The sharpest way to see the difference is what data modeling routinely discards: the verbs. A table headed <em>customer, order, location</em> is silent on the relationships that give those nouns their point — does the customer <em>place</em> the order, <em>cancel</em> it, <em>dispute</em> it? Those verb-concepts are the chassis of meaning, and a model that drops them is communicatively impotent: the lines between boxes say "related, somehow" and leave both a human and a machine exactly where they started. Conceptualization keeps the verbs because the verbs <em>are</em> the meaning; the nouns are just where it attaches. This is also why a concept model is not a "conceptual data model." A conceptual data model is still a data model — entities and attributes, one abstraction level up from physical. A concept model operates in a different domain entirely: structured meaning, business vocabulary, and the disambiguation of what words mean, before the question of how to store any of it arises. Calling the first one "conceptual" is how organizations convince themselves they've done conceptualization when they've only done early-stage engineering. The payoff for getting the order right is durability. Concepts are more stable than any technology — they reflect how people think, not how machines store — which is why a well-built concept model outlives the platforms beneath it (one held up at ~90% accuracy twelve years on, while the databases under it were replaced twice). And it's the precondition for everything downstream: you cannot resolve data integration, or connect meaningfully to GenAI, using the same storage-first techniques that produced the fragmentation in the first place. Meaning first, then the model, then the machine — in that order, or you industrialize the wrong thing.</p>
       <a class="c-back" href="../concepts.html">← All concepts &amp; vocabulary</a>
     </div>
@@ -119,11 +120,11 @@
     <div class="wrap">
       <div>&#169; 2026 Jaco van der Laan &#183; Consilium Information Systems B.V.</div>
       <div>
-        <a href="../approach.html">Approach</a>
-        <a href="../services.html">Services</a>
-        <a href="../about.html">About</a>
-        <a href="../articles.html">Articles</a>
-        <a href="../contact.html">Contact</a>
+        <a href="../approach/">Approach</a>
+        <a href="../services/">Services</a>
+        <a href="../about/">About</a>
+        <a href="../articles/">Articles</a>
+        <a href="../contact/">Contact</a>
       </div>
     </div>
   </footer>
